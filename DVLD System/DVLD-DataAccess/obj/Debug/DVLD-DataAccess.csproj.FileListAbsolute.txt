@@ -1,0 +1,12 @@
+D:\Development\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.dll
+D:\Development\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.pdb
+D:\Development\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.AssemblyReference.cache
+D:\Development\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
+D:\Development\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
+D:\Development\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.dll
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.pdb
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.AssemblyReference.cache
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
+C:\Users\ibrahimshbat\source\repos\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb

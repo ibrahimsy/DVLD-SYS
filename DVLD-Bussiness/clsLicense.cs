@@ -1,0 +1,246 @@
+﻿using DVLD_DataAccess;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DVLD_Bussiness
+{
+    /*
+      int LicenseID
+      int ApplicationID
+      int DriverID
+      int LicenseClass
+      DateTime IssueDate
+      DateTime ExpirationDate
+      string Notes
+      float PaidFees
+      byte IsActive
+      int IssueReason
+      int CreatedByUserID
+     */
+    public class clsLicense
+    {
+        enum Mode { enAddNew = 1, enUpdate = 2 }
+
+        Mode _Mode;
+
+        public enum enIssueReson { enFirstTime = 1, enRenew = 2, enDamageReplacment = 3, enLostReplacement = 4 };
+        public int LicenseID { get; set; }
+        public int ApplicationID { get; set; }
+
+        public clsApplication ApplicationInfo;
+        public int DriverID { get; set; }
+
+        public clsDriver DriverInfo;
+
+        public int LicenseClass { get; set; }
+
+        public clsLicenseClass LicenseClassInfo;
+        public DateTime IssueDate { get; set; }
+        public DateTime ExpirationDate { get; set; }
+        public string Notes { get; set; }
+        public float PaidFees { get; set; }
+        public bool IsActive { get; set; }
+        public enIssueReson IssueReason { get; set; }
+        public int CreatedByUserID { get; set; }
+
+        public clsUser UserInfo;
+
+        public string IssueReasonText
+        {
+            get
+            {
+                return GetIssueReasonText(this.IssueReason);
+            }
+        }
+
+        public clsLicense()
+        {
+            _Mode = Mode.enAddNew;
+
+              this.LicenseID = -1;
+              this.ApplicationID = -1;
+              this.DriverID = -1;
+              this.LicenseClass = -1;
+              this.IssueDate = DateTime.Now;
+              this.ExpirationDate = DateTime.Now;
+              this.Notes = "";
+              this.PaidFees = 0;
+              this.IsActive = true;
+              this.IssueReason = enIssueReson.enFirstTime;
+              this.CreatedByUserID = -1;
+             
+        }
+
+        private clsLicense( int LicenseID ,int ApplicationID,int DriverID,int LicenseClass,DateTime IssueDate,DateTime ExpirationDate
+                           ,string Notes,float PaidFees,bool IsActive,enIssueReson IssueReason,int CreatedByUserID)
+        {
+            _Mode = Mode.enUpdate;
+
+            this.LicenseID = LicenseID;
+            this.LicenseClassInfo = clsLicenseClass.Find(this.LicenseID);
+            this.ApplicationID = ApplicationID;
+            this.ApplicationInfo = clsApplication.Find(this.ApplicationID);
+            this.DriverID = DriverID;
+            this.DriverInfo = clsDriver.FindByDriverID(this.DriverID);
+            this.LicenseClass = LicenseClass;
+            this.LicenseClassInfo = clsLicenseClass.Find(this.LicenseClass);
+            this.IssueDate = IssueDate;
+            this.ExpirationDate = ExpirationDate;
+            this.Notes = Notes;
+            this.PaidFees = PaidFees;
+            this.IsActive = IsActive;
+            this.IssueReason = IssueReason;
+            this.CreatedByUserID = CreatedByUserID;
+            this.UserInfo = clsUser.Find(CreatedByUserID);
+        }
+
+        private bool _AddNewLicense()
+        {
+            this.LicenseID = clsLicenseData.AddNewLicense(
+                                                ApplicationID
+                                               ,DriverID
+                                               ,LicenseClass
+                                               ,IssueDate
+                                               ,ExpirationDate
+                                               ,Notes
+                                               ,PaidFees
+                                               ,IsActive
+                                               ,(byte)IssueReason
+                                               ,CreatedByUserID);
+
+            return LicenseID != -1;
+        }
+
+        private bool _UpdateLicense()
+        {
+            return clsLicenseData.UpdateLicense(LicenseID
+                                               , ApplicationID
+                                               , DriverID
+                                               , LicenseClass
+                                               , IssueDate
+                                               , ExpirationDate
+                                               , Notes
+                                               , PaidFees
+                                               , IsActive
+                                               ,(byte) IssueReason
+                                               , CreatedByUserID);
+        }
+
+        public static clsLicense Find(int LicenseID)
+        {
+            int ApplicationID = -1;
+            int DriverID = -1;
+            int LicenseClass = -1;
+            DateTime IssueDate = DateTime.Now;
+            DateTime ExpirationDate = DateTime.Now;
+            string Notes = "";
+            float PaidFees = 0;
+            bool IsActive = true;
+            byte IssueReason = 1;
+            int CreatedByUserID = -1;
+
+            if (clsLicenseData.GetLicenseInfoByID(LicenseID
+                                                   , ref ApplicationID
+                                                   , ref DriverID
+                                                   , ref LicenseClass
+                                                   , ref IssueDate
+                                                   , ref ExpirationDate
+                                                   , ref Notes
+                                                   , ref PaidFees
+                                                   , ref IsActive
+                                                   , ref IssueReason
+                                                   , ref CreatedByUserID))
+            {
+                return new clsLicense(LicenseID, ApplicationID, DriverID, LicenseClass, IssueDate, ExpirationDate, Notes,
+                               PaidFees, IsActive, (enIssueReson)IssueReason, CreatedByUserID);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static bool IsExist(int LicenseID)
+        {
+            return clsLicenseData.IsLicenseExist(LicenseID);
+        }
+
+        public static bool Delete(int LicenseID)
+        {
+            return clsLicenseData.DeleteLicense(LicenseID);
+        }
+
+        public bool IsDetained()
+        {
+            return clsDetainedLicense.IsLicenseDetained(this.LicenseID);
+        }
+
+        public static DataTable GetAllLicensees()
+        {
+            return clsLicenseData.GetAllLicenses();
+        }
+
+        public static DataTable GetAllLocalLicenseByDriverID(int DriverID)
+        {
+            return clsLicenseData.GetAllLocalLicensesByDriverID(DriverID);
+        }
+
+        public static DataTable GetAllInternationalLicenseByDriverID(int DriverID)
+        {
+            return clsLicenseData.GetAllInternationalLicensesByDriverID(DriverID);
+        }
+
+        public string GetIssueReasonText(enIssueReson IssueReason)
+        {
+            switch (IssueReason)
+            {
+                case enIssueReson.enFirstTime:
+                    return "First Time";
+                case enIssueReson.enRenew:
+                    return "Renew";
+                case enIssueReson.enDamageReplacment:
+                    return "Damage Replacment";
+                case enIssueReson.enLostReplacement:
+                    return "Lost Replacment";
+                default:
+                    return "First Time";
+            }
+        }
+
+
+        public static int GetActiveLicensePerPersonID(int PersonID,int LicenseClass)
+        {
+            return clsLicenseData.GetActiveLicensePerPersonId(PersonID, LicenseClass);
+        }
+
+        public static int GetLicenseByPersonID(int PersonID, int LicenseClass)
+        {
+            return clsLicenseData.GetLicenseByPersonId(PersonID, LicenseClass);
+        }
+        public bool Save()
+        {
+            switch (_Mode)
+            {
+                case Mode.enAddNew:
+                    if (_AddNewLicense())
+                    {
+                        _Mode = Mode.enUpdate;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case Mode.enUpdate:
+                    return _UpdateLicense();
+
+                default: return false;
+            }
+        }
+
+    }
+}
