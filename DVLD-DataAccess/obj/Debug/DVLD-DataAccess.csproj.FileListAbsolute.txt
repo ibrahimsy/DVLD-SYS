@@ -16,3 +16,9 @@ D:\Devlopment\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.AssemblyRefere
 D:\Devlopment\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
 D:\Devlopment\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
 D:\Devlopment\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb
+D:\Development\C#\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.dll
+D:\Development\C#\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.pdb
+D:\Development\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.AssemblyReference.cache
+D:\Development\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
+D:\Development\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
+D:\Development\C#\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb

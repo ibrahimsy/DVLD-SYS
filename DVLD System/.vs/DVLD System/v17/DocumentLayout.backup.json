@@ -3,40 +3,18 @@
   "WorkspaceRootPath": "D:\\Development\\C#\\DVLD System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\dvld system\\applications\\local applications\\frmaddnewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:applications\\local applications\\frmaddnewlocaldrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\dvld system\\applications\\replacment license applications\\frmreplacmentlicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:applications\\replacment license applications\\frmreplacmentlicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\dvld system\\users\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\dvld system\\applications\\replacment license applications\\frmreplacmentlicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:applications\\replacment license applications\\frmreplacmentlicenseapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmaddedituser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\dvld-bussiness\\clslicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\frmchangepassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\DVLD System\\users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:users\\controls\\ctrlusercard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2AF3C38-BE4A-4B93-9908-21E275F1CD29}|..\\DVLD-DataAccess\\DVLD-DataAccess.csproj|d:\\development\\c#\\dvld-dataaccess\\clslicensedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,112 +24,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmAddNewLocalDrivingLicense.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Applications\\Local Applications\\frmAddNewLocalDrivingLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Local Applications\\frmAddNewLocalDrivingLicense.cs",
-              "ToolTip": "D:\\Development\\C#\\DVLD System\\Applications\\Local Applications\\frmAddNewLocalDrivingLicense.cs [Design]",
-              "RelativeToolTip": "Applications\\Local Applications\\frmAddNewLocalDrivingLicense.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "clsLicenseData.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\DVLD-DataAccess\\clsLicenseData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-DataAccess\\clsLicenseData.cs",
+              "ToolTip": "D:\\Development\\C#\\DVLD-DataAccess\\clsLicenseData.cs",
+              "RelativeToolTip": "..\\DVLD-DataAccess\\clsLicenseData.cs",
+              "ViewState": "AgIAALkBAAAAAAAAAAAQwO0BAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-16T19:56:38.781Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmAddEditUser.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmAddEditUser.cs",
-              "RelativeDocumentMoniker": "Users\\frmAddEditUser.cs",
-              "ToolTip": "D:\\Development\\C#\\DVLD System\\Users\\frmAddEditUser.cs",
-              "RelativeToolTip": "Users\\frmAddEditUser.cs",
-              "ViewState": "AgIAANEAAAAAAAAAAAAwwOkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:08:29.366Z",
+              "WhenOpened": "2024-11-23T10:59:52.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmAddEditUser.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmAddEditUser.cs",
-              "RelativeDocumentMoniker": "Users\\frmAddEditUser.cs",
-              "ToolTip": "D:\\Devlopment\\C#\\DVLD System\\Users\\frmAddEditUser.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\Devlopment\\C#\\DVLD System\\Users\\frmAddEditUser.cs [Design]",
+              "Title": "clsLicense.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\DVLD-Bussiness\\clsLicense.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsLicense.cs",
+              "ToolTip": "D:\\Development\\C#\\DVLD-Bussiness\\clsLicense.cs*",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsLicense.cs*",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAcwAYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:08:27.174Z"
+              "WhenOpened": "2024-11-23T10:44:12.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmManageUsers.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmManageUsers.cs",
-              "RelativeDocumentMoniker": "Users\\frmManageUsers.cs",
-              "ToolTip": "D:\\Development\\C#\\DVLD System\\Users\\frmManageUsers.cs",
-              "RelativeToolTip": "Users\\frmManageUsers.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAuwOkAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "frmReplacmentLicenseApplication.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "ToolTip": "D:\\Development\\C#\\DVLD System\\Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "RelativeToolTip": "Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAgwJQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:05:37.599Z"
+              "WhenOpened": "2024-11-23T10:17:11.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmManageUsers.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmManageUsers.cs",
-              "RelativeDocumentMoniker": "Users\\frmManageUsers.cs",
-              "ToolTip": "D:\\Devlopment\\C#\\DVLD System\\Users\\frmManageUsers.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\Devlopment\\C#\\DVLD System\\Users\\frmManageUsers.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "frmReplacmentLicenseApplication.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "RelativeDocumentMoniker": "Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs",
+              "ToolTip": "D:\\Development\\C#\\DVLD System\\Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs [Design]",
+              "RelativeToolTip": "Applications\\Replacment License Applications\\frmReplacmentLicenseApplication.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T19:05:31.049Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ctrlUserCard.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
-              "ToolTip": "D:\\Development\\C#\\DVLD System\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeToolTip": "Users\\Controls\\ctrlUserCard.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T18:41:10.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ctrlUserCard.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\Controls\\ctrlUserCard.cs",
-              "RelativeDocumentMoniker": "Users\\Controls\\ctrlUserCard.cs",
-              "ToolTip": "D:\\Devlopment\\C#\\DVLD System\\Users\\Controls\\ctrlUserCard.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\Devlopment\\C#\\DVLD System\\Users\\Controls\\ctrlUserCard.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T18:41:08.34Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmChangePassword.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
-              "ToolTip": "D:\\Development\\C#\\DVLD System\\Users\\frmChangePassword.cs",
-              "RelativeToolTip": "Users\\frmChangePassword.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAcwDoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T12:14:17.305Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "frmChangePassword.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\DVLD System\\Users\\frmChangePassword.cs",
-              "RelativeDocumentMoniker": "Users\\frmChangePassword.cs",
-              "ToolTip": "D:\\Devlopment\\C#\\DVLD System\\Users\\frmChangePassword.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\Devlopment\\C#\\DVLD System\\Users\\frmChangePassword.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T12:14:05.961Z"
+              "WhenOpened": "2024-11-23T10:17:10.073Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

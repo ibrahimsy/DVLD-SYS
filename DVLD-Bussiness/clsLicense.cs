@@ -221,6 +221,54 @@ namespace DVLD_Bussiness
         {
             return clsLicenseData.GetLicenseByPersonId(PersonID, LicenseClass);
         }
+
+        public bool DeactivateCurrentLicense()
+        {
+            return clsLicenseData.DeactivateLicenseByID(this.LicenseID);
+        }
+        public clsLicense Replace(enIssueReson IssueReson,int CreatedByUserID)
+        {
+
+            //First We Initilize A Replacment Application
+            clsApplication ReplacmentApplication = new clsApplication();
+
+            ReplacmentApplication.ApplicantPersonID = this.DriverInfo.PersonID;
+            ReplacmentApplication.ApplicationDate = DateTime.Now;
+            ReplacmentApplication.ApplicationStatus = (int)clsApplication.enApplicationStatus.enCompleted;
+
+            if (IssueReson == enIssueReson.enDamageReplacment)
+                ReplacmentApplication.ApplicationTypeID = (int)clsApplication.enApplicationTypes.enReplacementForDamagedDrivingLicense;
+            else
+                ReplacmentApplication.ApplicationTypeID = (int)clsApplication.enApplicationTypes.enReplacementForLostDrivingLicense;
+
+            ReplacmentApplication.LastStatusDate = DateTime.Now;
+            ReplacmentApplication.PaidFees = clsApplicationTypes.Find(ReplacmentApplication.ApplicationTypeID).Fees;
+            ReplacmentApplication.CreatedByUserID = CreatedByUserID;
+
+            if (!ReplacmentApplication.Save())
+                return null;
+
+            //Create New License
+            clsLicense NewLicense = new clsLicense();
+            NewLicense.ApplicationID = ReplacmentApplication.ApplicationID;
+            NewLicense.DriverID = this.DriverID;
+            NewLicense.LicenseClass = this.LicenseClass;
+            NewLicense.IssueDate = DateTime.Now;
+            NewLicense.ExpirationDate = DateTime.Now.AddYears(clsLicenseClass.Find(this.LicenseClass).DefaultValidityLength);
+            NewLicense.PaidFees = this.PaidFees;
+            NewLicense.IsActive = true;    
+            NewLicense.IssueReason = IssueReson;
+            NewLicense.CreatedByUserID = CreatedByUserID;
+
+
+            if (!NewLicense.Save())
+                return null;
+
+            DeactivateCurrentLicense();
+
+            return NewLicense;
+        }
+
         public bool Save()
         {
             switch (_Mode)

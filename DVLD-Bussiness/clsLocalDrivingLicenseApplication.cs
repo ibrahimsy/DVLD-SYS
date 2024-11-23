@@ -115,11 +115,6 @@ namespace DVLD_Bussiness
 
             return IsBaseApplicationDeleted;
         }
-
-        public bool Cancel()
-        {
-            return base.Cancel();
-        }
         
         public static DataTable GetAllLocalDrivingLicenseApplications()
         {

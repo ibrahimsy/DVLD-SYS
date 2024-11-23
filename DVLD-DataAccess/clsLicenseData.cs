@@ -490,5 +490,34 @@ namespace DVLD_DataAccess
             }
             return LicenseID;
         }
+    
+        public static bool DeactivateLicenseByID(int LicenseID)
+        {
+            int AffectedRows = 0;
+
+            string query = @"UPDATE Licenses SET IsActive = 0
+                                WHERE LicenseID = @LicenseID";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+            try
+            {
+                connection.Open();
+
+                AffectedRows = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally { connection.Close(); }
+
+            return AffectedRows > 0;
+        }
     }
 }
