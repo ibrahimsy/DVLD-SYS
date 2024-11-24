@@ -23,7 +23,10 @@ namespace DVLD_System.Licenses.Controls
             InitializeComponent();
           
         }
-
+        public clsLicense LicenseInfo
+        {
+            get { return _LicenseInfo; }
+        }
         public int LicenseID
         {
             get { return _LicenseID; }

@@ -43,6 +43,13 @@ namespace DVLD_System.Licenses.Controls
             }
         }
         
+        public clsLicense LicenseInfo
+        {
+            get
+            {
+                return ctrlDriverLicenseInfo1.LicenseInfo;
+            }
+        }
         public ctrlLicenseInfoWithFilter()
         {
             InitializeComponent();

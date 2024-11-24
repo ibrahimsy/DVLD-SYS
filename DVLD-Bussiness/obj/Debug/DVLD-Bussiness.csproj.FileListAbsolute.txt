@@ -34,3 +34,12 @@ D:\Development\C#\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.csproj.CoreCompileInpu
 D:\Development\C#\DVLD-Bussiness\obj\Debug\DVLD-Bus.692BB9BA.Up2Date
 D:\Development\C#\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.dll
 D:\Development\C#\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.pdb
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\bin\Debug\DVLD-Bussiness.dll
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\bin\Debug\DVLD-Bussiness.pdb
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\bin\Debug\DVLD-DataAccess.dll
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\bin\Debug\DVLD-DataAccess.pdb
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.csproj.AssemblyReference.cache
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.csproj.CoreCompileInputs.cache
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\obj\Debug\DVLD-Bus.692BB9BA.Up2Date
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.dll
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-Bussiness\obj\Debug\DVLD-Bussiness.pdb

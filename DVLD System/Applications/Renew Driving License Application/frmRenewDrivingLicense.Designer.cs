@@ -61,10 +61,10 @@
             // 
             // ctrlLicenseInfoWithFilter1
             // 
-            this.ctrlLicenseInfoWithFilter1.Location = new System.Drawing.Point(10, 11);
+            this.ctrlLicenseInfoWithFilter1.Location = new System.Drawing.Point(-9, 0);
             this.ctrlLicenseInfoWithFilter1.Margin = new System.Windows.Forms.Padding(2);
             this.ctrlLicenseInfoWithFilter1.Name = "ctrlLicenseInfoWithFilter1";
-            this.ctrlLicenseInfoWithFilter1.Size = new System.Drawing.Size(838, 472);
+            this.ctrlLicenseInfoWithFilter1.Size = new System.Drawing.Size(838, 434);
             this.ctrlLicenseInfoWithFilter1.TabIndex = 0;
             this.ctrlLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlLicenseInfoWithFilter1_OnLicenseSelected);
             // 
@@ -94,9 +94,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 487);
+            this.groupBox1.Location = new System.Drawing.Point(4, 439);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(825, 275);
+            this.groupBox1.Size = new System.Drawing.Size(825, 257);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Applicationa New License Info";
@@ -315,7 +315,7 @@
             this.llShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llShowLicenseInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.llShowLicenseInfo.Location = new System.Drawing.Point(257, 778);
+            this.llShowLicenseInfo.Location = new System.Drawing.Point(216, 712);
             this.llShowLicenseInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llShowLicenseInfo.Name = "llShowLicenseInfo";
             this.llShowLicenseInfo.Size = new System.Drawing.Size(157, 20);
@@ -330,7 +330,7 @@
             this.llShowLicenseHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llShowLicenseHistory.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llShowLicenseHistory.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.llShowLicenseHistory.Location = new System.Drawing.Point(51, 778);
+            this.llShowLicenseHistory.Location = new System.Drawing.Point(10, 712);
             this.llShowLicenseHistory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llShowLicenseHistory.Name = "llShowLicenseHistory";
             this.llShowLicenseHistory.Size = new System.Drawing.Size(190, 20);
@@ -346,7 +346,7 @@
             this.btnRenew.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRenew.Image = global::DVLD_System.Properties.Resources.Renew_Driving_License_32;
             this.btnRenew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRenew.Location = new System.Drawing.Point(750, 768);
+            this.btnRenew.Location = new System.Drawing.Point(731, 702);
             this.btnRenew.Name = "btnRenew";
             this.btnRenew.Size = new System.Drawing.Size(98, 37);
             this.btnRenew.TabIndex = 19;
@@ -362,7 +362,7 @@
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_System.Properties.Resources.close__1_;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(646, 769);
+            this.btnClose.Location = new System.Drawing.Point(627, 703);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 37);
             this.btnClose.TabIndex = 18;
@@ -375,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 817);
+            this.ClientSize = new System.Drawing.Size(843, 749);
             this.Controls.Add(this.llShowLicenseInfo);
             this.Controls.Add(this.llShowLicenseHistory);
             this.Controls.Add(this.btnRenew);
