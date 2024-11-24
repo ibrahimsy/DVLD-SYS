@@ -62,9 +62,10 @@ namespace DVLD_System.Licenses.Controls
             if (_LicenseInfo == null)
             {
                 MessageBox.Show("No License Exist","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                _LicenseID = -1;
                 return;
             }
-
+            
             lblClassName.Text = _LicenseInfo.LicenseClassInfo.ClassName;
             lblDriverName.Text = _LicenseInfo.DriverInfo.PersonInfo.FullName;
             lblLicenseID.Text = _LicenseID.ToString();

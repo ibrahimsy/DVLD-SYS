@@ -50,6 +50,7 @@ namespace DVLD_System.Licenses.Controls
                 return ctrlDriverLicenseInfo1.LicenseInfo;
             }
         }
+        
         public ctrlLicenseInfoWithFilter()
         {
             InitializeComponent();
@@ -68,21 +69,14 @@ namespace DVLD_System.Licenses.Controls
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtLicenseID.Text))
+            if (!this.ValidateChildren())
             {
+                MessageBox.Show("some feild are not valid,put mouse on red icon to see error ","Validation Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtLicenseID.Focus();
                 return;
             }
             int LicenseID = int.Parse(txtLicenseID.Text.Trim());
-
-            if (!this.ValidateChildren())
-            {
-                return;
-            }
-
-            ctrlDriverLicenseInfo1.LoadLicenseInfo(LicenseID);
-
-            if(OnLicenseSelected != null)
-                OnLicenseSelected(LicenseID);
+            LoadInfo(LicenseID);
         }
 
         private void txtLicenseID_Validating(object sender, CancelEventArgs e)
@@ -91,37 +85,35 @@ namespace DVLD_System.Licenses.Controls
             if (string.IsNullOrEmpty(txtLicenseID.Text))
             {
                 errorProvider1.SetError(txtLicenseID, "This Field Is Required");
-                //e.Cancel = true;
+                e.Cancel = true;
             }
             else
             {
                 errorProvider1.SetError(txtLicenseID, "");
-                e.Cancel = false;
             }
         }
 
         public void LoadInfo(int LicenseID)
         {
-            _LicenseID = LicenseID;
             ctrlDriverLicenseInfo1.LoadLicenseInfo(LicenseID);
-            FindNow();
-        }
-        public void FindNow()
-        {
-            txtLicenseID.Text = LicenseID.ToString(); 
+            txtLicenseID.Text = LicenseID.ToString();
             txtLicenseID.Focus();
 
-            if(OnLicenseSelected !=null)
-                OnLicenseSelected(LicenseID);
+            _LicenseID = ctrlDriverLicenseInfo1.LicenseID;
+
+            if (OnLicenseSelected != null)
+                OnLicenseSelected(_LicenseID);
         }
         
         public void ResetLicenseInfo()
         {
             ctrlDriverLicenseInfo1.ResetLicenseInfo();
         }
+        
         public void TxtLicenseIDFocus()
         {
             txtLicenseID.Focus();
         }
     }
+
 }
