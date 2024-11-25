@@ -31,7 +31,23 @@ namespace DVLD_System.Licenses
             {
                 MessageBox.Show("No Application Found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 this.Close();
+                return;
             }
+
+            if (!_LocalApplicationInfo.PassedAllTests())
+            {
+                MessageBox.Show("Person Should Pass All Test First", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            if (_LocalApplicationInfo.IsLicenseIssued())
+            {
+                MessageBox.Show("There is License Issued For This Application", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
             ctrlLocalDrivingLicenseApplicationInfo1.LoadApplicationInfo(_LocalApplicationID);
            
         }

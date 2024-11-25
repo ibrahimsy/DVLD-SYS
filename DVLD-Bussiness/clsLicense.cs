@@ -48,6 +48,14 @@ namespace DVLD_Bussiness
         public enIssueReson IssueReason { get; set; }
         public int CreatedByUserID { get; set; }
 
+        public bool IsDetained
+        {
+            get
+            {
+                return IsLicenseDetained();
+            }
+        }
+
         public clsUser UserInfo;
 
         public string IssueReasonText
@@ -175,7 +183,7 @@ namespace DVLD_Bussiness
             return clsLicenseData.DeleteLicense(LicenseID);
         }
 
-        public bool IsDetained()
+        public bool IsLicenseDetained()
         {
             return clsDetainedLicense.IsLicenseDetained(this.LicenseID);
         }

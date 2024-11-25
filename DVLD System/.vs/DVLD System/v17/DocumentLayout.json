@@ -1,12 +1,135 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld-bussiness\\clslicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\frmissuelocallicenseforfirsttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\frmissuelocallicenseforfirsttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\frmissuelocallicenseforfirsttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\frmissuelocallicenseforfirsttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ctrlLicenseInfoWithFilter.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwEgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:47:05.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ctrlLicenseInfoWithFilter.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs [Design]",
+              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:46:56.841Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsLicense.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD-Bussiness\\clsLicense.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsLicense.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD-Bussiness\\clsLicense.cs",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsLicense.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAIA5wDYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:38:06.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ctrlDriverLicenseInfo.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAADgvyIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:33:49.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ctrlDriverLicenseInfo.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs [Design]",
+              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:30:27.376Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmIssueLocalLicenseForFirstTime.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "RelativeToolTip": "Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAADgvyYAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:14:15.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmIssueLocalLicenseForFirstTime.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs [Design]",
+              "RelativeToolTip": "Licenses\\Local Licenses\\frmIssueLocalLicenseForFirstTime.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:14:10.713Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

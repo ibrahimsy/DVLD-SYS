@@ -79,7 +79,7 @@ namespace DVLD_System.Licenses.Controls
             lblDateOfBirth.Text = clsFormat.DateToShort(_LicenseInfo.DriverInfo.PersonInfo.DateOfBirth);
             lblDriverID.Text = _LicenseInfo.DriverID.ToString();
             lblExpirationDate.Text = clsFormat.DateToShort(_LicenseInfo.ExpirationDate);
-            lblIsDetained.Text = _LicenseInfo.IsDetained()?"Yes":"No";
+            lblIsDetained.Text = _LicenseInfo.IsDetained?"Yes":"No";
 
             _LoadDriverImage();
         }

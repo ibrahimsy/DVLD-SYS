@@ -1,103 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrldriverlicenseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:licenses\\local licenses\\controls\\ctrllicenseinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\applications\\renew driving license application\\frmrenewdrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:applications\\renew driving license application\\frmrenewdrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld-sys\\dvld system\\applications\\renew driving license application\\frmrenewdrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:applications\\renew driving license application\\frmrenewdrivinglicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ctrlDriverLicenseInfo.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
-              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
-              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
-              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlDriverLicenseInfo.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAADgv0AAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:28:54.975Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ctrlLicenseInfoWithFilter.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAgwEkAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:27:09.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ctrlLicenseInfoWithFilter.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "RelativeDocumentMoniker": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs",
-              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs [Design]",
-              "RelativeToolTip": "Licenses\\Local Licenses\\Controls\\ctrlLicenseInfoWithFilter.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:27:07.426Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmRenewDrivingLicense.cs",
-              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "RelativeToolTip": "Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAIwCAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:24:26.264Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmRenewDrivingLicense.cs [Design]",
-              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "RelativeDocumentMoniker": "Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs",
-              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD-SYS\\DVLD System\\Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs [Design]",
-              "RelativeToolTip": "Applications\\Renew Driving License Application\\frmRenewDrivingLicense.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:24:23.28Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

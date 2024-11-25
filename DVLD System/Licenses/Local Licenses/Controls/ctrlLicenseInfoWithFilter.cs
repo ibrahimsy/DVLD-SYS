@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,11 +36,17 @@ namespace DVLD_System.Licenses.Controls
             }
         } 
         
+        bool _FilterEnabled = true;
         public bool FilterEnable
         {
+            get
+            {
+                return _FilterEnabled;
+            }
             set
             {
-                gbFilter.Enabled = value;
+                value = _FilterEnabled;
+                gbFilter.Enabled = _FilterEnabled;
             }
         }
         

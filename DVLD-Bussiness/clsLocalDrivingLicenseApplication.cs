@@ -136,6 +136,10 @@ namespace DVLD_Bussiness
             return clsLocalDrivingLicenseApplicationData.GetPassedTestCount(LDLApplicationID);
         }
 
+        public bool PassedAllTests()
+        {
+            return GetPassedTestCount(this.LocalDrivingLicenseApplicationID) == 3;
+        }
 
         public bool IsLicenseIssued()
         {
