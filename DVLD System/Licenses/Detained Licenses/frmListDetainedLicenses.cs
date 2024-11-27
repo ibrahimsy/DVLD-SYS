@@ -179,7 +179,7 @@ namespace DVLD_System.Licenses.Detained_Licenses
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             int LicenseID = (int)dgvDetainedLicenses.CurrentRow.Cells[1].Value;
-            releaseDetainedLicenseToolStripMenuItem.Enabled = clsLicense.Find(LicenseID).IsDetained();
+            releaseDetainedLicenseToolStripMenuItem.Enabled = clsLicense.Find(LicenseID).IsDetained;
         }
     }
 }

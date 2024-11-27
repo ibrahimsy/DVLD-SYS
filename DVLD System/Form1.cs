@@ -5,6 +5,7 @@ using DVLD_System.Applications.Release_Detained_License_Applications;
 using DVLD_System.Applications.Renew_Driving_License_Application;
 using DVLD_System.Applications.Replacment_License_Applications;
 using DVLD_System.Drivers;
+using DVLD_System.Licenses;
 using DVLD_System.Licenses.Detain_Licenses;
 using DVLD_System.Licenses.Detained_Licenses;
 using DVLD_System.Licenses.International_Licenses;
@@ -160,6 +161,12 @@ namespace DVLD_System
         private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmReleaseDetainedLicense frm = new frmReleaseDetainedLicense();
+            frm.ShowDialog();
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowLicensesHistory frm = new frmShowLicensesHistory();
             frm.ShowDialog();
         }
     }

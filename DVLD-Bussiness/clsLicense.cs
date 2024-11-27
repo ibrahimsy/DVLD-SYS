@@ -313,7 +313,22 @@ namespace DVLD_Bussiness
 
             return NewLicense;
         }
-       
+
+        public int Detain(float Fees,int CreatedByUserID)
+        {
+            clsDetainedLicense _DetainedLicense = new clsDetainedLicense();
+            _DetainedLicense.LicenseID = this.LicenseID;
+            _DetainedLicense.DetainDate = DateTime.Now;
+            _DetainedLicense.FineFees = Convert.ToSingle( Fees);
+            _DetainedLicense.CreatedByUserID = CreatedByUserID;
+
+            if (!_DetainedLicense.Save())
+            {
+                return -1;
+            }
+
+            return _DetainedLicense.DetainID;
+        }
         public bool IsLicenseExpired()
         {
             return this.ExpirationDate < DateTime.Now;

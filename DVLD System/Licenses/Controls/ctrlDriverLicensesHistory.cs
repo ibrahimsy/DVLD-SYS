@@ -29,10 +29,10 @@ namespace DVLD_System.Licenses.Controls
 
         void _LoadLocalLicensesInfo()
         {
-               
-                _dtLocalLicenses = clsDriver.GetLicenses(_DriverID);
-                dgvLocalLicenses.DataSource = _dtLocalLicenses;
-           
+
+            _dtLocalLicenses = clsDriver.GetLicenses(_DriverID);
+            dgvLocalLicenses.DataSource = _dtLocalLicenses;
+
 
             if (dgvLocalLicenses.Rows.Count > 0)
             {
@@ -83,18 +83,36 @@ namespace DVLD_System.Licenses.Controls
                 dgvInternationalLicenses.Columns[5].Width = 100;
             }
         }
-        public void LoadInfo(int PersonID)
+
+        public void LoadInfoByDriverID(int PersonID)
         {
-             _Driver = clsDriver.FindByPersonID(PersonID);
-            if(_Driver == null)
+            _Driver = clsDriver.FindByPersonID(PersonID);
+            if (_Driver == null)
             {
-                MessageBox.Show("No Driver Found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No Driver Found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
                 _DriverID = _Driver.DriverID;
             }
+
+            _LoadLocalLicensesInfo();
+
+            _LoadInternationalLicensesInfo();
+        }
+
+        public void LoadInfoByPersonID(int PersonID)
+        {
+            _Driver = clsDriver.FindByPersonID(PersonID);
+            if (_Driver == null)
+            {
+                MessageBox.Show($"No Driver Linked To person With ID [{PersonID}] Found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _DriverID = _Driver.DriverID;
+
 
             _LoadLocalLicensesInfo();
 
@@ -108,6 +126,7 @@ namespace DVLD_System.Licenses.Controls
             frmShowLicenseInfo frm = new frmShowLicenseInfo(LicenseID);
             frm.ShowDialog();
         }
+
         private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _showLicenseInfo();
@@ -120,7 +139,7 @@ namespace DVLD_System.Licenses.Controls
             frmShowInternationalLicenseInfo frm = new frmShowInternationalLicenseInfo(InternationalLicenseID);
             frm.ShowDialog();
         }
-       
+
         private void showInternationalLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _ShowInternationalLicenseInfo();
@@ -139,6 +158,14 @@ namespace DVLD_System.Licenses.Controls
         private void dgvInternationalLicenses_DoubleClick(object sender, EventArgs e)
         {
             _ShowInternationalLicenseInfo();
+        }
+
+        public void Clear()
+        {
+            if (_dtLocalLicenses != null)
+                _dtLocalLicenses.Clear();
+            if (_dtInternationalLicenses != null)
+                _dtInternationalLicenses.Clear();
         }
     }
 }

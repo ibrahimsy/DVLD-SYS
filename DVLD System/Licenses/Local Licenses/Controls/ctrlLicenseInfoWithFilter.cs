@@ -117,7 +117,7 @@ namespace DVLD_System.Licenses.Controls
             ctrlDriverLicenseInfo1.ResetLicenseInfo();
         }
         
-        public void TxtLicenseIDFocus()
+        public void TextLicenseIDFocus()
         {
             txtLicenseID.Focus();
         }

@@ -28,6 +28,7 @@ namespace DVLD_System.Applications.Renew_Driving_License_Application
         private void ctrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
         {
             int SelectedLicenseID = obj;
+            lblOldLicenseID.Text = SelectedLicenseID.ToString();
             llShowLicenseHistory.Enabled = (SelectedLicenseID != -1);
 
             if (SelectedLicenseID == -1)
@@ -35,13 +36,8 @@ namespace DVLD_System.Applications.Renew_Driving_License_Application
                 return;
             }
 
-            lblApplicationDate.Text = clsFormat.DateToShort( DateTime.Now);
-            lblIssueDate.Text = clsFormat.DateToShort (DateTime.Now);
-            lblApplicationFees.Text = clsApplicationTypes.Find((int)clsApplication.enApplicationTypes.enRenewDrivingLicense).Fees.ToString();
-            lblLicenseFees.Text = ctrlLicenseInfoWithFilter1.LicenseInfo.LicenseClassInfo.ClassFees.ToString();
-            lblOldLicenseID.Text = ctrlLicenseInfoWithFilter1.LicenseInfo.LicenseID.ToString();
-            lblExpirationDate.Text = clsFormat.DateToShort(DateTime.Now.AddYears(ctrlLicenseInfoWithFilter1.LicenseInfo.LicenseClassInfo.DefaultValidityLength));
-            lblCreatedBy.Text = clsGlobalSettings.CurrentUser.UserName;
+            lblLicenseFees.Text = ctrlLicenseInfoWithFilter1.LicenseInfo.LicenseClassInfo.ClassFees.ToString();  
+            lblExpirationDate.Text = clsFormat.DateToShort(DateTime.Now.AddYears(ctrlLicenseInfoWithFilter1.LicenseInfo.LicenseClassInfo.DefaultValidityLength));          
             lblTotalFees.Text = (Convert.ToSingle(lblApplicationFees.Text) + Convert.ToSingle(lblLicenseFees.Text)).ToString();
             txtNotes.Text = ctrlLicenseInfoWithFilter1.LicenseInfo.Notes;
 
@@ -62,6 +58,7 @@ namespace DVLD_System.Applications.Renew_Driving_License_Application
                                 MessageBoxIcon.Error);
                 return;
             }
+
             btnRenew.Enabled = true;
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -93,9 +90,16 @@ namespace DVLD_System.Applications.Renew_Driving_License_Application
 
         private void frmRenewDrivingLicense_Load(object sender, EventArgs e)
         {
+            lblApplicationDate.Text = clsFormat.DateToShort(DateTime.Now);
+            lblIssueDate.Text = lblApplicationDate.Text;
+            lblApplicationFees.Text = clsApplicationTypes.Find((int)clsApplication.enApplicationTypes.enRenewDrivingLicense).Fees.ToString();
+            lblCreatedBy.Text = clsGlobalSettings.CurrentUser.UserName;
+            lblExpirationDate.Text = "[? ? ? ?]";
+            
             btnRenew.Enabled = false;
             llShowLicenseInfo.Enabled = false;
-            llShowLicenseHistory.Enabled = false;   
+            llShowLicenseHistory.Enabled = false;
+            ctrlLicenseInfoWithFilter1.TextLicenseIDFocus();
         }
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

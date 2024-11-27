@@ -42,7 +42,7 @@ namespace DVLD_System.Applications.Release_Detained_License_Applications
 
         bool _HandelDetainedLicenseConstraint()
         {
-            if (!_LicenseInfo.IsDetained())
+            if (!_LicenseInfo.IsDetained)
             {
                 MessageBox.Show("Selected License Is Not Detained,Choose Another One.",
                     "Error",

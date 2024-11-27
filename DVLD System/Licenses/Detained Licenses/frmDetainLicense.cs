@@ -15,22 +15,14 @@ namespace DVLD_System.Licenses.Detain_Licenses
 {
     public partial class frmDetainLicense : Form
     {
-        int _LicenseID = -1;
-        clsLicense _LicenseInfo;
+        int _SelectedLicenseID = -1;
+        int _DetainID = -1;
         public frmDetainLicense()
         {
             InitializeComponent();
         }
 
-        bool _HandelDetainedLicense()
-        {
-            if (_LicenseInfo.IsDetained())
-            {
-                MessageBox.Show("Selected License Allready Detained","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return false;
-            }
-            return true;
-        }
+       
 
         void _ResetDefaultInfo()
         {
@@ -44,19 +36,20 @@ namespace DVLD_System.Licenses.Detain_Licenses
         }
         private void ctrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
         {
-            _LicenseID = obj;
-            _LicenseInfo = clsLicense.Find(_LicenseID);
-
-            if (_LicenseInfo == null)
+            _SelectedLicenseID = obj;
+          
+            if (_SelectedLicenseID == -1)
             {
                 return;
             }
 
-            llShowLicenseHistory.Enabled = true;
-            lblLicenseID.Text = _LicenseID.ToString();
+            llShowLicenseHistory.Enabled = (_SelectedLicenseID != -1);
 
-            if (!_HandelDetainedLicense())
+            lblLicenseID.Text = _SelectedLicenseID.ToString();
+
+            if (ctrlLicenseInfoWithFilter1.LicenseInfo.IsDetained)
             {
+                MessageBox.Show("Selected License Allready Detained", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -76,43 +69,30 @@ namespace DVLD_System.Licenses.Detain_Licenses
             {
                 return;
             }
-            /*
-             LicenseID
-             DetainDate
-             FineFees
-             CreatedByUserID
-             IsReleased
-             ReleaseDate
-             ReleasedByUserID
-             ReleaseApplicationID
-             */
 
-            clsDetainedLicense _DetainedLicense = new clsDetainedLicense();
-            _DetainedLicense.LicenseID = _LicenseID;
-            _DetainedLicense.DetainDate  = DateTime.Now;
-            _DetainedLicense.FineFees = Convert.ToSingle(txtDetainFees.Text.Trim());
-            _DetainedLicense.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
-
-            if (_DetainedLicense.Save())
+            int DetainID = ctrlLicenseInfoWithFilter1.LicenseInfo.Detain(
+                                    Convert.ToSingle(txtDetainFees.Text.Trim()),
+                                    clsGlobalSettings.CurrentUser.UserID);
+            if (DetainID == -1)
             {
-                MessageBox.Show($"Selected Licesne Is Detaind Successfuly With Detain ID = [{_DetainedLicense.DetainID}]",
+                MessageBox.Show($"An Error Occurred During Detain The License",
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                return;
+            }
+            
+            MessageBox.Show($"Selected Licesne Is Detaind Successfuly With Detain ID = [{DetainID}]",
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                lblLicenseID.Text = _LicenseID.ToString();
-                lblDetainID.Text = _DetainedLicense.DetainID.ToString();
-                llShowLicenseInfo.Enabled = true;
-                btnDetain.Enabled = false;
-                ctrlLicenseInfoWithFilter1.FilterEnable = false;
-            }
-            else
-            {
-                MessageBox.Show($"An Error Occurred During Detain The License",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            lblLicenseID.Text = _SelectedLicenseID.ToString();
+            lblDetainID.Text = DetainID.ToString();
+            llShowLicenseInfo.Enabled = true;
+            btnDetain.Enabled = false;
+            ctrlLicenseInfoWithFilter1.FilterEnable = false;
+            txtDetainFees.Enabled = false;
 
         }
 
@@ -123,13 +103,13 @@ namespace DVLD_System.Licenses.Detain_Licenses
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowLicenseInfo frm = new frmShowLicenseInfo(_LicenseID);
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(_SelectedLicenseID);
             frm.ShowDialog();
         }
 
         private void llShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowLicensesHistory frm = new frmShowLicensesHistory(_LicenseInfo.DriverInfo.PersonID);
+            frmShowLicensesHistory frm = new frmShowLicensesHistory(ctrlLicenseInfoWithFilter1.LicenseInfo.DriverInfo.PersonID);
             frm.ShowDialog();
         }
 
@@ -154,7 +134,7 @@ namespace DVLD_System.Licenses.Detain_Licenses
 
         private void frmDetainLicense_Activated(object sender, EventArgs e)
         {
-            ctrlLicenseInfoWithFilter1.TxtLicenseIDFocus();
+            ctrlLicenseInfoWithFilter1.TextLicenseIDFocus();
         }
     }
 }

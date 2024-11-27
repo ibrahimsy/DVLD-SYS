@@ -21,7 +21,6 @@ namespace DVLD_System.Applications.Replacment_License_Applications
         enReplacmentMode _ReplacmentMode = enReplacmentMode.enDamageLicense;
 
         int _LicenseID = -1;
-        clsLicense _OldLicenseInfo;
         clsApplication _ReplacmentApplication;
         clsLicense _NewLicenseInfo;
         public frmReplacmentLicenseApplication()
@@ -70,9 +69,17 @@ namespace DVLD_System.Applications.Replacment_License_Applications
             _ChangeReplacmentMode();
         }
 
-        bool _HandleActiveLicenseConstraint()
+       
+        private void ctrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
         {
-            if (!_OldLicenseInfo.IsActive)
+            int SelectedLicenseID = obj;
+            llShowLicenseInfo.Enabled = (SelectedLicenseID != -1);
+            lblOldLicenseID.Text = SelectedLicenseID.ToString();
+
+            if (SelectedLicenseID == -1)
+                return; 
+
+            if (!ctrlLicenseInfoWithFilter1.LicenseInfo.IsActive)
             {
                 MessageBox.Show("Selected License Is Not Active",
                                 "Error",
@@ -80,35 +87,9 @@ namespace DVLD_System.Applications.Replacment_License_Applications
                                 MessageBoxIcon.Error);
 
                 btnIssueReplacment.Enabled = false;
-                llShowLicenseInfo.Enabled = false;
-
-                return false;
-            }
-
-            btnIssueReplacment.Enabled = true;
-            return true;
-        }
-
-        private void ctrlLicenseInfoWithFilter1_OnLicenseSelected(int obj)
-        {
-            _LicenseID = obj;
-            _OldLicenseInfo = clsLicense.Find(_LicenseID);
-            if (_OldLicenseInfo == null) 
-            {
-                MessageBox.Show($"No Licesne Found With ID = {_LicenseID}",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+               
                 return;
             }
-
-            if (!_HandleActiveLicenseConstraint())
-            {
-                return;
-            }
-
-            llShowLicenseHistory.Enabled = true;
-            lblOldLicenseID.Text = _LicenseID.ToString();
             btnIssueReplacment.Enabled = true;
         }
 
@@ -120,7 +101,7 @@ namespace DVLD_System.Applications.Replacment_License_Applications
 
         private void llShowLicenseHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowLicensesHistory frm = new frmShowLicensesHistory(_OldLicenseInfo.DriverInfo.PersonID);
+            frmShowLicensesHistory frm = new frmShowLicensesHistory(ctrlLicenseInfoWithFilter1.LicenseInfo.DriverInfo.PersonID);
             frm.ShowDialog();
         }
 
@@ -140,7 +121,7 @@ namespace DVLD_System.Applications.Replacment_License_Applications
         private void btnIssueReplacment_Click(object sender, EventArgs e)
         {
 
-            clsLicense NewLicense = _OldLicenseInfo.Replace(_GetIssueReason(),clsGlobalSettings.CurrentUser.UserID);
+            clsLicense NewLicense = ctrlLicenseInfoWithFilter1.LicenseInfo.Replace(_GetIssueReason(),clsGlobalSettings.CurrentUser.UserID);
 
             if (NewLicense == null)
             {

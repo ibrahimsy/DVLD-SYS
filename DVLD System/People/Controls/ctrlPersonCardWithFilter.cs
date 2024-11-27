@@ -126,7 +126,7 @@ namespace DVLD_System.Controls
                     break;
             }
 
-            if (OnPersonSelected != null)
+            if (OnPersonSelected != null && EnableFilter)
                 OnPersonSelected(ctrlPersonCard1.PersonID);
 
         }
