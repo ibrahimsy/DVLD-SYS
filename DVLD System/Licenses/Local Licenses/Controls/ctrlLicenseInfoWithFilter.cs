@@ -45,7 +45,7 @@ namespace DVLD_System.Licenses.Controls
             }
             set
             {
-                value = _FilterEnabled;
+                _FilterEnabled = value;
                 gbFilter.Enabled = _FilterEnabled;
             }
         }
@@ -108,7 +108,7 @@ namespace DVLD_System.Licenses.Controls
 
             _LicenseID = ctrlDriverLicenseInfo1.LicenseID;
 
-            if (OnLicenseSelected != null)
+            if (OnLicenseSelected != null && FilterEnable)
                 OnLicenseSelected(_LicenseID);
         }
         

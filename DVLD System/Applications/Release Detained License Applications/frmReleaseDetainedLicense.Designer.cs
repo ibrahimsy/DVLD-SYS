@@ -34,7 +34,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCreatedBy = new System.Windows.Forms.Label();
-            this.lblApplicationID = new System.Windows.Forms.Label();
+            this.lblReleasedApplicationID = new System.Windows.Forms.Label();
             this.lblFineFees = new System.Windows.Forms.Label();
             this.lblLicenseID = new System.Windows.Forms.Label();
             this.lblTotalFees = new System.Windows.Forms.Label();
@@ -119,7 +119,7 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lblCreatedBy);
-            this.groupBox1.Controls.Add(this.lblApplicationID);
+            this.groupBox1.Controls.Add(this.lblReleasedApplicationID);
             this.groupBox1.Controls.Add(this.lblFineFees);
             this.groupBox1.Controls.Add(this.lblLicenseID);
             this.groupBox1.Controls.Add(this.lblTotalFees);
@@ -152,15 +152,15 @@
             this.lblCreatedBy.TabIndex = 21;
             this.lblCreatedBy.Text = "[ ? ? ? ?]";
             // 
-            // lblApplicationID
+            // lblReleasedApplicationID
             // 
-            this.lblApplicationID.AutoSize = true;
-            this.lblApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationID.Location = new System.Drawing.Point(567, 106);
-            this.lblApplicationID.Name = "lblApplicationID";
-            this.lblApplicationID.Size = new System.Drawing.Size(79, 20);
-            this.lblApplicationID.TabIndex = 20;
-            this.lblApplicationID.Text = "[ ? ? ? ?]";
+            this.lblReleasedApplicationID.AutoSize = true;
+            this.lblReleasedApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReleasedApplicationID.Location = new System.Drawing.Point(567, 106);
+            this.lblReleasedApplicationID.Name = "lblReleasedApplicationID";
+            this.lblReleasedApplicationID.Size = new System.Drawing.Size(79, 20);
+            this.lblReleasedApplicationID.TabIndex = 20;
+            this.lblReleasedApplicationID.Text = "[ ? ? ? ?]";
             // 
             // lblFineFees
             // 
@@ -296,8 +296,9 @@
             // 
             // ctrlLicenseInfoWithFilter1
             // 
+            this.ctrlLicenseInfoWithFilter1.FilterEnable = true;
             this.ctrlLicenseInfoWithFilter1.Location = new System.Drawing.Point(13, 14);
-            this.ctrlLicenseInfoWithFilter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ctrlLicenseInfoWithFilter1.Margin = new System.Windows.Forms.Padding(2);
             this.ctrlLicenseInfoWithFilter1.Name = "ctrlLicenseInfoWithFilter1";
             this.ctrlLicenseInfoWithFilter1.Size = new System.Drawing.Size(838, 472);
             this.ctrlLicenseInfoWithFilter1.TabIndex = 22;
@@ -314,7 +315,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlLicenseInfoWithFilter1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmReleaseDetainedLicense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Release Detained License";
@@ -334,7 +335,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblCreatedBy;
-        private System.Windows.Forms.Label lblApplicationID;
+        private System.Windows.Forms.Label lblReleasedApplicationID;
         private System.Windows.Forms.Label lblFineFees;
         private System.Windows.Forms.Label lblLicenseID;
         private System.Windows.Forms.Label lblTotalFees;

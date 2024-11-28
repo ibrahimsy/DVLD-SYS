@@ -112,7 +112,7 @@ namespace DVLD_DataAccess
         {
             bool _isFound = false;
 
-            string query = @"SELECT * FROM DetainedLicenses WHERE LicenseID = @LicenseID";
+            string query = @"SELECT TOP 1 * FROM DetainedLicenses WHERE LicenseID = @LicenseID ORDER BY DetainID DESC";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -431,5 +431,46 @@ namespace DVLD_DataAccess
             }
             return dt;
         }
+    
+        public static bool ReleaseDetainedLices(int DetainID,int ReleaseApplicationID,int ReleasedByUserID)
+        {
+            int AffectedRows = 0;
+
+            string query = @"UPDATE DetainedLicenses
+                             SET   IsReleased = 1
+                                  ,ReleaseDate = @ReleaseDate
+                                  ,ReleasedByUserID = @ReleasedByUserID
+                                  ,ReleaseApplicationID = @ReleaseApplicationID
+                             WHERE DetainID = @DetainID";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@DetainID", DetainID);
+            command.Parameters.AddWithValue("@ReleaseDate", DateTime.Now);
+            command.Parameters.AddWithValue("@ReleasedByUserID", ReleasedByUserID);
+            command.Parameters.AddWithValue("@ReleaseApplicationID", ReleaseApplicationID);
+
+
+            try
+            {
+                connection.Open();
+
+                AffectedRows = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return AffectedRows > 0;
+        }
+    
     }
 }

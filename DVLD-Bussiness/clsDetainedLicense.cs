@@ -27,7 +27,7 @@ namespace DVLD_Bussiness
 
         public int DetainID { get; set; }
         public int LicenseID { get; set; }
-        public clsLicense LicenseInfo;
+      //  public clsLicense LicenseInfo;
         public  DateTime DetainDate { get; set; }
         public float FineFees { get; set; }
         public int CreatedByUserID { get; set; }
@@ -68,7 +68,7 @@ namespace DVLD_Bussiness
 
             this.DetainID = DetainID;
             this.LicenseID = LicenseID;
-            this.LicenseInfo = clsLicense.Find(this.LicenseID);
+           // this.LicenseInfo = clsLicense.Find(this.LicenseID);
             this.DetainDate = DetainDate;
             this.FineFees = FineFees;
             this.CreatedByUserID = CreatedByUserID;
@@ -199,6 +199,11 @@ namespace DVLD_Bussiness
         public static DataTable GetAllDetainedLicenses()
         {
             return clsDetainedLicenseData.GetAllDetainedLicenses();
+        }
+
+        public  bool ReleaseDetainedLicense(int ReleaseApplicationID, int ReleasedByUserID)
+        {
+            return clsDetainedLicenseData.ReleaseDetainedLices(this.DetainID, ReleaseApplicationID, ReleasedByUserID);
         }
 
         public bool Save()

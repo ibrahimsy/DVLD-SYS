@@ -48,6 +48,7 @@ namespace DVLD_Bussiness
         public enIssueReson IssueReason { get; set; }
         public int CreatedByUserID { get; set; }
 
+        public clsDetainedLicense DetainedInfo;
         public bool IsDetained
         {
             get
@@ -105,6 +106,7 @@ namespace DVLD_Bussiness
             this.IssueReason = IssueReason;
             this.CreatedByUserID = CreatedByUserID;
             this.UserInfo = clsUser.Find(CreatedByUserID);
+            this.DetainedInfo = clsDetainedLicense.FindByLicenseID(this.LicenseID);
         }
 
         private bool _AddNewLicense()
@@ -329,6 +331,29 @@ namespace DVLD_Bussiness
 
             return _DetainedLicense.DetainID;
         }
+        
+        public bool ReleaseDetainedLicense(int ReleasedByUserID,ref int ReleasedApplicationID)
+        {
+            clsApplication ReleaseApplicationInfo = new clsApplication();
+
+            ReleaseApplicationInfo.ApplicantPersonID = this.DriverInfo.PersonID;
+            ReleaseApplicationInfo.ApplicationDate = DateTime.Now;
+            ReleaseApplicationInfo.ApplicationStatus = (int)clsApplication.enApplicationStatus.enCompleted;
+            ReleaseApplicationInfo.ApplicationTypeID = (int)clsApplication.enApplicationTypes.enReleaseDetainedDrivingLicsense;
+            ReleaseApplicationInfo.CreatedByUserID = ReleasedByUserID;
+            ReleaseApplicationInfo.LastStatusDate = DateTime.Now;
+            ReleaseApplicationInfo.PaidFees = clsApplicationTypes.Find((int)clsApplication.enApplicationTypes.enReleaseDetainedDrivingLicsense).Fees;
+
+            if (!ReleaseApplicationInfo.Save())
+            {
+                ReleasedApplicationID = -1;
+                return false;
+            }
+            ReleasedApplicationID = ReleaseApplicationInfo.ApplicationID;
+
+           return this.DetainedInfo.ReleaseDetainedLicense(ReleasedApplicationID, ReleasedByUserID);
+        }
+        
         public bool IsLicenseExpired()
         {
             return this.ExpirationDate < DateTime.Now;
