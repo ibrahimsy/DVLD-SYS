@@ -342,3 +342,5 @@ D:\Development\C#\My-Github\DVLD SYS\DVLD System\bin\Debug\DVLD-DataAccess.pdb
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD-Pre.B267ABE5.Up2Date
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.WrittenTest.frmWrittenTest.resources
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Tests.WrittenTest.Controls.ctrlQuestion.resources
+D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Tests.WrittenTest.Controls.ctrlQuestion.resources
+D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.WrittenTest.frmWrittenTest.resources
