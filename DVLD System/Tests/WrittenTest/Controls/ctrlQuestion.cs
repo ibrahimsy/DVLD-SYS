@@ -51,13 +51,14 @@ namespace DVLD_System.Tests.WrittenTest.Controls
                 return;
             }
 
-            lblQuestion.Text = QuestionInfo.Question;
+            lblQuestion.Text = QuestionInfo.Question +" - ("+QuestionID.ToString()+")";
             
             rbOption1.Text = QuestionInfo.Option1;
             rbOption2.Text = QuestionInfo.Option2;
             rbOption3.Text = QuestionInfo.Option3;
             rbOption4.Text = QuestionInfo.Option4;
 
+            rbOption1.Checked = true;
         }
 
         private void rbSelectedOption_CheckedChanged(object sender, EventArgs e)

@@ -43,7 +43,7 @@
             this.lblQuestion.Size = new System.Drawing.Size(622, 51);
             this.lblQuestion.TabIndex = 0;
             this.lblQuestion.Text = "Question";
-            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rbOption1
             // 
