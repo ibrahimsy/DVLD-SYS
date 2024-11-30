@@ -33,12 +33,6 @@ namespace DVLD_System.Tests
         {
             ctrlScheduledTest1.TestType = _TestType;
             ctrlScheduledTest1.LoadInfo(_AppointmentID);
-
-            //if (ctrlScheduledTest1.AppointmentInfo == null)
-            //{
-            //    MessageBox.Show("No Appointment Found","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            //    return;
-            //}
             _TestID = ctrlScheduledTest1.TestID;
 
             if (_TestID != -1)

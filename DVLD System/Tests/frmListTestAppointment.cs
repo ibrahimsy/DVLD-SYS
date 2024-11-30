@@ -1,5 +1,6 @@
 ﻿using DVLD_Bussiness;
 using DVLD_System.Properties;
+using DVLD_System.WrittenTest;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -154,8 +155,15 @@ namespace DVLD_System.Tests
         private void takeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int AppointmentID = (int)dgvAppointments.CurrentRow.Cells[0].Value;
+            
+            if (_TestType == clsTestType.enTestType.enWrittinTest)
+            {
+                frmWrittenTest WrittenForm = new frmWrittenTest(AppointmentID);
+                WrittenForm.ShowDialog();
+                return;
+            }
 
-
+            
             Form frm = new frmTakeTest(AppointmentID,_TestType);
             frm.ShowDialog();
 
