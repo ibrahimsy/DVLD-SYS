@@ -34,12 +34,12 @@ namespace DVLD_System.Licenses.International_Licenses.Controls
 
         void _LoadDriverImage()
         {
-            if (_InternationalLicenseInfo.ApplicationInfo.PersonInfo.Gendor == 0)
+            if (_InternationalLicenseInfo.DriverInfo.PersonInfo.Gendor == 0)
                 pbDriverImage.Image = Resources.male;
             else
                 pbDriverImage.Image= Resources.female;
 
-            string ImagePath = _InternationalLicenseInfo.ApplicationInfo.PersonInfo.ImagePath;
+            string ImagePath = _InternationalLicenseInfo.DriverInfo.PersonInfo.ImagePath;
             if (ImagePath != "")
             {
                 if (File.Exists(ImagePath))
@@ -78,12 +78,12 @@ namespace DVLD_System.Licenses.International_Licenses.Controls
             lblInternationalLicenseID.Text = _InternationalLicenseInfo.InternationalLicenseID.ToString();
             lblDriverName.Text = _InternationalLicenseInfo.DriverInfo.PersonInfo.FullName;
             lblLicenseID.Text = _InternationalLicenseInfo.IssuedUsingLocalLicenseID.ToString();
-            lblNationalNo.Text = _InternationalLicenseInfo.ApplicationInfo.PersonInfo.NationalNo;
-            lblGendor.Text = _InternationalLicenseInfo.ApplicationInfo.PersonInfo.Gendor == 0?"Male":"Female";
+            lblNationalNo.Text = _InternationalLicenseInfo.DriverInfo.PersonInfo.NationalNo;
+            lblGendor.Text = _InternationalLicenseInfo.DriverInfo.PersonInfo.Gendor == 0?"Male":"Female";
             lblIssueDate.Text = clsFormat.DateToShort(_InternationalLicenseInfo.IssueDate);
             lblApplicationID.Text = _InternationalLicenseInfo.ApplicationID.ToString();
             lblIsActive.Text = _InternationalLicenseInfo.IsActive ? "Yes" : "No";
-            lblDateOfBirth.Text = clsFormat.DateToShort( _InternationalLicenseInfo.ApplicationInfo.PersonInfo.DateOfBirth);
+            lblDateOfBirth.Text = clsFormat.DateToShort( _InternationalLicenseInfo.DriverInfo.PersonInfo.DateOfBirth);
             lblDriverID.Text = _InternationalLicenseInfo.DriverID.ToString();
             lblExpirationDate.Text = clsFormat.DateToShort(_InternationalLicenseInfo.ExpirationDate);
 

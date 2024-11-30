@@ -62,6 +62,7 @@ namespace DVLD_System.Licenses.Controls
             if (_LicenseInfo == null)
             {
                 MessageBox.Show("No License Exist","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                ResetLicenseInfo();
                 _LicenseID = -1;
                 return;
             }

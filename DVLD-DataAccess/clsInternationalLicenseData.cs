@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DataAccess
 {
@@ -82,7 +83,12 @@ namespace DVLD_DataAccess
         {
             int InternationalLicenseID = -1;
 
-            string query = @"INSERT INTO InternationalLicenses
+            string query = @"
+                        Update InternationalLicenses SET 
+                        IsActive = 0
+                        WHERE DriverID = @DriverID;
+
+                        INSERT INTO InternationalLicenses
                                (ApplicationID
                                ,DriverID
                                ,IssuedUsingLocalLicenseID
@@ -296,7 +302,7 @@ namespace DVLD_DataAccess
                               ,IssueDate
                               ,ExpirationDate
                               ,IsActive
-                          FROM InternationalLicenses";
+                          FROM InternationalLicenses ORDER BY IsActive,ExpirationDate DESC";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -324,6 +330,82 @@ namespace DVLD_DataAccess
                 connection.Close();
             }
             return dt;
+        }
+
+        public static DataTable GetDriverInternationalLicenses(int DriverID)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"SELECT InternationalLicenseID
+                              ,ApplicationID
+                              ,DriverID
+                              ,IssuedUsingLocalLicenseID
+                              ,IssueDate
+                              ,ExpirationDate
+                              ,IsActive
+                            FROM InternationalLicenses WHERE DriverID = @DriverID 
+                            ORDER BY ExpirationDate DESC";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@DriverID", DriverID);
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public static int GetActiveInternationalLicenseIDByDriverID(int DriverID)
+        {
+            int InternationalLicenseID = -1;
+
+            string query = @"SELECT TOP 1 InternationalLicenseID FROM 
+                            InternationalLicenses WHERE DriverID = @DriverID
+                            And GETDATE() BETWEEN IssueDate AND ExpirationDate
+                            ORDER BY ExpirationDate DESC";
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@DriverID", DriverID);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+                if (result != null && (int.TryParse(result.ToString(), out int ID)))
+                {
+                    InternationalLicenseID = ID;
+                }
+            }
+            catch (Exception ex)
+            {
+                InternationalLicenseID = -1;
+            }
+            finally { connection.Close(); }
+
+            return InternationalLicenseID;
         }
     }
 }

@@ -28,3 +28,9 @@ D:\Development\C#\My-Github\DVLD SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.c
 D:\Development\C#\My-Github\DVLD SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
 D:\Development\C#\My-Github\DVLD SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
 D:\Development\C#\My-Github\DVLD SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.dll
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\bin\Debug\DVLD-DataAccess.pdb
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.AssemblyReference.cache
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.csproj.CoreCompileInputs.cache
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.dll
+D:\Development\C#\My-Github\DVLD-SYS\DVLD-DataAccess\obj\Debug\DVLD-DataAccess.pdb

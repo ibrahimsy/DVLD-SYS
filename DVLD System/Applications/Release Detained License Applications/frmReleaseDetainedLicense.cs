@@ -78,13 +78,7 @@ namespace DVLD_System.Applications.Release_Detained_License_Applications
 
         private void frmReleaseDetainedLicense_Load(object sender, EventArgs e)
         {
-            //_ResetDefaultInfo();
-
-            //if (_SelectedLicenseID != -1)
-            //{
-            //    ctrlLicenseInfoWithFilter1.FilterEnable = false;
-            //    ctrlLicenseInfoWithFilter1.LoadInfo(_SelectedLicenseID);
-            //}
+           
         }
 
         private void btnRelease_Click(object sender, EventArgs e)

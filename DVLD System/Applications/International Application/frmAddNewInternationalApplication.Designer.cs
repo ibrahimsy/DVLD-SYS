@@ -322,13 +322,13 @@
             // 
             // ctrlLicenseInfoWithFilter1
             // 
+            this.ctrlLicenseInfoWithFilter1.FilterEnable = true;
             this.ctrlLicenseInfoWithFilter1.Location = new System.Drawing.Point(9, 11);
             this.ctrlLicenseInfoWithFilter1.Margin = new System.Windows.Forms.Padding(2);
             this.ctrlLicenseInfoWithFilter1.Name = "ctrlLicenseInfoWithFilter1";
             this.ctrlLicenseInfoWithFilter1.Size = new System.Drawing.Size(841, 472);
             this.ctrlLicenseInfoWithFilter1.TabIndex = 18;
             this.ctrlLicenseInfoWithFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlLicenseInfoWithFilter1_OnLicenseSelected);
-            this.ctrlLicenseInfoWithFilter1.Load += new System.EventHandler(this.ctrlLicenseInfoWithFilter1_Load);
             // 
             // frmAddNewInternationalApplication
             // 
