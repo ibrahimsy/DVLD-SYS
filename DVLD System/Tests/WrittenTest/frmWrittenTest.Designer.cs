@@ -73,6 +73,7 @@
             this.btnNext.Text = "Next";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // frmWrittenTest
             // 

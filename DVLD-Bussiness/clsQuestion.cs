@@ -10,68 +10,70 @@ namespace DVLD_Bussiness
 {
     public class clsQuestion
     {
+        //QuestionID,Question,Option1,Option3,Option4,CorrectAnswerID
         enum Mode { enAddNew = 1, enUpdate = 2 }
 
         Mode _Mode;
 
-        public int TestID { get; set; }
-        public int TestAppointmentID { get; set; }
+        public int QuestionID { get; set; }
+        public string Question { get; set; }
+        public string Option1 {  get; set; }
+        public string Option2 { get; set; }
+        public string Option3 { get; set; }
+        public string Option4 { get; set; }
+        public int CorrectAnswerID { get; set; }
 
-        public clsTestAppointment TestAppointmentInfo;
-        public bool TestResult { get; set; }
-        public string Notes { get; set; }
-        public int CreatedByUserID { get; set; }
-
-        public clsUser UserInfo;
-        public clsTest()
+        public clsQuestion()
         {
             _Mode = Mode.enAddNew;
 
-            this.TestID = -1;
-            this.TestAppointmentID = -1;
-            this.TestResult = false;
-            this.Notes = "";
-            this.CreatedByUserID = -1;
+            this.QuestionID = -1;
+            this.Question = "";
+            this.Option1 = "";
+            this.Option2 = "";
+            this.Option3 = "";
+            this.Option4 = "";
+            this.CorrectAnswerID = -1;
         }
 
-        private clsTest(int TestID, int TestAppointmentID, bool TestResult,
-                                string Notes, int CreatedByUserID)
+        private clsQuestion(int QuestionID,string Question, string Option1, string Option2, string Option3, string Option4, int CorrectAnswerID)
         {
             _Mode = Mode.enUpdate;
 
-            this.TestID = TestID;
-            this.TestAppointmentID = TestAppointmentID;
-            TestAppointmentInfo = clsTestAppointment.Find(TestAppointmentID);
-            this.TestResult = TestResult;
-            this.Notes = Notes;
-            this.CreatedByUserID = CreatedByUserID;
-            UserInfo = clsUser.Find(CreatedByUserID);
+            this.QuestionID = QuestionID;
+            this.Question = Question;
+            this.Option1 = Option1;
+            this.Option2 = Option2;
+            this.Option3 = Option3;
+            this.Option4 = Option4;
+            this.CorrectAnswerID = CorrectAnswerID;
         }
 
-        private bool _AddNewTest()
+        private bool _AddNewQuestion()
         {
-            this.TestID = clsTestData.AddNewTest(TestAppointmentID, TestResult,
-                                                    Notes, CreatedByUserID);
+            this.QuestionID = clsQuestionData.AddNewQuestion(Question, Option1, Option2,Option3, Option4, CorrectAnswerID);
 
-            return TestID != -1;
+            return QuestionID != -1;
         }
 
-        private bool _UpdateTest()
+        private bool _UpdateQuestion()
         {
-            return clsTestData.UpdateTest(TestID, TestAppointmentID, TestResult,
-                                                    Notes, CreatedByUserID);
+            return clsQuestionData.UpdateQuestion(QuestionID, Question, Option1, Option2, Option3, Option4, CorrectAnswerID);
         }
 
-        public static clsTest Find(int TestID)
+        public static clsQuestion Find(int QuestionID)
         {
-            int TestAppointmentID = -1;
-            bool TestResult = false;
-            string Notes = "";
-            int CreatedByUserID = -1;
+         
+            string Question = "";
+            string Option1 = "";
+            string Option2 = "";
+            string Option3 = "";
+            string Option4 = "";
+            int CorrectAnswerID = -1;
 
-            if (clsTestData.GetTestInfoByID(TestID, ref TestAppointmentID, ref TestResult, ref Notes, ref CreatedByUserID))
+            if (clsQuestionData.GetQuestionInfoByID(QuestionID, ref Question, ref Option1, ref Option2, ref Option3,ref Option4,ref CorrectAnswerID))
             {
-                return new clsTest(TestID, TestAppointmentID, TestResult, Notes, CreatedByUserID);
+                return new clsQuestion(QuestionID,  Question,  Option1,  Option2,  Option3,  Option4, CorrectAnswerID);
             }
             else
             {
@@ -79,73 +81,22 @@ namespace DVLD_Bussiness
             }
         }
 
-        public static clsTest FindByTestAppointment(int TestAppointmentID)
+        public static bool Delete(int QuestionID)
         {
-            int TestID = -1;
-            bool TestResult = false;
-            string Notes = "";
-            int CreatedByUserID = -1;
-
-            if (clsTestData.GetTestInfoByAppointmentID(ref TestID, TestAppointmentID, ref TestResult, ref Notes, ref CreatedByUserID))
-            {
-                return new clsTest(TestID, TestAppointmentID, TestResult, Notes, CreatedByUserID);
-            }
-            else
-            {
-                return null;
-            }
+            return clsQuestionData.DeleteQuestion(QuestionID);
         }
 
-
-        public static clsTest GetLastTestPerTestType(int LocalDrivingLicenseApplication, clsTestType.enTestType TestType)
+        public static DataTable GetAllQuestiones()
         {
-            int TestID = -1;
-            int TestAppointmentID = -1;
-            bool TestResult = false;
-            string Notes = "";
-            int CreatedByUserID = -1;
-
-            if (clsTestData.GetLastTestPerTestType(LocalDrivingLicenseApplication, (int)TestType, ref TestID, ref TestAppointmentID, ref TestResult, ref Notes, ref CreatedByUserID))
-            {
-                return new clsTest(TestID, TestAppointmentID, TestResult, Notes, CreatedByUserID);
-            }
-
-            return null;
+            return clsQuestionData.GetAllQuestions();
         }
 
-
-
-        public static bool IsExist(int TestID)
-        {
-            return clsTestData.IsTestExist(TestID);
-        }
-
-        public static bool IsTestPassed(int LDLAppID, int TestTypeID)
-        {
-            return clsTestData.IsTestPassed(LDLAppID, TestTypeID);
-        }
-
-
-        public static bool Delete(int TestID)
-        {
-            return clsTestData.DeleteTest(TestID);
-        }
-
-        public static DataTable GetAllTestes()
-        {
-            return clsTestData.GetAllTests();
-        }
-
-        public int GetTestID()
-        {
-            return clsTestData.GetTestID(this.TestAppointmentID);
-        }
         public bool Save()
         {
             switch (_Mode)
             {
                 case Mode.enAddNew:
-                    if (_AddNewTest())
+                    if (_AddNewQuestion())
                     {
                         _Mode = Mode.enUpdate;
                         return true;
@@ -155,7 +106,7 @@ namespace DVLD_Bussiness
                         return false;
                     }
                 case Mode.enUpdate:
-                    return _UpdateTest();
+                    return _UpdateQuestion();
 
                 default: return false;
             }

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.rbOption1 = new System.Windows.Forms.RadioButton();
             this.rbOption2 = new System.Windows.Forms.RadioButton();
             this.rbOption3 = new System.Windows.Forms.RadioButton();
             this.rbOption4 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // label1
+            // lblQuestion
             // 
-            this.label1.Font = new System.Drawing.Font("Titillium Web", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(622, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Question";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuestion.Font = new System.Drawing.Font("Titillium Web", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Location = new System.Drawing.Point(3, 10);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(622, 51);
+            this.lblQuestion.TabIndex = 0;
+            this.lblQuestion.Text = "Question";
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rbOption1
             // 
@@ -60,6 +60,7 @@
             this.rbOption1.Text = "Option 1";
             this.rbOption1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbOption1.UseVisualStyleBackColor = true;
+            this.rbOption1.CheckedChanged += new System.EventHandler(this.rbSelectedOption_CheckedChanged);
             // 
             // rbOption2
             // 
@@ -76,6 +77,7 @@
             this.rbOption2.Text = "Option 2";
             this.rbOption2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbOption2.UseVisualStyleBackColor = true;
+            this.rbOption2.CheckedChanged += new System.EventHandler(this.rbSelectedOption_CheckedChanged);
             // 
             // rbOption3
             // 
@@ -92,6 +94,7 @@
             this.rbOption3.Text = "Option 3";
             this.rbOption3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbOption3.UseVisualStyleBackColor = true;
+            this.rbOption3.CheckedChanged += new System.EventHandler(this.rbSelectedOption_CheckedChanged);
             // 
             // rbOption4
             // 
@@ -108,6 +111,7 @@
             this.rbOption4.Text = "Option 4";
             this.rbOption4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbOption4.UseVisualStyleBackColor = true;
+            this.rbOption4.CheckedChanged += new System.EventHandler(this.rbSelectedOption_CheckedChanged);
             // 
             // ctrlQuestion
             // 
@@ -118,7 +122,7 @@
             this.Controls.Add(this.rbOption3);
             this.Controls.Add(this.rbOption2);
             this.Controls.Add(this.rbOption1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblQuestion);
             this.Name = "ctrlQuestion";
             this.Size = new System.Drawing.Size(628, 280);
             this.ResumeLayout(false);
@@ -128,7 +132,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.RadioButton rbOption1;
         private System.Windows.Forms.RadioButton rbOption2;
         private System.Windows.Forms.RadioButton rbOption3;

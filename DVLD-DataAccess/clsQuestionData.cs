@@ -40,7 +40,7 @@ namespace DVLD_DataAccess
                     Option2 = (string)(reader["Option2"]);
                     Option3 = (string)(reader["Option3"]);
                     Option4 = (string)(reader["Option4"]);
-                    CorrectAnserID = (int)reader["CorrectAnserID"];
+                    CorrectAnserID = (byte)reader["CorrectAnserID"];
 
                 }
                 reader.Close();
@@ -183,7 +183,7 @@ namespace DVLD_DataAccess
         {
             DataTable dt = new DataTable();
 
-            string query = @"SELECT * FROM WrittenTestQuestions ORDER BY NEWID()";
+            string query = @"SELECT * FROM WrittenTestQuestions";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
