@@ -36,10 +36,9 @@ namespace DVLD_System.Tests.WrittenTest.Controls
         public ctrlQuestion()
         {
             InitializeComponent();
-            rbOption1.Checked = true;
         }
 
-        public void LoadInfo(int QuestionID)
+        public void LoadInfo(int QuestionID,int CurrentQuestionIndex)
         {
             _QuestionID = QuestionID;
 
@@ -51,19 +50,29 @@ namespace DVLD_System.Tests.WrittenTest.Controls
                 return;
             }
 
-            lblQuestion.Text = QuestionInfo.Question +" • ";
+            lblQuestion.Text = QuestionInfo.Question +$" ({CurrentQuestionIndex}) ";
             
             rbOption1.Text = QuestionInfo.Option1;
             rbOption2.Text = QuestionInfo.Option2;
             rbOption3.Text = QuestionInfo.Option3;
             rbOption4.Text = QuestionInfo.Option4;
 
-            rbOption1.Checked = true;
         }
 
         private void rbSelectedOption_CheckedChanged(object sender, EventArgs e)
         {
-            _SelectedOptionID = Convert.ToInt32(((RadioButton)sender).Tag);
+            if (((RadioButton)sender).Checked)
+                _SelectedOptionID = Convert.ToInt32(((RadioButton)sender).Tag);
+        }
+
+        public void ClearSelection()
+        {
+            rbOption1.Checked = rbOption2.Checked = rbOption3.Checked = rbOption4.Checked = false;
+        }
+
+        public bool IsAnswered()
+        {
+            return rbOption1.Checked || rbOption2.Checked || rbOption3.Checked || rbOption4.Checked;
         }
     }
 }

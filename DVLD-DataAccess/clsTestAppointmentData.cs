@@ -433,7 +433,7 @@ namespace DVLD_DataAccess
             string query = @"select * from TestAppointments where
                             LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
                             And TestTypeID = @TestTypeID
-                            order by AppointmentDate Desc";
+                            order by TestAppointmentID Desc";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -549,7 +549,7 @@ namespace DVLD_DataAccess
             string query = @"SELECT TOP 1 AppointmentDate FROM TestAppointments WHERE
                             LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
                             and TestTypeID = @TestTypeID
-                            ORDER BY AppointmentDate DESC";
+                            ORDER BY TestAppointmentID DESC";
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             SqlCommand command = new SqlCommand(query, connection);

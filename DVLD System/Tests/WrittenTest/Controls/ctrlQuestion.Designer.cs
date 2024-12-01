@@ -37,7 +37,7 @@
             // 
             // lblQuestion
             // 
-            this.lblQuestion.Font = new System.Drawing.Font("Titillium Web", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuestion.Location = new System.Drawing.Point(3, 10);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(622, 51);
@@ -49,11 +49,11 @@
             // 
             this.rbOption1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbOption1.AutoSize = true;
-            this.rbOption1.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOption1.Location = new System.Drawing.Point(503, 89);
+            this.rbOption1.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption1.Location = new System.Drawing.Point(502, 89);
             this.rbOption1.Name = "rbOption1";
             this.rbOption1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbOption1.Size = new System.Drawing.Size(100, 33);
+            this.rbOption1.Size = new System.Drawing.Size(101, 27);
             this.rbOption1.TabIndex = 1;
             this.rbOption1.TabStop = true;
             this.rbOption1.Tag = "1";
@@ -66,11 +66,11 @@
             // 
             this.rbOption2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbOption2.AutoSize = true;
-            this.rbOption2.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOption2.Location = new System.Drawing.Point(503, 134);
+            this.rbOption2.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption2.Location = new System.Drawing.Point(502, 134);
             this.rbOption2.Name = "rbOption2";
             this.rbOption2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbOption2.Size = new System.Drawing.Size(100, 33);
+            this.rbOption2.Size = new System.Drawing.Size(101, 27);
             this.rbOption2.TabIndex = 2;
             this.rbOption2.TabStop = true;
             this.rbOption2.Tag = "2";
@@ -83,11 +83,11 @@
             // 
             this.rbOption3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbOption3.AutoSize = true;
-            this.rbOption3.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOption3.Location = new System.Drawing.Point(503, 179);
+            this.rbOption3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption3.Location = new System.Drawing.Point(502, 179);
             this.rbOption3.Name = "rbOption3";
             this.rbOption3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbOption3.Size = new System.Drawing.Size(100, 33);
+            this.rbOption3.Size = new System.Drawing.Size(101, 27);
             this.rbOption3.TabIndex = 3;
             this.rbOption3.TabStop = true;
             this.rbOption3.Tag = "3";
@@ -100,11 +100,11 @@
             // 
             this.rbOption4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbOption4.AutoSize = true;
-            this.rbOption4.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbOption4.Location = new System.Drawing.Point(503, 224);
+            this.rbOption4.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption4.Location = new System.Drawing.Point(502, 224);
             this.rbOption4.Name = "rbOption4";
             this.rbOption4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rbOption4.Size = new System.Drawing.Size(100, 33);
+            this.rbOption4.Size = new System.Drawing.Size(101, 27);
             this.rbOption4.TabIndex = 4;
             this.rbOption4.TabStop = true;
             this.rbOption4.Tag = "4";

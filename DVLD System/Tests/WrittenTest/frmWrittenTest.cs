@@ -1,4 +1,6 @@
-﻿using DVLD_Bussiness;
+﻿using BankBussiness;
+using DVLD_Bussiness;
+using DVLD_System.Tests.WrittenTest.Controls;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -15,6 +17,8 @@ namespace DVLD_System.WrittenTest
         int _PassedQuestionCount = 0;
         int CounterLabel = 0;
         bool IsPassed = false;
+        int PassingScore = clsSetting.FindSettingByID((int)clsSetting.enSettings.PassingScore).SettingValue;
+        int QuestionPerExam = clsSetting.FindSettingByID((int)clsSetting.enSettings.QuestionsPerExam).SettingValue;
 
         clsTestType.enTestType _TestType = clsTestType.enTestType.enWrittinTest;
         public frmWrittenTest(int AppointmentID)
@@ -40,6 +44,8 @@ namespace DVLD_System.WrittenTest
 
             gpQuestionBox.Visible = false;
             lblTimerCount.Visible = false;
+
+            lblConditionLabel.Text = $"You Have {QuestionPerExam} Question To Answer Them, The Minimum Question Number To Pass This Test Is {PassingScore} OF {QuestionPerExam} Question";
         }
         
         private void SaveTestInfo()
@@ -59,32 +65,27 @@ namespace DVLD_System.WrittenTest
             }
             this.Close();
         }
-        private void _DisplayNextQuestion()
+        
+        private void _DisplayQuestion()
         {
-           
             if (_CurrentQuestionIndex <= _dtQuestionList.Rows.Count)
             {
-                ctrlQuestion1.LoadInfo(Convert.ToInt32(_dtQuestionList.Rows[_CurrentQuestionIndex - 1]["QuestionID"]));
-                
-                if (ctrlQuestion1.SelectedOptionID == ctrlQuestion1.QuestionInfo.CorrectAnswerID)
-                {
-                    _PassedQuestionCount++;
-                }
-
-                _CurrentQuestionIndex++;
+                ctrlQuestion1.ClearSelection();
+                ctrlQuestion1.LoadInfo(Convert.ToInt32(_dtQuestionList.Rows[_CurrentQuestionIndex - 1]["QuestionID"]), _CurrentQuestionIndex);
             }
             else
             {
                 btnNext.Enabled = false;
-                if (_PassedQuestionCount < 35)
+                
+                if (_PassedQuestionCount < PassingScore)
                 {
                     IsPassed = false;
-                    MessageBox.Show($"Sorry: You Faild,\n\n Number Of Correct Answer Is [{_PassedQuestionCount}]/40", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Exam Finished: You Faild,\n\n Number Of Correct Answer Is [{_PassedQuestionCount}]/{QuestionPerExam}", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     IsPassed = true;
-                    MessageBox.Show($"Congratulations ,You Passed The Test ,\n\n Number Of Correct Answer Is [{_PassedQuestionCount}]/40","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show($"Congratulations ,You Passed The Test ,\n\n Number Of Correct Answer Is [{_PassedQuestionCount}]/{QuestionPerExam}","",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
 
                 SaveTestInfo();
@@ -93,12 +94,24 @@ namespace DVLD_System.WrittenTest
         
         private void btnNext_Click(object sender, EventArgs e)
         {
-            _DisplayNextQuestion();
+
+            if(!ctrlQuestion1.IsAnswered())
+            {
+                MessageBox.Show("Please Choose An Answer Before Proceeding!");
+                return;
+            }
+            if (ctrlQuestion1.SelectedOptionID == ctrlQuestion1.QuestionInfo.CorrectAnswerID)
+            {
+                _PassedQuestionCount++;
+            }
+
+            _CurrentQuestionIndex++;
+            _DisplayQuestion();
         }
 
         private void btnStartTest_Click(object sender, EventArgs e)
         {
-            _DisplayNextQuestion();
+            
             timer1.Enabled = true;
             lblTimerCount.Visible=true;
             btnStartTest.Visible = false;
@@ -115,6 +128,7 @@ namespace DVLD_System.WrittenTest
                 lblTimerCount.Visible = false;
             }
             lblTimerCount.Text = CounterLabel.ToString();
+            _DisplayQuestion();
         }
     }
 }

@@ -160,13 +160,12 @@ namespace DVLD_System.Tests
             {
                 frmWrittenTest WrittenForm = new frmWrittenTest(AppointmentID);
                 WrittenForm.ShowDialog();
-                return;
             }
-
-            
-            Form frm = new frmTakeTest(AppointmentID,_TestType);
-            frm.ShowDialog();
-
+            else
+            {
+                Form frm = new frmTakeTest(AppointmentID, _TestType);
+                frm.ShowDialog();
+            }
             _RefreshAppintmentList();
         }
     }
