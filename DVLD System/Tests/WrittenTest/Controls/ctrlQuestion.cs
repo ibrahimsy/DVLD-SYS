@@ -51,7 +51,7 @@ namespace DVLD_System.Tests.WrittenTest.Controls
                 return;
             }
 
-            lblQuestion.Text = QuestionInfo.Question +" - ("+QuestionID.ToString()+")";
+            lblQuestion.Text = QuestionInfo.Question +" • ";
             
             rbOption1.Text = QuestionInfo.Option1;
             rbOption2.Text = QuestionInfo.Option2;

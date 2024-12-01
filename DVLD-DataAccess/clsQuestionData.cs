@@ -183,7 +183,7 @@ namespace DVLD_DataAccess
         {
             DataTable dt = new DataTable();
 
-            string query = @"SELECT * FROM WrittenTestQuestions";
+            string query = @"SELECT * FROM WrittenTestQuestions ORDER BY NEWID()";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 

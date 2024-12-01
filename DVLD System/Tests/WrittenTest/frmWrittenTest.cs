@@ -15,6 +15,7 @@ namespace DVLD_System.WrittenTest
         int _PassedQuestionCount = 0;
         int CounterLabel = 0;
         bool IsPassed = false;
+
         clsTestType.enTestType _TestType = clsTestType.enTestType.enWrittinTest;
         public frmWrittenTest(int AppointmentID)
         {
@@ -63,7 +64,7 @@ namespace DVLD_System.WrittenTest
            
             if (_CurrentQuestionIndex <= _dtQuestionList.Rows.Count)
             {
-                ctrlQuestion1.LoadInfo(_CurrentQuestionIndex);
+                ctrlQuestion1.LoadInfo(Convert.ToInt32(_dtQuestionList.Rows[_CurrentQuestionIndex - 1]["QuestionID"]));
                 
                 if (ctrlQuestion1.SelectedOptionID == ctrlQuestion1.QuestionInfo.CorrectAnswerID)
                 {
