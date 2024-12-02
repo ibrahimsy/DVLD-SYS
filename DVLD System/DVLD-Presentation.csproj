@@ -752,5 +752,14 @@
   <ItemGroup>
     <None Include="Resources\Male 512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DetainVehichle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehichleServices.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

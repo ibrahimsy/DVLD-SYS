@@ -153,6 +153,16 @@ namespace DVLD_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap car {
+            get {
+                object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -256,6 +266,16 @@ namespace DVLD_System.Properties {
         internal static System.Drawing.Bitmap Detain_64 {
             get {
                 object obj = ResourceManager.GetObject("Detain 64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DetainVehichle {
+            get {
+                object obj = ResourceManager.GetObject("DetainVehichle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +413,16 @@ namespace DVLD_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fine {
+            get {
+                object obj = ResourceManager.GetObject("fine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group {
             get {
                 object obj = ResourceManager.GetObject("group", resourceCulture);
@@ -486,6 +516,26 @@ namespace DVLD_System.Properties {
         internal static System.Drawing.Bitmap Login_image {
             get {
                 object obj = ResourceManager.GetObject("Login_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Main_Form_Image {
+            get {
+                object obj = ResourceManager.GetObject("Main_Form_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MainFormImg {
+            get {
+                object obj = ResourceManager.GetObject("MainFormImg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -896,6 +946,16 @@ namespace DVLD_System.Properties {
         internal static System.Drawing.Bitmap Users_2_400 {
             get {
                 object obj = ResourceManager.GetObject("Users 2 400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VehichleServices {
+            get {
+                object obj = ResourceManager.GetObject("VehichleServices", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
