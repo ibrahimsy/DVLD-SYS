@@ -43,20 +43,28 @@
   <ItemGroup>
     <Compile Include="clsApplication.cs" />
     <Compile Include="clsApplicationTypes.cs" />
+    <Compile Include="clsBodies.cs" />
     <Compile Include="clsCountry.cs" />
     <Compile Include="clsDetainedLicense.cs" />
     <Compile Include="clsDriver.cs" />
+    <Compile Include="clsFines.cs" />
     <Compile Include="clsInternationalLicense.cs" />
     <Compile Include="clsLicense.cs" />
     <Compile Include="clsLicenseClass.cs" />
     <Compile Include="clsLocalDrivingLicenseApplication.cs" />
+    <Compile Include="clsMakeModels.cs" />
+    <Compile Include="clsMakes.cs" />
+    <Compile Include="clsPayments.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsQuestion.cs" />
     <Compile Include="clsSettings.cs" />
+    <Compile Include="clsSubModels.cs" />
     <Compile Include="clsTest.cs" />
     <Compile Include="clsTestAppointment.cs" />
     <Compile Include="clsTestType.cs" />
     <Compile Include="clsUser.cs" />
+    <Compile Include="clsVehichleLicenses.cs" />
+    <Compile Include="clsVehichles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

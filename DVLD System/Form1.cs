@@ -164,13 +164,7 @@ namespace DVLD_System
             frm.ShowDialog();
         }
 
-        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmShowLicensesHistory frm = new frmShowLicensesHistory();
-            frm.ShowDialog();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void showVehichlesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

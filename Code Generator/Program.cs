@@ -459,7 +459,7 @@ namespace Code_Generator
         static void Main(string[] args)
         {
             string connectionString = "Server=.;Database=DVLD;User Id =sa;Password=sa123456;";
-            string tableName = "Settings";
+            string tableName = "Fines";
 
 
             var columns = CodeGenerator.GetTableColumns(connectionString, tableName);

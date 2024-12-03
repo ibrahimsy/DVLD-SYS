@@ -385,32 +385,32 @@
             // 
             this.manageDetainLicenseToolStripMenuItem.Image = global::DVLD_System.Properties.Resources.Detain_32;
             this.manageDetainLicenseToolStripMenuItem.Name = "manageDetainLicenseToolStripMenuItem";
-            this.manageDetainLicenseToolStripMenuItem.Size = new System.Drawing.Size(270, 36);
-            this.manageDetainLicenseToolStripMenuItem.Text = "Manage Detain License";
+            this.manageDetainLicenseToolStripMenuItem.Size = new System.Drawing.Size(277, 36);
+            this.manageDetainLicenseToolStripMenuItem.Text = "Manage Detain Vehichle";
             // 
             // toolStripMenuItem12
             // 
             this.toolStripMenuItem12.Name = "toolStripMenuItem12";
-            this.toolStripMenuItem12.Size = new System.Drawing.Size(267, 6);
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(274, 6);
             // 
             // detainLicenseToolStripMenuItem1
             // 
             this.detainLicenseToolStripMenuItem1.Image = global::DVLD_System.Properties.Resources.Detain_32;
             this.detainLicenseToolStripMenuItem1.Name = "detainLicenseToolStripMenuItem1";
-            this.detainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
-            this.detainLicenseToolStripMenuItem1.Text = "Detain License";
+            this.detainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(277, 36);
+            this.detainLicenseToolStripMenuItem1.Text = "Detain Vehichle";
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(267, 6);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(274, 6);
             // 
             // releaseDetainLicenseToolStripMenuItem1
             // 
             this.releaseDetainLicenseToolStripMenuItem1.Image = global::DVLD_System.Properties.Resources.Release_Detained_License_32;
             this.releaseDetainLicenseToolStripMenuItem1.Name = "releaseDetainLicenseToolStripMenuItem1";
-            this.releaseDetainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
-            this.releaseDetainLicenseToolStripMenuItem1.Text = "Release Detained License";
+            this.releaseDetainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(277, 36);
+            this.releaseDetainLicenseToolStripMenuItem1.Text = "Release Detained Vehichle";
             // 
             // peopleToolStripMenuItem
             // 
@@ -444,6 +444,7 @@
             this.showVehichlesListToolStripMenuItem.Name = "showVehichlesListToolStripMenuItem";
             this.showVehichlesListToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.showVehichlesListToolStripMenuItem.Text = "Show Vehichles List";
+            this.showVehichlesListToolStripMenuItem.Click += new System.EventHandler(this.showVehichlesListToolStripMenuItem_Click);
             // 
             // toolStripMenuItem14
             // 
@@ -514,11 +515,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DVLD_System.Properties.Resources.DriverCenter;
-            this.pictureBox1.Location = new System.Drawing.Point(1153, 365);
+            this.pictureBox1.Image = global::DVLD_System.Properties.Resources.Main_DVLD_System;
+            this.pictureBox1.Location = new System.Drawing.Point(629, 217);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(276, 289);
+            this.pictureBox1.Size = new System.Drawing.Size(412, 390);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -541,7 +542,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Form1_FormClosed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
