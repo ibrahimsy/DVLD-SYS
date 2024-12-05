@@ -456,6 +456,7 @@
             this.addNewVehichleToolStripMenuItem.Name = "addNewVehichleToolStripMenuItem";
             this.addNewVehichleToolStripMenuItem.Size = new System.Drawing.Size(220, 28);
             this.addNewVehichleToolStripMenuItem.Text = "Add New Vehichle";
+            this.addNewVehichleToolStripMenuItem.Click += new System.EventHandler(this.addNewVehichleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -516,10 +517,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD_System.Properties.Resources.Main_DVLD_System;
-            this.pictureBox1.Location = new System.Drawing.Point(629, 217);
+            this.pictureBox1.Location = new System.Drawing.Point(648, 217);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(412, 390);
+            this.pictureBox1.Size = new System.Drawing.Size(390, 390);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;

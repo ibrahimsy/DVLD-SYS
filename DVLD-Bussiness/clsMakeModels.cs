@@ -92,7 +92,15 @@ namespace BankBussiness
             return clsMakeModelData.GetAllMakeModels();
         }
 
+        public static DataTable GetModelsListByMakeID(int MakeID)
+        {
+            return clsMakeModelData.GetMakeModelsByMakeID(MakeID);
+        }
 
+        public static DataTable GetModelsListByMakeName(string MakeName)
+        {
+            return clsMakeModelData.GetMakeModelsByMakeName(MakeName);
+        }
 
         public bool Save()
         {

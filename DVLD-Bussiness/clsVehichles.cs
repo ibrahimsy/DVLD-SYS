@@ -22,7 +22,9 @@ namespace BankBussiness
 
         public int VehichleID { set; get; }
         public string ChassisNumber { set; get; }
-        public string LicensePlate { set; get; }
+        public string PlateNumber { set; get; }
+        public int MakeID { set; get; }
+        public int ModelID { set; get; }
         public int SubModelID { set; get; }
         public int BodyID { set; get; }
         public int OwnerID { set; get; }
@@ -35,7 +37,9 @@ namespace BankBussiness
         {
             this.VehichleID = -1;
             this.ChassisNumber = "";
-            this.LicensePlate = "";
+            this.PlateNumber = "";
+            this.MakeID = -1;
+            this.ModelID = -1;
             this.SubModelID = -1;
             this.BodyID = -1;
             this.OwnerID = -1;
@@ -48,11 +52,13 @@ namespace BankBussiness
 
 
 
-        private clsVehichle(int VehichleID, string ChassisNumber, string LicensePlate, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
+        private clsVehichle(int VehichleID, string ChassisNumber, string PlateNumber, int MakeID, int ModelID, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
         {
             this.VehichleID = VehichleID;
             this.ChassisNumber = ChassisNumber;
-            this.LicensePlate = LicensePlate;
+            this.PlateNumber = PlateNumber;
+            this.MakeID = MakeID;
+            this.ModelID = ModelID;
             this.SubModelID = SubModelID;
             this.BodyID = BodyID;
             this.OwnerID = OwnerID;
@@ -66,7 +72,7 @@ namespace BankBussiness
 
         private bool _AddVehichle()
         {
-            VehichleID = clsVehichleData.AddVehichle(ChassisNumber, LicensePlate, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+            VehichleID = clsVehichleData.AddVehichle(ChassisNumber, PlateNumber,MakeID,ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
 
             return (VehichleID != -1);
         }
@@ -74,23 +80,25 @@ namespace BankBussiness
 
         private bool _UpdateVehichle()
         {
-            return clsVehichleData.UpdateVehichleByID(VehichleID, ChassisNumber, LicensePlate, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+            return clsVehichleData.UpdateVehichleByID(VehichleID, ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
         }
 
 
         public static clsVehichle FindVehichleByID(int VehichleID)
         {
             string ChassisNumber = "";
-            string LicensePlate = "";
+            string PlateNumber = "";
             int SubModelID = -1;
+            int MakeID = -1;
+            int ModelID = -1;
             int BodyID = -1;
             int OwnerID = -1;
             int Year = 1900;
             string Color = "";
             int CreatedBy = -1;
-            if (clsVehichleData.GetVehichleByID(VehichleID, ref ChassisNumber, ref LicensePlate, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
+            if (clsVehichleData.GetVehichleByID(VehichleID, ref ChassisNumber, ref PlateNumber,ref MakeID,ref ModelID, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
             {
-                return new clsVehichle(VehichleID, ChassisNumber, LicensePlate, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+                return new clsVehichle(VehichleID, ChassisNumber, PlateNumber,MakeID,ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
             }
             else
             {
@@ -111,7 +119,7 @@ namespace BankBussiness
         }
 
 
-        public static DataTable GetVehichlesList()
+        public static DataTable VehichlesList()
         {
             return clsVehichleData.GetAllVehichles();
         }

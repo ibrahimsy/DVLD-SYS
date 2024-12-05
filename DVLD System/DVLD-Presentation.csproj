@@ -321,6 +321,12 @@
     <Compile Include="Tests\WrittenTest\frmWrittenTest.Designer.cs">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehichles\frmAddEditVehichle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehichles\frmAddEditVehichle.Designer.cs">
+      <DependentUpon>frmAddEditVehichle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehichles\frmVehichlesList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\WrittenTest\frmWrittenTest.resx">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehichles\frmAddEditVehichle.resx">
+      <DependentUpon>frmAddEditVehichle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehichles\frmVehichlesList.resx">
       <DependentUpon>frmVehichlesList.cs</DependentUpon>
@@ -775,6 +784,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Manage Cars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cars List.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add vehichle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

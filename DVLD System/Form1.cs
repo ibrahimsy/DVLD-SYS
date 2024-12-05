@@ -11,6 +11,7 @@ using DVLD_System.Licenses.Detained_Licenses;
 using DVLD_System.Licenses.International_Licenses;
 using DVLD_System.Tests.Test_Types;
 using DVLD_System.Users;
+using DVLD_System.Vehichles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -167,6 +168,12 @@ namespace DVLD_System
         private void showVehichlesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewVehichleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditVehichle frm = new frmAddEditVehichle();
+            frm.ShowDialog();
         }
     }
 }

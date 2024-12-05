@@ -205,7 +205,7 @@ namespace BankDataAccess
         {
             DataTable dt = new DataTable();
 
-            string query = @"SELECT * FROM Makes ORDER BY MakeID DESC";
+            string query = @"SELECT * FROM Makes";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);

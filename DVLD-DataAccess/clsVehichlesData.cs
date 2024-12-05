@@ -14,12 +14,14 @@ namespace BankDataAccess
 
     public class clsVehichleData
     {
-        public static int AddVehichle( string ChassisNumber, string LicensePlate, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
+        public static int AddVehichle( string ChassisNumber, string PlateNumber,int MakeID,int ModelID, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
         {
             int _VehichleID = -1;
             string query = @"INSERT INTO Vehichles(
                         ChassisNumber,
-                        LicensePlate,
+                        PlateNumber,
+                        MakeID,
+                        ModelID,
                         SubModelID,
                         BodyID,
                         OwnerID,
@@ -28,7 +30,9 @@ namespace BankDataAccess
                         CreatedBy
                         ) VALUES (
                         @ChassisNumber,
-                        @LicensePlate,
+                        @PlateNumber,
+                        @MakeID,
+                        @ModelID,
                         @SubModelID,
                         @BodyID,
                         @OwnerID,
@@ -41,7 +45,9 @@ namespace BankDataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ChassisNumber", ChassisNumber);
-            command.Parameters.AddWithValue("@LicensePlate", LicensePlate);
+            command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+            command.Parameters.AddWithValue("@MakeID", MakeID);
+            command.Parameters.AddWithValue("@ModelID", ModelID);
             command.Parameters.AddWithValue("@SubModelID", SubModelID);
             command.Parameters.AddWithValue("@BodyID", BodyID);
             command.Parameters.AddWithValue("@OwnerID", OwnerID);
@@ -69,9 +75,7 @@ namespace BankDataAccess
             return _VehichleID;
         }
 
-
-
-        public static bool UpdateVehichleByID(int VehichleID, string ChassisNumber, string LicensePlate, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
+        public static bool UpdateVehichleByID(int VehichleID, string ChassisNumber, string PlateNumber, int MakeID, int ModelID, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
         {
 
 
@@ -80,7 +84,9 @@ namespace BankDataAccess
             string query = @"UPDATE Vehichles SET 
                                 VehichleID = @VehichleID,
                                 ChassisNumber = @ChassisNumber,
-                                LicensePlate = @LicensePlate,
+                                PlateNumber = @PlateNumber,
+                                MakeID = @MakeID,
+                                ModelID = @ModelID,
                                 SubModelID = @SubModelID,
                                 BodyID = @BodyID,
                                 OwnerID = @OwnerID,
@@ -94,7 +100,9 @@ namespace BankDataAccess
 
             command.Parameters.AddWithValue("@VehichleID", VehichleID);
             command.Parameters.AddWithValue("@ChassisNumber", ChassisNumber);
-            command.Parameters.AddWithValue("@LicensePlate", LicensePlate);
+            command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+            command.Parameters.AddWithValue("@MakeID", MakeID);
+            command.Parameters.AddWithValue("@ModelID", ModelID);
             command.Parameters.AddWithValue("@SubModelID", SubModelID);
             command.Parameters.AddWithValue("@BodyID", BodyID);
             command.Parameters.AddWithValue("@OwnerID", OwnerID);
@@ -119,8 +127,6 @@ namespace BankDataAccess
 
             return AffectedRows > 0;
         }
-
-
 
         public static bool DeleteVehichleByID(int VehichleID)
         {
@@ -152,9 +158,7 @@ namespace BankDataAccess
             return AffectedRows > 0;
         }
 
-
-
-        public static bool GetVehichleByID(int VehichleID, ref string ChassisNumber, ref string LicensePlate, ref int SubModelID, ref int BodyID, ref int OwnerID, ref int Year, ref string Color, ref int CreatedBy)
+        public static bool GetVehichleByID(int VehichleID, ref string ChassisNumber, ref string PlateNumber,ref int MakeID,ref int ModelID, ref int SubModelID, ref int BodyID, ref int OwnerID, ref int Year, ref string Color, ref int CreatedBy)
         {
 
             bool IsFound = false;
@@ -178,7 +182,9 @@ namespace BankDataAccess
                     IsFound = true;
 
                     ChassisNumber = (string)reader["ChassisNumber"];
-                    LicensePlate = (string)reader["LicensePlate"];
+                    PlateNumber = (string)reader["PlateNumber"];
+                    MakeID = (int)reader["MakeID"];
+                    ModelID = (int)reader["ModelID"];
                     SubModelID = (int)reader["SubModelID"];
                     BodyID = (int)reader["BodyID"];
                     OwnerID = (int)reader["OwnerID"];
@@ -201,10 +207,6 @@ namespace BankDataAccess
 
             return IsFound;
         }
-
-
-
-
 
         public static bool IsVehichleExistByVehichleID(int VehichleID)
         {
@@ -237,10 +239,6 @@ namespace BankDataAccess
             }
             return IsFound;
         }
-
-
-
-
 
         public static DataTable GetAllVehichles()
         {

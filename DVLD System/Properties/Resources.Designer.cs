@@ -83,6 +83,16 @@ namespace DVLD_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_vehichle {
+            get {
+                object obj = ResourceManager.GetObject("add vehichle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddAppointment_32 {
             get {
                 object obj = ResourceManager.GetObject("AddAppointment 32", resourceCulture);
@@ -156,6 +166,16 @@ namespace DVLD_System.Properties {
         internal static System.Drawing.Bitmap car {
             get {
                 object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cars_List {
+            get {
+                object obj = ResourceManager.GetObject("Cars List", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

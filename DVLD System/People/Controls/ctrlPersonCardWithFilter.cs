@@ -64,6 +64,7 @@ namespace DVLD_System.Controls
         }
 
         bool _EnableFilter = true;
+        
         public bool EnableFilter
         {
             get
@@ -89,8 +90,6 @@ namespace DVLD_System.Controls
             _FillComboBox();
 
         }
-
-
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {

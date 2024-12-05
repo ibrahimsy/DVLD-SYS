@@ -14,7 +14,7 @@ namespace BankDataAccess
 
     public class clsMakeModelData
     {
-        public static int AddMakeModel( int MakeID, string ModelName)
+        public static int AddMakeModel(int MakeID, string ModelName)
         {
             int _ModelID = -1;
             string query = @"INSERT INTO MakeModels(
@@ -50,8 +50,6 @@ namespace BankDataAccess
             }
             return _ModelID;
         }
-
-
 
         public static bool UpdateMakeModelByID(int ModelID, int MakeID, string ModelName)
         {
@@ -90,8 +88,6 @@ namespace BankDataAccess
             return AffectedRows > 0;
         }
 
-
-
         public static bool DeleteMakeModelByID(int ModelID)
         {
 
@@ -121,8 +117,6 @@ namespace BankDataAccess
 
             return AffectedRows > 0;
         }
-
-
 
         public static bool GetMakeModelByID(int ModelID, ref int MakeID, ref string ModelName)
         {
@@ -167,10 +161,6 @@ namespace BankDataAccess
             return IsFound;
         }
 
-
-
-
-
         public static bool IsMakeModelExistByModelID(int ModelID)
         {
             bool IsFound = false;
@@ -203,10 +193,6 @@ namespace BankDataAccess
             return IsFound;
         }
 
-
-
-
-
         public static DataTable GetAllMakeModels()
         {
             DataTable dt = new DataTable();
@@ -237,6 +223,70 @@ namespace BankDataAccess
             return dt;
         }
 
+        public static DataTable GetMakeModelsByMakeID(int MakeID)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"SELECT * FROM MakeModels Where MakeID = @MakeID";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@MakeID", MakeID);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public static DataTable GetMakeModelsByMakeName(string Make)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"SELECT        MakeModels.ModelID, Makes.Make, MakeModels.ModelName
+                            FROM           Makes INNER JOIN
+                                           MakeModels ON Makes.MakeID = MakeModels.MakeID
+		                                   WHERE Makes.Make = @Make";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Make", Make);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
 
     }
 }
