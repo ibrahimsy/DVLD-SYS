@@ -78,8 +78,8 @@ namespace DVLD_System.Controls
             {
                 if (File.Exists(ImagePath))
                     pbPersonImage.ImageLocation = ImagePath;
-                else
-                    MessageBox.Show("No Image Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //else
+                //    MessageBox.Show("No Image Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         

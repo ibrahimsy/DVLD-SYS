@@ -172,7 +172,7 @@ namespace DVLD_System
 
         private void addNewVehichleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddEditVehichle frm = new frmAddEditVehichle();
+            frmAddEditVehicle frm = new frmAddEditVehicle();
             frm.ShowDialog();
         }
     }

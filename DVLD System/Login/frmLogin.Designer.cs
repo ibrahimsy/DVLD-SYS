@@ -56,55 +56,58 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.BlueViolet;
             this.label2.Location = new System.Drawing.Point(25, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(341, 19);
+            this.label2.Size = new System.Drawing.Size(347, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Driver and Vehicle Licensing Department";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(511, 152);
+            this.txtUsername.Font = new System.Drawing.Font("Titillium Web", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(525, 160);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(203, 20);
+            this.txtUsername.Size = new System.Drawing.Size(203, 32);
             this.txtUsername.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(419, 153);
+            this.label3.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(419, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.Size = new System.Drawing.Size(100, 29);
             this.label3.TabIndex = 5;
             this.label3.Text = "UserName";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(419, 182);
+            this.label4.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(419, 204);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 18);
+            this.label4.Size = new System.Drawing.Size(94, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Password";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(511, 181);
+            this.txtPassword.Font = new System.Drawing.Font("Titillium Web", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(525, 202);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '⚫';
-            this.txtPassword.Size = new System.Drawing.Size(203, 20);
+            this.txtPassword.Size = new System.Drawing.Size(203, 32);
             this.txtPassword.TabIndex = 6;
             // 
             // cbRememberMe
             // 
             this.cbRememberMe.AutoSize = true;
-            this.cbRememberMe.Location = new System.Drawing.Point(511, 206);
+            this.cbRememberMe.Font = new System.Drawing.Font("Titillium Web", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRememberMe.Location = new System.Drawing.Point(525, 252);
             this.cbRememberMe.Name = "cbRememberMe";
-            this.cbRememberMe.Size = new System.Drawing.Size(94, 17);
+            this.cbRememberMe.Size = new System.Drawing.Size(128, 28);
             this.cbRememberMe.TabIndex = 8;
             this.cbRememberMe.Text = "Remember me";
             this.cbRememberMe.UseVisualStyleBackColor = true;
@@ -112,10 +115,11 @@
             // btnLogin
             // 
             this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnLogin.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(639, 229);
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(615, 299);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 29);
+            this.btnLogin.Size = new System.Drawing.Size(113, 36);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -124,10 +128,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(507, 52);
+            this.label5.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(520, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 18);
+            this.label5.Size = new System.Drawing.Size(193, 29);
             this.label5.TabIndex = 10;
             this.label5.Text = "Login To Your Account";
             // 

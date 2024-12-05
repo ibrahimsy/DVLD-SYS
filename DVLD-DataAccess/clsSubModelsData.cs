@@ -238,5 +238,37 @@ namespace BankDataAccess
         }
 
 
+        public static DataTable GetAllSubModelsByModelName(string ModelName)
+        {
+            DataTable dt = new DataTable();
+
+            string query = @"SELECT      MakeModels.ModelName, SubModels.SubModelName
+                             FROM        SubModels INNER JOIN
+                                         MakeModels ON SubModels.ModelID = MakeModels.ModelID
+			                             WHERE ModelName = @ModelName";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@ModelName", ModelName);
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return dt;
+        }
     }
 }

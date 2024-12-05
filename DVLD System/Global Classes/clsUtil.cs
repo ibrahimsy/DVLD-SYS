@@ -10,7 +10,7 @@ namespace DVLD_System.Global_Classes
 {
     public class clsUtil
     {
-
+        static Random Rand = new Random();
         static string _CreateGUID()
         {
             Guid guid = Guid.NewGuid();
@@ -70,5 +70,23 @@ namespace DVLD_System.Global_Classes
             }
             return true;
         }
+
+
+        private static string _GenerateCategoryLetter()
+        {
+            string[] Categories = {"A","B","C","D","E","F" };
+            return Categories[Rand.Next(Categories.Length)];
+        }
+
+        private static string _GeneratePlateNumber()
+        {
+            return Rand.Next(1, 99999).ToString("D5");
+        }
+
+        public static string GenerateVehiclePlateNumber()
+        {
+            return $"{_GenerateCategoryLetter()}-{_GeneratePlateNumber()} (DXB)";
+        }
+
     }
 }

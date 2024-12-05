@@ -92,6 +92,10 @@ namespace BankBussiness
             return clsSubModelData.GetAllSubModels();
         }
 
+        public static DataTable GetSubModelsByModelName(string ModelName)
+        {
+            return clsSubModelData.GetAllSubModelsByModelName(ModelName);
+        }
 
 
         public bool Save()

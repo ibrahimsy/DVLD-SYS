@@ -321,17 +321,17 @@
     <Compile Include="Tests\WrittenTest\frmWrittenTest.Designer.cs">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehichles\frmAddEditVehichle.cs">
+    <Compile Include="Vehicles\frmAddEditVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vehichles\frmAddEditVehichle.Designer.cs">
-      <DependentUpon>frmAddEditVehichle.cs</DependentUpon>
+    <Compile Include="Vehicles\frmAddEditVehicle.Designer.cs">
+      <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vehichles\frmVehichlesList.cs">
+    <Compile Include="Vehicles\frmVehiclesList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vehichles\frmVehichlesList.Designer.cs">
-      <DependentUpon>frmVehichlesList.cs</DependentUpon>
+    <Compile Include="Vehicles\frmVehiclesList.Designer.cs">
+      <DependentUpon>frmVehiclesList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Applications\Application Types\frmEditApplicationType.resx">
       <DependentUpon>frmEditApplicationType.cs</DependentUpon>
@@ -475,11 +475,11 @@
     <EmbeddedResource Include="Tests\WrittenTest\frmWrittenTest.resx">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehichles\frmAddEditVehichle.resx">
-      <DependentUpon>frmAddEditVehichle.cs</DependentUpon>
+    <EmbeddedResource Include="Vehicles\frmAddEditVehicle.resx">
+      <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vehichles\frmVehichlesList.resx">
-      <DependentUpon>frmVehichlesList.cs</DependentUpon>
+    <EmbeddedResource Include="Vehicles\frmVehiclesList.resx">
+      <DependentUpon>frmVehiclesList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
