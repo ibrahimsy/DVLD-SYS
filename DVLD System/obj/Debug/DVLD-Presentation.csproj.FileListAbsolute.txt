@@ -346,3 +346,5 @@ D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Tests.Wri
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.WrittenTest.frmWrittenTest.resources
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmAddEditVehicle.resources
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmVehiclesList.resources
+D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmAddEditVehicle.resources
+D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmVehiclesList.resources

@@ -48,7 +48,16 @@ namespace BankDataAccess
             command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
             command.Parameters.AddWithValue("@MakeID", MakeID);
             command.Parameters.AddWithValue("@ModelID", ModelID);
-            command.Parameters.AddWithValue("@SubModelID", SubModelID);
+
+            if (SubModelID == -1)
+            {
+                command.Parameters.AddWithValue("@SubModelID", DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@SubModelID", SubModelID);
+            }
+            
             command.Parameters.AddWithValue("@BodyID", BodyID);
             command.Parameters.AddWithValue("@OwnerID", OwnerID);
             command.Parameters.AddWithValue("@Year", Year);
@@ -82,7 +91,6 @@ namespace BankDataAccess
             int AffectedRows = 0;
 
             string query = @"UPDATE Vehichles SET 
-                                VehichleID = @VehichleID,
                                 ChassisNumber = @ChassisNumber,
                                 PlateNumber = @PlateNumber,
                                 MakeID = @MakeID,
@@ -103,7 +111,14 @@ namespace BankDataAccess
             command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
             command.Parameters.AddWithValue("@MakeID", MakeID);
             command.Parameters.AddWithValue("@ModelID", ModelID);
-            command.Parameters.AddWithValue("@SubModelID", SubModelID);
+            if (SubModelID == -1)
+            {
+                command.Parameters.AddWithValue("@SubModelID", DBNull.Value);
+            }
+            else
+            {
+                command.Parameters.AddWithValue("@SubModelID", SubModelID);
+            }
             command.Parameters.AddWithValue("@BodyID", BodyID);
             command.Parameters.AddWithValue("@OwnerID", OwnerID);
             command.Parameters.AddWithValue("@Year", Year);
@@ -185,7 +200,15 @@ namespace BankDataAccess
                     PlateNumber = (string)reader["PlateNumber"];
                     MakeID = (int)reader["MakeID"];
                     ModelID = (int)reader["ModelID"];
-                    SubModelID = (int)reader["SubModelID"];
+                    if (reader["SubModelID"] == DBNull.Value)
+                    {
+                        SubModelID = -1;
+                    }
+                    else
+                    {
+                        SubModelID = (int)reader["SubModelID"];
+                    }
+                    
                     BodyID = (int)reader["BodyID"];
                     OwnerID = (int)reader["OwnerID"];
                     Year = (int)reader["Year"];
@@ -244,7 +267,7 @@ namespace BankDataAccess
         {
             DataTable dt = new DataTable();
 
-            string query = @"SELECT * FROM Vehichles ORDER BY VehichleID DESC";
+            string query = @"SELECT * FROM Vehicles_View ORDER BY VehichleID DESC";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);

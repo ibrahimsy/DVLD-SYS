@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BankDataAccess;
+using DVLD_Bussiness;
+using System.Data;
 
 namespace BankBussiness
 {
@@ -24,14 +19,25 @@ namespace BankBussiness
         public string ChassisNumber { set; get; }
         public string PlateNumber { set; get; }
         public int MakeID { set; get; }
+
+        public clsMake MakeInfo;
         public int ModelID { set; get; }
+
+        public clsMakeModel ModelInfo;
         public int SubModelID { set; get; }
+
+        public clsSubModel SubModelInfo;
         public int BodyID { set; get; }
+
+        public clsBody BodyInfo;
         public int OwnerID { set; get; }
+
+        public clsPerson OwnerInfo;
         public int Year { set; get; }
         public string Color { set; get; }
         public int CreatedBy { set; get; }
 
+        public clsUser UserInfo;
 
         public clsVehichle()
         {
@@ -58,13 +64,19 @@ namespace BankBussiness
             this.ChassisNumber = ChassisNumber;
             this.PlateNumber = PlateNumber;
             this.MakeID = MakeID;
+            this.MakeInfo = clsMake.FindMakeByID(MakeID);
             this.ModelID = ModelID;
+            this.ModelInfo = clsMakeModel.FindMakeModelByID(ModelID);
             this.SubModelID = SubModelID;
+            this.SubModelInfo = clsSubModel.FindSubModelByID(SubModelID);
             this.BodyID = BodyID;
+            this.BodyInfo = clsBody.FindBodyByID(BodyID);
             this.OwnerID = OwnerID;
+            this.OwnerInfo = clsPerson.Find(OwnerID);
             this.Year = Year;
             this.Color = Color;
             this.CreatedBy = CreatedBy;
+            this.UserInfo = clsUser.Find(CreatedBy);
             _Mode = enMode.enUpdate;
         }
 
@@ -72,7 +84,7 @@ namespace BankBussiness
 
         private bool _AddVehichle()
         {
-            VehichleID = clsVehichleData.AddVehichle(ChassisNumber, PlateNumber,MakeID,ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+            VehichleID = clsVehichleData.AddVehichle(ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
 
             return (VehichleID != -1);
         }
@@ -96,9 +108,9 @@ namespace BankBussiness
             int Year = 1900;
             string Color = "";
             int CreatedBy = -1;
-            if (clsVehichleData.GetVehichleByID(VehichleID, ref ChassisNumber, ref PlateNumber,ref MakeID,ref ModelID, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
+            if (clsVehichleData.GetVehichleByID(VehichleID, ref ChassisNumber, ref PlateNumber, ref MakeID, ref ModelID, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
             {
-                return new clsVehichle(VehichleID, ChassisNumber, PlateNumber,MakeID,ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+                return new clsVehichle(VehichleID, ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
             }
             else
             {

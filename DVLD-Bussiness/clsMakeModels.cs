@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BankDataAccess;
+using System.Runtime.InteropServices;
 
 namespace BankBussiness
 {
@@ -74,6 +75,19 @@ namespace BankBussiness
             }
         }
 
+        public static clsMakeModel FindMakeModelByName(string ModelName)
+        {
+            int MakeID = -1;
+            int ModelID = -1;
+            if (clsMakeModelData.GetMakeModelByName(ModelName, ref ModelID, ref MakeID))
+            {
+                return new clsMakeModel(ModelID, MakeID, ModelName);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static bool IsExistByMakeModelID(int ModelID)
         {

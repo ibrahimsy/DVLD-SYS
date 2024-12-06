@@ -14,7 +14,7 @@ namespace DVLD_System.Vehichles
 {
     public partial class frmVehiclesList : Form
     {
-        private static DataTable _dtAllVehichles = clsVehichle.VehichlesList();
+        private static DataTable _dtAllVehichles;
         public frmVehiclesList()
         {
             InitializeComponent();
@@ -22,8 +22,10 @@ namespace DVLD_System.Vehichles
 
         private void frmVehichlesList_Load(object sender, EventArgs e)
         {
+            _dtAllVehichles = clsVehichle.VehichlesList();
             dgvVehichleList.DataSource = _dtAllVehichles;
             lblNumberOfRecords.Text = _dtAllVehichles.Rows.Count.ToString();
+
             cbFilterBy.SelectedIndex = 0;
 
             if (_dtAllVehichles.Rows.Count > 0)
@@ -68,6 +70,19 @@ namespace DVLD_System.Vehichles
         private void btnAddVehichle_Click(object sender, EventArgs e)
         {
             frmAddEditVehicle frm = new frmAddEditVehicle();
+            frm.ShowDialog();
+
+            frmVehichlesList_Load(null,null);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void editVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditVehicle frm = new frmAddEditVehicle((int)dgvVehichleList.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
 
             frmVehichlesList_Load(null,null);

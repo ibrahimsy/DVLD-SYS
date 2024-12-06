@@ -59,8 +59,20 @@ namespace BankBussiness
 
         public static clsMake FindMakeByID(int MakeID)
         {
-            string Make = default;
+            string Make = "";
             if (clsMakeData.GetMakeByID( MakeID, ref Make))
+            {
+                return new clsMake(MakeID, Make);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static clsMake FindMakeByName(string Make)
+        {
+            int MakeID = -1;
+            if (clsMakeData.GetMakeByName(ref MakeID,Make))
             {
                 return new clsMake(MakeID, Make);
             }

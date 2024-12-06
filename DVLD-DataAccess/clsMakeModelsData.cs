@@ -161,6 +161,47 @@ namespace BankDataAccess
             return IsFound;
         }
 
+        public static bool GetMakeModelByName(string ModelName, ref int ModelID, ref int MakeID)
+        {
+
+            bool IsFound = false;
+
+            string query = "SELECT * FROM MakeModels WHERE ModelName = @ModelName";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ModelName", ModelName);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    ModelID = (int)reader["ModelID"];
+                    MakeID = (int)reader["MakeID"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
         public static bool IsMakeModelExistByModelID(int ModelID)
         {
             bool IsFound = false;

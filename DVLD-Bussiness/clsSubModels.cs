@@ -74,6 +74,19 @@ namespace BankBussiness
             }
         }
 
+        public static clsSubModel FindSubModelByName(string SubModelName)
+        {
+            int ModelID = -1;
+            int SubModelID = -1;
+            if (clsSubModelData.GetSubModelByName(SubModelName,ref SubModelID, ref ModelID ))
+            {
+                return new clsSubModel(SubModelID, ModelID, SubModelName);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static bool IsExistBySubModelID(int SubModelID)
         {

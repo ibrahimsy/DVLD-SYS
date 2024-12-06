@@ -161,7 +161,46 @@ namespace BankDataAccess
             return IsFound;
         }
 
+        public static bool GetBodyByName(string BodyName, ref int BodyID)
+        {
 
+            bool IsFound = false;
+
+            string query = "SELECT * FROM Bodies WHERE BodyName = @BodyName";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@BodyName", BodyName);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    BodyID = (int)reader["BodyID"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
 
 
 

@@ -167,7 +167,8 @@ namespace DVLD_System
 
         private void showVehichlesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmVehiclesList frm = new frmVehiclesList();
+            frm.ShowDialog();
         }
 
         private void addNewVehichleToolStripMenuItem_Click(object sender, EventArgs e)

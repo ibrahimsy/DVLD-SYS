@@ -69,7 +69,18 @@ namespace BankBussiness
                 return null;
             }
         }
-
+        public static clsBody FindBodyByName(string BodyName)
+        {
+            int BodyID = -1;
+            if (clsBodyData.GetBodyByName(BodyName, ref BodyID))
+            {
+                return new clsBody(BodyID, BodyName);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static bool IsExistByBodyID(int BodyID)
         {

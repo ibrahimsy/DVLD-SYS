@@ -168,7 +168,47 @@ namespace BankDataAccess
         }
 
 
+        public static bool GetSubModelByName(string SubModelName, ref int SubModelID, ref int ModelID)
+        {
 
+            bool IsFound = false;
+
+            string query = "SELECT * FROM SubModels WHERE SubModelName = @SubModelName";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@SubModelName", SubModelName);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    SubModelID = (int)reader["SubModelID"];
+                    ModelID = (int)reader["ModelID"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
 
 
         public static bool IsSubModelExistBySubModelID(int SubModelID)

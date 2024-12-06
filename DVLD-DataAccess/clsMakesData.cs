@@ -141,8 +141,6 @@ namespace BankDataAccess
                 if (reader.Read())
                 {
                     IsFound = true;
-
-                    MakeID = (int)reader["MakeID"];
                     Make = (string)reader["Make"];
 
                 }
@@ -161,6 +159,46 @@ namespace BankDataAccess
             return IsFound;
         }
 
+        public static bool GetMakeByName(ref int MakeID, string Make)
+        {
+
+            bool IsFound = false;
+
+            string query = "SELECT * FROM Makes WHERE Make = @Make";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Make", Make);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    MakeID = (int)reader["MakeID"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
 
 
 

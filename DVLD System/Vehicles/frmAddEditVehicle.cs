@@ -18,6 +18,8 @@ namespace DVLD_System.Vehichles
         enMode _Mode = enMode.AddNew;
         int _VehichleID = -1;
         int _SelectedPerson = -1;
+        clsVehichle _VehicleInfo;
+
         public frmAddEditVehicle()
         {
             InitializeComponent();
@@ -35,9 +37,11 @@ namespace DVLD_System.Vehichles
         {
             if (_Mode == enMode.AddNew)
             {
+                _VehicleInfo = new clsVehichle();
                 lblTitle.Text = "Register Vehichle";
                 this.Text = lblTitle.Text;
                 tpVehichleInfo.Enabled = false;
+                btnSave.Enabled = false;
             }
             else
             {
@@ -45,6 +49,9 @@ namespace DVLD_System.Vehichles
                 this.Text = lblTitle.Text;
                 tpVehichleInfo.Enabled = true;
             }
+
+            _FillMakeInComboBox();
+            _FillBodyTypeInComboBox();
         }
         void _FillMakeInComboBox()
         {
@@ -65,7 +72,7 @@ namespace DVLD_System.Vehichles
                 cbModel.Items.Add(Row["ModelName"]);
             }
 
-            cbModel.SelectedIndex = 0;
+            //cbModel.SelectedIndex = 0;
         }
 
         void _FillSubModelInComboBox()
@@ -91,16 +98,42 @@ namespace DVLD_System.Vehichles
             cbType.SelectedIndex = 0;
         }
 
+        private void _LoadData()
+        {
+            _VehicleInfo = clsVehichle.FindVehichleByID(_VehichleID);
+            if (_VehicleInfo == null)
+            {
+                MessageBox.Show($"Vehicle Not Found With ID=[{_VehichleID}]","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            ctrlPersonCardWithFilter1.LoadInfo(_VehicleInfo.OwnerID);
+            ctrlPersonCardWithFilter1.EnableFilter = false;
+            lblTitle.Text = "Edit Vehicle";
+            this.Text = lblTitle.Text;
+
+            lblVehichleID.Text = _VehicleInfo.VehichleID.ToString();
+            txtChassisNumber.Text = _VehicleInfo.ChassisNumber;
+            txtPlateNumber.Text = _VehicleInfo.PlateNumber;
+            cbMake.SelectedIndex = cbMake.FindString(clsMake.FindMakeByID(_VehicleInfo.MakeID).Make);
+            _FillMakeModelInComboBox();
+            cbModel.SelectedIndex = cbModel.FindString(clsMakeModel.FindMakeModelByID(_VehicleInfo.ModelID).ModelName);
+            _FillSubModelInComboBox();
+            cbSubModel.SelectedIndex = cbSubModel.FindString(clsSubModel.FindSubModelByID(_VehicleInfo.SubModelID).SubModelName);
+            cbType.SelectedIndex = cbType.FindString(clsBody.FindBodyByID(_VehicleInfo.BodyID).BodyName);
+            txtColor.Text = _VehicleInfo.Color; 
+            txtYear.Text = _VehicleInfo.Year.ToString();
+            lblOwnerFullName.Text = _VehicleInfo.OwnerInfo.FullName;
+            lblCreatedBy.Text = _VehicleInfo.UserInfo.UserName;
+        }
         private void frmAddEditVehichle_Load(object sender, EventArgs e)
         {
-            if(_Mode == enMode.AddNew)
+            _ResetDefaultData();
+            
+            if (_Mode == enMode.Update)
             {
-                _ResetDefaultData();
+                _LoadData();
             }
-            else
-            {
-
-            }
+          
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -112,11 +145,9 @@ namespace DVLD_System.Vehichles
             }
             tabControl1.SelectedTab = tabControl1.TabPages["tpVehichleInfo"];
             tpVehichleInfo.Enabled = true;
+            btnSave.Enabled = true;
             lblCreatedBy.Text = clsGlobalSettings.CurrentUser.UserName;
             lblOwnerFullName.Text = ctrlPersonCardWithFilter1.SelectedPersonInfo.FullName;
-            _FillMakeInComboBox();
-            _FillBodyTypeInComboBox();
-
             txtPlateNumber.Text = clsUtil.GenerateVehiclePlateNumber();
         }
 
@@ -149,6 +180,32 @@ namespace DVLD_System.Vehichles
                 MessageBox.Show("Some Feild Incorrect,Put Mouse On Red Icon","Not Allowed",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
+            
+            _VehicleInfo.ChassisNumber = txtChassisNumber.Text;
+            _VehicleInfo.PlateNumber = txtPlateNumber.Text;
+            _VehicleInfo.MakeID = clsMake.FindMakeByName(cbMake.Text).MakeID;
+            _VehicleInfo.ModelID = clsMakeModel.FindMakeModelByName(cbModel.Text).ModelID;
+            _VehicleInfo.SubModelID = cbSubModel.Text == ""? -1 : clsSubModel.FindSubModelByName(cbSubModel.Text).SubModelID;
+            _VehicleInfo.BodyID = clsBody.FindBodyByName(cbType.Text).BodyID;
+            _VehicleInfo.Color = txtColor.Text;
+            _VehicleInfo.Year =  Convert.ToInt32( txtYear.Text);
+            _VehicleInfo.OwnerID = ctrlPersonCardWithFilter1.PersonID;
+            _VehicleInfo.CreatedBy = clsGlobalSettings.CurrentUser.UserID;
+
+            if (_VehicleInfo.Save())
+            {
+                MessageBox.Show("Vehicle Registered Successfuly","Sucess",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                btnSave.Enabled = false;
+                lblVehichleID.Text = _VehicleInfo.VehichleID.ToString();
+                lblTitle.Text = "Edit Vehichle";
+                this.Text = lblTitle.Text;
+                ctrlPersonCardWithFilter1.EnableFilter = false;
+            }
+            else
+            {
+                MessageBox.Show("Vehicle Not Registered! ,An Error Occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void ValidateEmpty(object sender, CancelEventArgs e)
