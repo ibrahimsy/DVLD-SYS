@@ -18,5 +18,15 @@ namespace DVLD_System.Global_Classes
 
             return regex.IsMatch(emailAddress);
         }
+
+        public static bool ValidateChassisNumber(string ChassisNumber)
+        {
+            string Pattern = @"^[A-HJ-NPR-Z0-9]{17}$"; 
+
+            Regex Regex = new Regex(Pattern);
+
+            return Regex.IsMatch(ChassisNumber);
+        }
+
     }
 }

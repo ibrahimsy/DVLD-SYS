@@ -350,10 +350,11 @@
             this.txtChassisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtChassisNumber.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChassisNumber.Location = new System.Drawing.Point(215, 151);
+            this.txtChassisNumber.MaxLength = 17;
             this.txtChassisNumber.Name = "txtChassisNumber";
             this.txtChassisNumber.Size = new System.Drawing.Size(250, 36);
             this.txtChassisNumber.TabIndex = 5;
-            this.txtChassisNumber.Validating += new System.ComponentModel.CancelEventHandler(this.ValidateEmpty);
+            this.txtChassisNumber.Validating += new System.ComponentModel.CancelEventHandler(this.ChassisNumber_Validate);
             // 
             // label5
             // 

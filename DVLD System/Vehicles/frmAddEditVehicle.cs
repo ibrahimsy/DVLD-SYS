@@ -181,7 +181,7 @@ namespace DVLD_System.Vehichles
                 return;
             }
             
-            _VehicleInfo.ChassisNumber = txtChassisNumber.Text;
+            _VehicleInfo.ChassisNumber = txtChassisNumber.Text.ToUpper();
             _VehicleInfo.PlateNumber = txtPlateNumber.Text;
             _VehicleInfo.MakeID = clsMake.FindMakeByName(cbMake.Text).MakeID;
             _VehicleInfo.ModelID = clsMakeModel.FindMakeModelByName(cbModel.Text).ModelID;
@@ -224,6 +224,30 @@ namespace DVLD_System.Vehichles
         private void txtYear_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void ChassisNumber_Validate(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtChassisNumber.Text))
+            {
+                errorProvider1.SetError(txtChassisNumber, "Required Feild");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtChassisNumber, null);
+            }
+
+            if (!clsValidation.ValidateChassisNumber(txtChassisNumber.Text.ToUpper()))
+            {
+                errorProvider1.SetError(txtChassisNumber, "Ivalid Chassis Number");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtChassisNumber, null);
+            }
+
         }
     }
 }
