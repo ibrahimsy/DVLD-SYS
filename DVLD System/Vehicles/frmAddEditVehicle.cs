@@ -52,6 +52,7 @@ namespace DVLD_System.Vehichles
 
             _FillMakeInComboBox();
             _FillBodyTypeInComboBox();
+            txtPlateNumber.Text = clsUtil.GenerateVehiclePlateNumber();
         }
         void _FillMakeInComboBox()
         {
@@ -100,7 +101,7 @@ namespace DVLD_System.Vehichles
 
         private void _LoadData()
         {
-            _VehicleInfo = clsVehichle.FindVehichleByID(_VehichleID);
+            _VehicleInfo = clsVehichle.Find(_VehichleID);
             if (_VehicleInfo == null)
             {
                 MessageBox.Show($"Vehicle Not Found With ID=[{_VehichleID}]","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -118,7 +119,10 @@ namespace DVLD_System.Vehichles
             _FillMakeModelInComboBox();
             cbModel.SelectedIndex = cbModel.FindString(clsMakeModel.FindMakeModelByID(_VehicleInfo.ModelID).ModelName);
             _FillSubModelInComboBox();
-            cbSubModel.SelectedIndex = cbSubModel.FindString(clsSubModel.FindSubModelByID(_VehicleInfo.SubModelID).SubModelName);
+
+            if(_VehicleInfo.SubModelID != -1)
+               cbSubModel.SelectedIndex =  cbSubModel.FindString(clsSubModel.FindSubModelByID(_VehicleInfo.SubModelID).SubModelName);
+            
             cbType.SelectedIndex = cbType.FindString(clsBody.FindBodyByID(_VehicleInfo.BodyID).BodyName);
             txtColor.Text = _VehicleInfo.Color; 
             txtYear.Text = _VehicleInfo.Year.ToString();
@@ -148,7 +152,7 @@ namespace DVLD_System.Vehichles
             btnSave.Enabled = true;
             lblCreatedBy.Text = clsGlobalSettings.CurrentUser.UserName;
             lblOwnerFullName.Text = ctrlPersonCardWithFilter1.SelectedPersonInfo.FullName;
-            txtPlateNumber.Text = clsUtil.GenerateVehiclePlateNumber();
+           
         }
 
         private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)

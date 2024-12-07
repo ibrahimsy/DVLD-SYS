@@ -321,11 +321,23 @@
     <Compile Include="Tests\WrittenTest\frmWrittenTest.Designer.cs">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfo.Designer.cs">
+      <DependentUpon>ctrlVehicleInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles\frmAddEditVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vehicles\frmAddEditVehicle.Designer.cs">
       <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmShowVehicleInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmShowVehicleInfo.Designer.cs">
+      <DependentUpon>frmShowVehicleInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehicles\frmVehiclesList.cs">
       <SubType>Form</SubType>
@@ -475,8 +487,14 @@
     <EmbeddedResource Include="Tests\WrittenTest\frmWrittenTest.resx">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfo.resx">
+      <DependentUpon>ctrlVehicleInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmAddEditVehicle.resx">
       <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmShowVehicleInfo.resx">
+      <DependentUpon>frmShowVehicleInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmVehiclesList.resx">
       <DependentUpon>frmVehiclesList.cs</DependentUpon>

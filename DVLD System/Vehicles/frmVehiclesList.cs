@@ -1,5 +1,6 @@
 ﻿using BankBussiness;
 using DVLD_Bussiness;
+using DVLD_System.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,33 @@ namespace DVLD_System.Vehichles
         public frmVehiclesList()
         {
             InitializeComponent();
+        }
+
+        string _ColumnText(string columnName)
+        {
+            switch (columnName)
+            {
+                case "Vehichle ID":
+                    return "VehichleID";
+                case "Chassis Number":
+                    return "ChassisNumber";
+                case "Plate Number":
+                    return "PlateNumber";
+                case "Make":
+                    return "Make";
+                case "Model":
+                    return "Model";
+                case "Body Type":
+                    return "Body";
+                case "Owner Name":
+                    return "FullName";
+                case "Year":
+                    return "Year";
+                case "Color":
+                    return "Color";
+                default:
+                    return "None";
+            }
         }
 
         private void frmVehichlesList_Load(object sender, EventArgs e)
@@ -86,6 +114,59 @@ namespace DVLD_System.Vehichles
             frm.ShowDialog();
 
             frmVehichlesList_Load(null,null);
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilterBy.SelectedIndex == cbFilterBy.FindString("None"))
+            {
+                txtFilterBy.Visible = false;
+                _dtAllVehichles.DefaultView.RowFilter = "";
+                return;
+            }
+
+            txtFilterBy.Visible = true;       
+            txtFilterBy.Focus();
+        }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+            string SelectedColumn = _ColumnText(cbFilterBy.Text);
+
+            string FilterValue = txtFilterBy.Text.Trim();
+
+            if (FilterValue == "")
+            {
+                _dtAllVehichles.DefaultView.RowFilter = "";
+                lblNumberOfRecords.Text = _dtAllVehichles.DefaultView.Count.ToString();
+                return;
+            }
+
+            if (SelectedColumn == "VehichleID" || SelectedColumn == "Year")
+            {
+
+                _dtAllVehichles.DefaultView.RowFilter = string.Format("[{0}] = {1}", SelectedColumn, FilterValue);
+            }
+            else
+            {
+                _dtAllVehichles.DefaultView.RowFilter = string.Format("[{0}] Like '{1}%'", SelectedColumn, FilterValue);
+            }
+
+            lblNumberOfRecords.Text = _dtAllVehichles.DefaultView.Count.ToString();
+        }
+
+        private void txtFilterBy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy.Text == "VehichleID" || cbFilterBy.Text == "Year")
+            {
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            }
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmShowVehicleInfo frm = new frmShowVehicleInfo((int)dgvVehichleList.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
     }
 }

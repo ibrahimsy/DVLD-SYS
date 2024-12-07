@@ -348,3 +348,5 @@ D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehichles
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmVehiclesList.resources
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmAddEditVehicle.resources
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehichles.frmVehiclesList.resources
+D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.Controls.ctrlVehicleInfo.resources
+D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.frmShowVehicleInfo.resources

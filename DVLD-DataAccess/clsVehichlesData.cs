@@ -231,6 +231,122 @@ namespace BankDataAccess
             return IsFound;
         }
 
+        public static bool GetVehichleByChassisNumber( string ChassisNumber,ref int VehichleID, ref string PlateNumber, ref int MakeID, ref int ModelID, ref int SubModelID, ref int BodyID, ref int OwnerID, ref int Year, ref string Color, ref int CreatedBy)
+        {
+
+            bool IsFound = false;
+
+            string query = "SELECT * FROM Vehichles WHERE ChassisNumber = @ChassisNumber";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ChassisNumber", ChassisNumber);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    VehichleID = (int)reader["VehichleID"];
+                    PlateNumber = (string)reader["PlateNumber"];
+                    MakeID = (int)reader["MakeID"];
+                    ModelID = (int)reader["ModelID"];
+                    if (reader["SubModelID"] == DBNull.Value)
+                    {
+                        SubModelID = -1;
+                    }
+                    else
+                    {
+                        SubModelID = (int)reader["SubModelID"];
+                    }
+
+                    BodyID = (int)reader["BodyID"];
+                    OwnerID = (int)reader["OwnerID"];
+                    Year = (int)reader["Year"];
+                    Color = (string)reader["Color"];
+                    CreatedBy = (int)reader["CreatedBy"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
+
+        public static bool GetVehichleByPlateNumber(string PlateNumber, ref int VehichleID, ref string ChassisNumber, ref int MakeID, ref int ModelID, ref int SubModelID, ref int BodyID, ref int OwnerID, ref int Year, ref string Color, ref int CreatedBy)
+        {
+
+            bool IsFound = false;
+
+            string query = "SELECT * FROM Vehichles WHERE PlateNumber = @PlateNumber";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    VehichleID = (int)reader["VehichleID"];
+                    ChassisNumber = (string)reader["ChassisNumber"];
+                    MakeID = (int)reader["MakeID"];
+                    ModelID = (int)reader["ModelID"];
+                    if (reader["SubModelID"] == DBNull.Value)
+                    {
+                        SubModelID = -1;
+                    }
+                    else
+                    {
+                        SubModelID = (int)reader["SubModelID"];
+                    }
+
+                    BodyID = (int)reader["BodyID"];
+                    OwnerID = (int)reader["OwnerID"];
+                    Year = (int)reader["Year"];
+                    Color = (string)reader["Color"];
+                    CreatedBy = (int)reader["CreatedBy"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
+
         public static bool IsVehichleExistByVehichleID(int VehichleID)
         {
             bool IsFound = false;

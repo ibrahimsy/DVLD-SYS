@@ -96,7 +96,7 @@ namespace BankBussiness
         }
 
 
-        public static clsVehichle FindVehichleByID(int VehichleID)
+        public static clsVehichle Find(int VehichleID)
         {
             string ChassisNumber = "";
             string PlateNumber = "";
@@ -118,6 +118,49 @@ namespace BankBussiness
             }
         }
 
+        public static clsVehichle FindByChassisNumber(string ChassisNumber)
+        {
+            int VehichleID = -1;
+            string PlateNumber = "";
+            int SubModelID = -1;
+            int MakeID = -1;
+            int ModelID = -1;
+            int BodyID = -1;
+            int OwnerID = -1;
+            int Year = 1900;
+            string Color = "";
+            int CreatedBy = -1;
+            if (clsVehichleData.GetVehichleByChassisNumber(ChassisNumber, ref VehichleID, ref PlateNumber, ref MakeID, ref ModelID, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
+            {
+                return new clsVehichle(VehichleID, ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static clsVehichle FindByPlateNumber(string PlateNumber)
+        {
+            int VehichleID = -1;
+            string ChassisNumber = "";
+            int SubModelID = -1;
+            int MakeID = -1;
+            int ModelID = -1;
+            int BodyID = -1;
+            int OwnerID = -1;
+            int Year = 1900;
+            string Color = "";
+            int CreatedBy = -1;
+            if (clsVehichleData.GetVehichleByPlateNumber(PlateNumber, ref VehichleID,ref ChassisNumber, ref MakeID, ref ModelID, ref SubModelID, ref BodyID, ref OwnerID, ref Year, ref Color, ref CreatedBy))
+            {
+                return new clsVehichle(VehichleID, ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static bool IsExistByVehichleID(int VehichleID)
         {
