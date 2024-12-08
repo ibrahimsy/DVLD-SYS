@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BankDataAccess;
+using DVLD_Bussiness;
 
 namespace BankBussiness
 {
 
 
 
-    public class clsVehichleLicense
+    public class clsVehichleLicense:clsApplication
     {
 
         enum enMode { enAddNew = 1, enUpdate = 2 }

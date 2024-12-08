@@ -55,9 +55,6 @@ namespace BankBussiness
             _Mode = enMode.enAddNew;
         }
 
-
-
-
         private clsVehichle(int VehichleID, string ChassisNumber, string PlateNumber, int MakeID, int ModelID, int SubModelID, int BodyID, int OwnerID, int Year, string Color, int CreatedBy)
         {
             this.VehichleID = VehichleID;
@@ -80,15 +77,12 @@ namespace BankBussiness
             _Mode = enMode.enUpdate;
         }
 
-
-
         private bool _AddVehichle()
         {
             VehichleID = clsVehichleData.AddVehichle(ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
 
             return (VehichleID != -1);
         }
-
 
         private bool _UpdateVehichle()
         {
@@ -167,19 +161,15 @@ namespace BankBussiness
             return clsVehichleData.IsVehichleExistByVehichleID(VehichleID);
         }
 
-
         public static bool DeleteVehichle(int VehichleID)
         {
             return clsVehichleData.DeleteVehichleByID(VehichleID);
         }
 
-
         public static DataTable VehichlesList()
         {
             return clsVehichleData.GetAllVehichles();
         }
-
-
 
         public bool Save()
         {
@@ -202,7 +192,6 @@ namespace BankBussiness
             }
             return false;
         }
-
 
     }
 }

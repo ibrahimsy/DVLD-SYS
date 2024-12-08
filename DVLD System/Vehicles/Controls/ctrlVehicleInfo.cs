@@ -31,6 +31,7 @@ namespace DVLD_System.Vehicles.Controls
                 return _VehicleInfo;
             }
         }
+       
         public ctrlVehicleInfo()
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace DVLD_System.Vehicles.Controls
             {
                 MessageBox.Show($"No Vehicle Found With ID = [{VehicleID}]");
                 _VehicleID = -1;
+                ResetVehicleInfo();
                 return;
             }
 
@@ -75,6 +77,7 @@ namespace DVLD_System.Vehicles.Controls
             {
                 MessageBox.Show($"No Vehicle Found With ID = [{_VehicleInfo.VehichleID}]");
                 _VehicleID = -1;
+                ResetVehicleInfo();
                 return;
             }
             _VehicleID = _VehicleInfo.VehichleID;
@@ -99,6 +102,7 @@ namespace DVLD_System.Vehicles.Controls
             {
                 MessageBox.Show($"No Vehicle Found With ID = [{_VehicleInfo.VehichleID}]");
                 _VehicleID = -1;
+                ResetVehicleInfo();
                 return;
             }
             _VehicleID = _VehicleInfo.VehichleID;
@@ -114,5 +118,23 @@ namespace DVLD_System.Vehicles.Controls
             lblCreatedBy.Text = _VehicleInfo.UserInfo.UserName;
 
         }
+   
+        public void ResetVehicleInfo()
+        {
+         
+            lblVehichleID.Text    = "[? ? ? ? ?]";
+            lblChassisNumber.Text = "[? ? ? ? ?]";
+            lblPlateNumber.Text   = "[? ? ? ? ?]";
+            lblMake.Text          = "[? ? ? ? ?]";
+            lblModel.Text         = "[? ? ? ? ?]";
+            lblSubModel.Text      = "[? ? ? ? ?]";
+            lblOwnerFullName.Text = "[? ? ? ? ?]";
+            lblType.Text          = "[? ? ? ? ?]";
+            lblYear.Text          = "[? ? ? ? ?]";
+            lblCreatedBy.Text     = "[? ? ? ? ?]";
+            lblColor.Text         = "[? ? ? ? ?]";
+        }
+    
+    
     }
 }

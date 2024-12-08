@@ -200,6 +200,7 @@
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
             this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.addVehicleToolStripMenuItem.Text = "Add Vehicle";
+            this.addVehicleToolStripMenuItem.Click += new System.EventHandler(this.addVehicleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -223,6 +224,7 @@
             this.deleteVehicleToolStripMenuItem.Name = "deleteVehicleToolStripMenuItem";
             this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.deleteVehicleToolStripMenuItem.Text = "Delete Vehicle";
+            this.deleteVehicleToolStripMenuItem.Click += new System.EventHandler(this.deleteVehicleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 

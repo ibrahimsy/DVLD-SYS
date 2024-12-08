@@ -168,5 +168,31 @@ namespace DVLD_System.Vehichles
             frmShowVehicleInfo frm = new frmShowVehicleInfo((int)dgvVehichleList.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
         }
+
+        private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditVehicle frm = new frmAddEditVehicle();
+            frm.ShowDialog();
+
+            frmVehichlesList_Load(null, null);
+        }
+
+        private void deleteVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure You Want To Delete This Vehicle", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;            
+            
+            if (clsVehichle.DeleteVehichle((int)dgvVehichleList.CurrentRow.Cells[0].Value))
+                
+                MessageBox.Show("Vehicle Deleted Successfuly",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Vehicle Not Deleted",
+                    "Faild",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+        }
     }
 }

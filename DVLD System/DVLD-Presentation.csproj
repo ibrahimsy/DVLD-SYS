@@ -321,11 +321,23 @@
     <Compile Include="Tests\WrittenTest\frmWrittenTest.Designer.cs">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehicleLicenses\frmIssueVehicleLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleLicenses\frmIssueVehicleLicense.Designer.cs">
+      <DependentUpon>frmIssueVehicleLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles\Controls\ctrlVehicleInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Vehicles\Controls\ctrlVehicleInfo.Designer.cs">
       <DependentUpon>ctrlVehicleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleInfoWithFilter.Designer.cs">
+      <DependentUpon>ctrlVehicleInfoWithFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="Vehicles\frmAddEditVehicle.cs">
       <SubType>Form</SubType>
@@ -487,8 +499,14 @@
     <EmbeddedResource Include="Tests\WrittenTest\frmWrittenTest.resx">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VehicleLicenses\frmIssueVehicleLicense.resx">
+      <DependentUpon>frmIssueVehicleLicense.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfo.resx">
       <DependentUpon>ctrlVehicleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfoWithFilter.resx">
+      <DependentUpon>ctrlVehicleInfoWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\frmAddEditVehicle.resx">
       <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
@@ -809,5 +827,6 @@
   <ItemGroup>
     <None Include="Resources\add vehichle.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
