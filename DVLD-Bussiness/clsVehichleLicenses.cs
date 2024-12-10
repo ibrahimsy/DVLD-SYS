@@ -25,6 +25,7 @@ namespace BankBussiness
         public int VehichleID { set; get; }
         public DateTime IssuedDate { set; get; }
         public DateTime ExpiryDate { set; get; }
+        public float LicenseFee {  set; get; }
         public byte Status { set; get; }
         public int CreatedBy { set; get; }
 
@@ -35,6 +36,7 @@ namespace BankBussiness
             this.VehichleID = -1;
             this.IssuedDate = DateTime.Now;
             this.ExpiryDate = DateTime.MaxValue;
+            this.LicenseFee = 0;
             this.Status = 0;
             this.CreatedBy = -1;
             _Mode = enMode.enAddNew;
@@ -43,12 +45,21 @@ namespace BankBussiness
 
 
 
-        private clsVehichleLicense(int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, byte Status, int CreatedBy)
+        private clsVehichleLicense(int ApplicationID ,int ApplicantPersonID,DateTime ApplicationDate,int ApplicationTypeID,
+           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,float LicenseFee, byte Status, int CreatedBy)
         {
+            this.ApplicationID = ApplicationID;
+            this.ApplicantPersonID = ApplicantPersonID;
+            this.ApplicationDate = ApplicationDate;
+            this.ApplicationTypeID = ApplicationTypeID;
+            this.ApplicationStatus = ApplicationStatus;
+            this.LastStatusDate = LastStatusDate;
+            this.PaidFees = PaidFees;
             this.VehichleLicenseID = VehichleLicenseID;
             this.VehichleID = VehichleID;
             this.IssuedDate = IssuedDate;
             this.ExpiryDate = ExpiryDate;
+            this.LicenseFee = LicenseFee;
             this.Status = Status;
             this.CreatedBy = CreatedBy;
             _Mode = enMode.enUpdate;
@@ -58,7 +69,7 @@ namespace BankBussiness
 
         private bool _AddVehichleLicense()
         {
-            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense( VehichleID, IssuedDate, ExpiryDate, Status, CreatedBy);
+            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense( VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
 
             return (VehichleLicenseID != -1);
         }
@@ -66,7 +77,7 @@ namespace BankBussiness
 
         private bool _UpdateVehichleLicense()
         {
-            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, Status, CreatedBy);
+            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
         }
 
 
@@ -77,10 +88,11 @@ namespace BankBussiness
             DateTime IssuedDate = DateTime.Now;
             DateTime ExpiryDate = DateTime.Now;
             byte Status = 0;
+            Decimal LicenseFee = 0;
             int CreatedBy = -1;
-            if (clsVehichleLicenseData.GetVehichleLicenseByID(VehichleLicenseID, ref VehichleID, ref IssuedDate, ref ExpiryDate, ref Status, ref CreatedBy))
+            if (clsVehichleLicenseData.GetVehichleLicenseByID(VehichleLicenseID, ref VehichleID, ref IssuedDate, ref ExpiryDate,ref LicenseFee, ref Status, ref CreatedBy))
             {
-                return new clsVehichleLicense(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, Status, CreatedBy);
+                return new clsVehichleLicense(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
             }
             else
             {

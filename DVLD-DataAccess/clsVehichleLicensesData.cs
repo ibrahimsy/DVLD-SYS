@@ -14,19 +14,21 @@ namespace BankDataAccess
 
     public class clsVehichleLicenseData
     {
-        public static int AddVehichleLicense(int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, byte Status, int CreatedBy)
+        public static int AddVehichleLicense(int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
         {
             int _VehichleLicenseID = -1;
             string query = @"INSERT INTO VehichleLicenses(
                             VehichleID,
                             IssuedDate,
                             ExpiryDate,
+                            LicenseFee,
                             Status,
                             CreatedBy
                             ) VALUES (
                             @VehichleID,
                             @IssuedDate,
                             @ExpiryDate,
+                            @LicenseFee,
                             @Status,
                             @CreatedBy
                             );
@@ -37,6 +39,7 @@ namespace BankDataAccess
             command.Parameters.AddWithValue("@VehichleID", VehichleID);
             command.Parameters.AddWithValue("@IssuedDate", IssuedDate);
             command.Parameters.AddWithValue("@ExpiryDate", ExpiryDate);
+            command.Parameters.AddWithValue("@LicenseFee", LicenseFee);
             command.Parameters.AddWithValue("@Status", Status);
             command.Parameters.AddWithValue("@CreatedBy", CreatedBy);
 
@@ -62,7 +65,7 @@ namespace BankDataAccess
 
 
 
-        public static bool UpdateVehichleLicenseByID(int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, byte Status, int CreatedBy)
+        public static bool UpdateVehichleLicenseByID(int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
         {
 
 
@@ -73,6 +76,7 @@ namespace BankDataAccess
                                 VehichleID = @VehichleID,
                                 IssuedDate = @IssuedDate,
                                 ExpiryDate = @ExpiryDate,
+                                LicenseFee = @LicenseFee,
                                 Status = @Status,
                                 CreatedBy = @CreatedBy
                                 WHERE VehichleLicenseID = @VehichleLicenseID";
@@ -84,6 +88,7 @@ namespace BankDataAccess
             command.Parameters.AddWithValue("@VehichleID", VehichleID);
             command.Parameters.AddWithValue("@IssuedDate", IssuedDate);
             command.Parameters.AddWithValue("@ExpiryDate", ExpiryDate);
+            command.Parameters.AddWithValue("@LicenseFee", LicenseFee);
             command.Parameters.AddWithValue("@Status", Status);
             command.Parameters.AddWithValue("@CreatedBy", CreatedBy);
 
@@ -139,7 +144,7 @@ namespace BankDataAccess
 
 
 
-        public static bool GetVehichleLicenseByID(int VehichleLicenseID, ref int VehichleID, ref DateTime IssuedDate, ref DateTime ExpiryDate, ref byte Status, ref int CreatedBy)
+        public static bool GetVehichleLicenseByID(int VehichleLicenseID, ref int VehichleID, ref DateTime IssuedDate, ref DateTime ExpiryDate,ref Decimal LicenseFee, ref byte Status, ref int CreatedBy)
         {
 
             bool IsFound = false;
@@ -165,6 +170,7 @@ namespace BankDataAccess
                     VehichleID = (int)reader["VehichleID"];
                     IssuedDate = (DateTime)reader["IssuedDate"];
                     ExpiryDate = (DateTime)reader["ExpiryDate"];
+                    LicenseFee = Convert.ToDecimal( reader["LicenseFee"]);
                     Status = (byte)reader["Status"];
                     CreatedBy = (int)reader["CreatedBy"];
 
