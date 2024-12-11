@@ -33,5 +33,10 @@ namespace DVLD_System.VehicleLicenses
             _SelectedVehicleID = obj;
             MessageBox.Show($"Selected Vehicle ID : [{_SelectedVehicleID}]");
         }
+
+        private void btnIssueLicense_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

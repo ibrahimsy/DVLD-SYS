@@ -38,6 +38,8 @@ namespace DVLD_Bussiness
 
             _Mode = Mode.enAddNew;
         }
+        
+        
         private clsLocalDrivingLicenseApplication(int LDLApplicationID, int ApplicationID,
                                 int ApplicantPersonID, DateTime ApplicationDate, int ApplicationTypeID, byte ApplicationStatus,
                                 DateTime LastStatusDate, float PaidFees, int CreatedByUserID, int LicenseClassID)

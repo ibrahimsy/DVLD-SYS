@@ -31,13 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.ctrlVehicleInfoWithFilter1 = new DVLD_System.Vehicles.Controls.ctrlVehicleInfoWithFilter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnIssueLicense = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblVehicleID = new System.Windows.Forms.Label();
+            this.lblVehicleLicenseID = new System.Windows.Forms.Label();
             this.lblLicenseFees = new System.Windows.Forms.Label();
             this.lblApplicationFees = new System.Windows.Forms.Label();
             this.lblIssueDate = new System.Windows.Forms.Label();
@@ -46,13 +47,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblVehicleLicenseID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,22 +94,23 @@
             this.ctrlVehicleInfoWithFilter1.TabIndex = 13;
             this.ctrlVehicleInfoWithFilter1.OnVehicleSelected += new System.Action<int>(this.ctrlVehicleInfoWithFilter1_OnVehicleSelected);
             // 
-            // button1
+            // btnIssueLicense
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::DVLD_System.Properties.Resources.close__1_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(725, 764);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 37);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Issue License";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIssueLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIssueLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIssueLicense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIssueLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIssueLicense.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssueLicense.Image = global::DVLD_System.Properties.Resources.close__1_;
+            this.btnIssueLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIssueLicense.Location = new System.Drawing.Point(725, 764);
+            this.btnIssueLicense.Name = "btnIssueLicense";
+            this.btnIssueLicense.Size = new System.Drawing.Size(143, 37);
+            this.btnIssueLicense.TabIndex = 18;
+            this.btnIssueLicense.Text = "Issue License";
+            this.btnIssueLicense.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIssueLicense.UseVisualStyleBackColor = true;
+            this.btnIssueLicense.Click += new System.EventHandler(this.btnIssueLicense_Click);
             // 
             // linkLabel1
             // 
@@ -192,6 +193,16 @@
             this.lblVehicleID.TabIndex = 19;
             this.lblVehicleID.Text = "[ ? ? ? ?]";
             // 
+            // lblVehicleLicenseID
+            // 
+            this.lblVehicleLicenseID.AutoSize = true;
+            this.lblVehicleLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehicleLicenseID.Location = new System.Drawing.Point(567, 42);
+            this.lblVehicleLicenseID.Name = "lblVehicleLicenseID";
+            this.lblVehicleLicenseID.Size = new System.Drawing.Size(79, 20);
+            this.lblVehicleLicenseID.TabIndex = 18;
+            this.lblVehicleLicenseID.Text = "[ ? ? ? ?]";
+            // 
             // lblLicenseFees
             // 
             this.lblLicenseFees.AutoSize = true;
@@ -269,6 +280,15 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Vehicle ID :";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(394, 36);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(162, 29);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Vehicle License ID :";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -314,25 +334,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Application ID :";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(394, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 29);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Vehicle License ID :";
-            // 
-            // lblVehicleLicenseID
-            // 
-            this.lblVehicleLicenseID.AutoSize = true;
-            this.lblVehicleLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleLicenseID.Location = new System.Drawing.Point(567, 42);
-            this.lblVehicleLicenseID.Name = "lblVehicleLicenseID";
-            this.lblVehicleLicenseID.Size = new System.Drawing.Size(79, 20);
-            this.lblVehicleLicenseID.TabIndex = 18;
-            this.lblVehicleLicenseID.Text = "[ ? ? ? ?]";
-            // 
             // frmIssueVehicleLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,7 +342,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIssueLicense);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlVehicleInfoWithFilter1);
             this.Controls.Add(this.label1);
@@ -361,7 +362,7 @@
         private System.Windows.Forms.Label label1;
         private Vehicles.Controls.ctrlVehicleInfoWithFilter ctrlVehicleInfoWithFilter1;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIssueLicense;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.GroupBox groupBox1;

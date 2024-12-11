@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DVLD_DataAccess;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BankDataAccess
 {
@@ -14,10 +15,11 @@ namespace BankDataAccess
 
     public class clsVehichleLicenseData
     {
-        public static int AddVehichleLicense(int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
+        public static int AddVehichleLicense(int ApplicationID,int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
         {
             int _VehichleLicenseID = -1;
             string query = @"INSERT INTO VehichleLicenses(
+                            ApplicationID,
                             VehichleID,
                             IssuedDate,
                             ExpiryDate,
@@ -25,6 +27,7 @@ namespace BankDataAccess
                             Status,
                             CreatedBy
                             ) VALUES (
+                            @ApplicationID,
                             @VehichleID,
                             @IssuedDate,
                             @ExpiryDate,
@@ -37,6 +40,7 @@ namespace BankDataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@VehichleID", VehichleID);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
             command.Parameters.AddWithValue("@IssuedDate", IssuedDate);
             command.Parameters.AddWithValue("@ExpiryDate", ExpiryDate);
             command.Parameters.AddWithValue("@LicenseFee", LicenseFee);
@@ -63,9 +67,7 @@ namespace BankDataAccess
             return _VehichleLicenseID;
         }
 
-
-
-        public static bool UpdateVehichleLicenseByID(int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
+        public static bool UpdateVehichleLicenseByID(int VehichleLicenseID,int ApplicationID,int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,Decimal LicenseFee, byte Status, int CreatedBy)
         {
 
 
@@ -73,6 +75,7 @@ namespace BankDataAccess
 
             string query = @"UPDATE VehichleLicenses SET 
                                 VehichleLicenseID = @VehichleLicenseID,
+                                ApplicationID = @ApplicationID,
                                 VehichleID = @VehichleID,
                                 IssuedDate = @IssuedDate,
                                 ExpiryDate = @ExpiryDate,
@@ -85,6 +88,7 @@ namespace BankDataAccess
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@VehichleLicenseID", VehichleLicenseID);
+            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
             command.Parameters.AddWithValue("@VehichleID", VehichleID);
             command.Parameters.AddWithValue("@IssuedDate", IssuedDate);
             command.Parameters.AddWithValue("@ExpiryDate", ExpiryDate);
@@ -109,8 +113,6 @@ namespace BankDataAccess
 
             return AffectedRows > 0;
         }
-
-
 
         public static bool DeleteVehichleLicenseByID(int VehichleLicenseID)
         {
@@ -142,9 +144,7 @@ namespace BankDataAccess
             return AffectedRows > 0;
         }
 
-
-
-        public static bool GetVehichleLicenseByID(int VehichleLicenseID, ref int VehichleID, ref DateTime IssuedDate, ref DateTime ExpiryDate,ref Decimal LicenseFee, ref byte Status, ref int CreatedBy)
+        public static bool GetVehichleLicenseByID(int VehichleLicenseID,ref int ApplicationID, ref int VehichleID, ref DateTime IssuedDate, ref DateTime ExpiryDate,ref Decimal LicenseFee, ref byte Status, ref int CreatedBy)
         {
 
             bool IsFound = false;
@@ -168,6 +168,7 @@ namespace BankDataAccess
                     IsFound = true;
 
                     VehichleID = (int)reader["VehichleID"];
+                    ApplicationID = (int)reader["ApplicationID"];
                     IssuedDate = (DateTime)reader["IssuedDate"];
                     ExpiryDate = (DateTime)reader["ExpiryDate"];
                     LicenseFee = Convert.ToDecimal( reader["LicenseFee"]);
@@ -189,10 +190,6 @@ namespace BankDataAccess
 
             return IsFound;
         }
-
-
-
-
 
         public static bool IsVehichleLicenseExistByVehichleLicenseID(int VehichleLicenseID)
         {
@@ -225,10 +222,6 @@ namespace BankDataAccess
             }
             return IsFound;
         }
-
-
-
-
 
         public static DataTable GetAllVehichleLicenses()
         {

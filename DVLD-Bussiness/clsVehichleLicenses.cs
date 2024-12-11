@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BankDataAccess;
 using DVLD_Bussiness;
+using System.Runtime.CompilerServices;
 
 namespace BankBussiness
 {
@@ -19,13 +20,13 @@ namespace BankBussiness
         enum enMode { enAddNew = 1, enUpdate = 2 }
         enMode _Mode = enMode.enAddNew;
 
-
+        public enum enStatus { Active = 1, InActive = 2 }
 
         public int VehichleLicenseID { set; get; }
         public int VehichleID { set; get; }
         public DateTime IssuedDate { set; get; }
         public DateTime ExpiryDate { set; get; }
-        public float LicenseFee {  set; get; }
+        public Decimal LicenseFee {  set; get; }
         public byte Status { set; get; }
         public int CreatedBy { set; get; }
 
@@ -46,7 +47,7 @@ namespace BankBussiness
 
 
         private clsVehichleLicense(int ApplicationID ,int ApplicantPersonID,DateTime ApplicationDate,int ApplicationTypeID,
-           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate,float LicenseFee, byte Status, int CreatedBy)
+           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, Decimal LicenseFee, byte Status, int CreatedBy)
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
@@ -69,7 +70,7 @@ namespace BankBussiness
 
         private bool _AddVehichleLicense()
         {
-            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense( VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
+            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense(ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
 
             return (VehichleLicenseID != -1);
         }
@@ -77,7 +78,7 @@ namespace BankBussiness
 
         private bool _UpdateVehichleLicense()
         {
-            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
+            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
         }
 
 
@@ -85,14 +86,25 @@ namespace BankBussiness
         {
 
             int VehichleID = -1;
+            int ApplicationID = -1;
             DateTime IssuedDate = DateTime.Now;
             DateTime ExpiryDate = DateTime.Now;
             byte Status = 0;
             Decimal LicenseFee = 0;
             int CreatedBy = -1;
-            if (clsVehichleLicenseData.GetVehichleLicenseByID(VehichleLicenseID, ref VehichleID, ref IssuedDate, ref ExpiryDate,ref LicenseFee, ref Status, ref CreatedBy))
+            if (clsVehichleLicenseData.GetVehichleLicenseByID(VehichleLicenseID,ref ApplicationID, ref VehichleID, ref IssuedDate, ref ExpiryDate,ref LicenseFee, ref Status, ref CreatedBy))
             {
-                return new clsVehichleLicense(VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
+                clsApplication Application = clsApplication.Find(ApplicationID);
+
+                return new clsVehichleLicense(
+                    Application.ApplicationID,
+                    Application.ApplicantPersonID,
+                    Application.ApplicationDate,
+                    Application.ApplicationTypeID,
+                    Application.ApplicationStatus,
+                    Application.LastStatusDate,
+                    Application.PaidFees,
+                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, CreatedBy);
             }
             else
             {
@@ -118,8 +130,7 @@ namespace BankBussiness
             return clsVehichleLicenseData.GetAllVehichleLicenses();
         }
 
-
-
+      
         public bool Save()
         {
             switch (_Mode)

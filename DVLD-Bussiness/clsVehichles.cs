@@ -1,5 +1,6 @@
 using BankDataAccess;
 using DVLD_Bussiness;
+using System;
 using System.Data;
 
 namespace BankBussiness
@@ -169,6 +170,20 @@ namespace BankBussiness
         public static DataTable VehichlesList()
         {
             return clsVehichleData.GetAllVehichles();
+        }
+
+        public int IssueLicense(int CreatedByID)
+        {
+            clsVehichleLicense VehichleLicense = new clsVehichleLicense();
+
+            VehichleLicense.VehichleID = this.VehichleID;
+            VehichleLicense.IssuedDate = DateTime.Now;
+            VehichleLicense.ExpiryDate = DateTime.Now.AddYears(1);
+            VehichleLicense.LicenseFee = 50;
+            VehichleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
+            VehichleLicense.CreatedBy = CreatedByID;
+
+            
         }
 
         public bool Save()
