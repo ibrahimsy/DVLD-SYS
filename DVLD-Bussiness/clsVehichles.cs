@@ -2,6 +2,7 @@ using BankDataAccess;
 using DVLD_Bussiness;
 using System;
 using System.Data;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace BankBussiness
 {
@@ -174,16 +175,37 @@ namespace BankBussiness
 
         public int IssueLicense(int CreatedByID)
         {
+            clsApplication Application = new clsApplication();
+
+            Application.ApplicantPersonID = this.OwnerID;
+            Application.ApplicationDate = DateTime.Now;
+            Application.ApplicationTypeID = (int)clsApplication.enApplicationTypes.IssueVehicleLicense;
+            Application.ApplicationStatus = (int)clsApplication.enApplicationStatus.enCompleted;
+            Application.LastStatusDate = DateTime.Now;
+            Application.PaidFees = clsApplicationTypes.Find((int)clsApplication.enApplicationTypes.IssueVehicleLicense).Fees;
+            Application.CreatedByUserID = CreatedByID;
+
+            if (!Application.Save())
+            {
+                return -1;
+            }
+
+            int VehicleLicenseID = -1;
+
             clsVehichleLicense VehichleLicense = new clsVehichleLicense();
 
+            VehichleLicense.ApplicationID = Application.ApplicationID;
             VehichleLicense.VehichleID = this.VehichleID;
             VehichleLicense.IssuedDate = DateTime.Now;
             VehichleLicense.ExpiryDate = DateTime.Now.AddYears(1);
-            VehichleLicense.LicenseFee = 50;
+            VehichleLicense.LicenseFee = clsSetting.FindSettingByID( (int)clsSetting.enSettings.VehicleFee).SettingValue;
             VehichleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
             VehichleLicense.CreatedBy = CreatedByID;
 
+            if (VehichleLicense.Save())
+                VehicleLicenseID = VehichleLicense.VehichleLicenseID;
             
+            return VehicleLicenseID;
         }
 
         public bool Save()

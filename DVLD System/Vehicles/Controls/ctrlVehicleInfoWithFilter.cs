@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankBussiness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace DVLD_System.Vehicles.Controls
      
         bool _FilterEnabled = true;
 
-        private bool FilterEnabled
+        public bool FilterEnabled
         {
             set
             {
@@ -36,14 +37,23 @@ namespace DVLD_System.Vehicles.Controls
                 return _FilterEnabled;
             }
         }
-        
-        private int VehicleID
+
+        public int VehicleID
         {
             get
             {
                 return ctrlVehicleInfo1.VehicleID;
             }
         }
+
+        public clsVehichle VehicleInfo
+        {
+            get
+            {
+                return ctrlVehicleInfo1.VehichleInfo;
+            }
+        }
+
 
         public ctrlVehicleInfoWithFilter()
         {

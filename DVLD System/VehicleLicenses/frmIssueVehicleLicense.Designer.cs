@@ -32,8 +32,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.ctrlVehicleInfoWithFilter1 = new DVLD_System.Vehicles.Controls.ctrlVehicleInfoWithFilter();
             this.btnIssueLicense = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llShowVehicleLicenseHistory = new System.Windows.Forms.LinkLabel();
+            this.llbShowVehicleLicense = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
@@ -99,6 +99,7 @@
             this.btnIssueLicense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIssueLicense.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIssueLicense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIssueLicense.Enabled = false;
             this.btnIssueLicense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIssueLicense.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssueLicense.Image = global::DVLD_System.Properties.Resources.close__1_;
@@ -112,27 +113,29 @@
             this.btnIssueLicense.UseVisualStyleBackColor = true;
             this.btnIssueLicense.Click += new System.EventHandler(this.btnIssueLicense_Click);
             // 
-            // linkLabel1
+            // llShowVehicleLicenseHistory
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(28, 764);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(252, 29);
-            this.linkLabel1.TabIndex = 19;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Show Vehicle License History";
+            this.llShowVehicleLicenseHistory.AutoSize = true;
+            this.llShowVehicleLicenseHistory.Enabled = false;
+            this.llShowVehicleLicenseHistory.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llShowVehicleLicenseHistory.Location = new System.Drawing.Point(28, 764);
+            this.llShowVehicleLicenseHistory.Name = "llShowVehicleLicenseHistory";
+            this.llShowVehicleLicenseHistory.Size = new System.Drawing.Size(252, 29);
+            this.llShowVehicleLicenseHistory.TabIndex = 19;
+            this.llShowVehicleLicenseHistory.TabStop = true;
+            this.llShowVehicleLicenseHistory.Text = "Show Vehicle License History";
             // 
-            // linkLabel2
+            // llbShowVehicleLicense
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(295, 764);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(188, 29);
-            this.linkLabel2.TabIndex = 20;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Show Vehicle License";
+            this.llbShowVehicleLicense.AutoSize = true;
+            this.llbShowVehicleLicense.Enabled = false;
+            this.llbShowVehicleLicense.Font = new System.Drawing.Font("Titillium Web", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbShowVehicleLicense.Location = new System.Drawing.Point(295, 764);
+            this.llbShowVehicleLicense.Name = "llbShowVehicleLicense";
+            this.llbShowVehicleLicense.Size = new System.Drawing.Size(188, 29);
+            this.llbShowVehicleLicense.TabIndex = 20;
+            this.llbShowVehicleLicense.TabStop = true;
+            this.llbShowVehicleLicense.Text = "Show Vehicle License";
             // 
             // groupBox1
             // 
@@ -340,8 +343,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 813);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.llbShowVehicleLicense);
+            this.Controls.Add(this.llShowVehicleLicenseHistory);
             this.Controls.Add(this.btnIssueLicense);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlVehicleInfoWithFilter1);
@@ -350,6 +353,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Issue Vehicle License";
             this.Activated += new System.EventHandler(this.frmIssueVehicleLicense_Activated);
+            this.Load += new System.EventHandler(this.frmIssueVehicleLicense_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -363,8 +367,8 @@
         private Vehicles.Controls.ctrlVehicleInfoWithFilter ctrlVehicleInfoWithFilter1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnIssueLicense;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel llShowVehicleLicenseHistory;
+        private System.Windows.Forms.LinkLabel llbShowVehicleLicense;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label lblExpirationDate;

@@ -24,7 +24,7 @@ namespace DVLD_System.Vehicles.Controls
             }
         }
 
-        clsVehichle clsVehichleInfo
+        public clsVehichle VehichleInfo
         {
             get
             {
