@@ -17,7 +17,7 @@ namespace BankBussiness
         enum enMode { enAddNew = 1, enUpdate = 2 }
         enMode _Mode = enMode.enAddNew;
 
-        public enum enSettings { PassingScore  = 1, QuestionsPerExam  = 2 ,VehicleFee = 3}
+        public enum enSettings { PassingScore  = 1, QuestionsPerExam  = 2 ,VehicleFee = 4}
 
         public int SettingID { set; get; }
         public string SettingName { set; get; }

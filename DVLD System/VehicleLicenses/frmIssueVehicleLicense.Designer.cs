@@ -43,7 +43,7 @@
             this.lblApplicationFees = new System.Windows.Forms.Label();
             this.lblIssueDate = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
-            this.lblِApplicationID = new System.Windows.Forms.Label();
+            this.lblApplicationID = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@
             // ctrlVehicleInfoWithFilter1
             // 
             this.ctrlVehicleInfoWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ctrlVehicleInfoWithFilter1.FilterEnabled = true;
             this.ctrlVehicleInfoWithFilter1.Location = new System.Drawing.Point(12, 73);
             this.ctrlVehicleInfoWithFilter1.Name = "ctrlVehicleInfoWithFilter1";
             this.ctrlVehicleInfoWithFilter1.Size = new System.Drawing.Size(855, 415);
@@ -148,7 +149,7 @@
             this.groupBox1.Controls.Add(this.lblApplicationFees);
             this.groupBox1.Controls.Add(this.lblIssueDate);
             this.groupBox1.Controls.Add(this.lblApplicationDate);
-            this.groupBox1.Controls.Add(this.lblِApplicationID);
+            this.groupBox1.Controls.Add(this.lblApplicationID);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -246,15 +247,15 @@
             this.lblApplicationDate.TabIndex = 13;
             this.lblApplicationDate.Text = "[ ? ? ? ?]";
             // 
-            // lblِApplicationID
+            // lblApplicationID
             // 
-            this.lblِApplicationID.AutoSize = true;
-            this.lblِApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblِApplicationID.Location = new System.Drawing.Point(215, 42);
-            this.lblِApplicationID.Name = "lblِApplicationID";
-            this.lblِApplicationID.Size = new System.Drawing.Size(79, 20);
-            this.lblِApplicationID.TabIndex = 12;
-            this.lblِApplicationID.Text = "[ ? ? ? ?]";
+            this.lblApplicationID.AutoSize = true;
+            this.lblApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationID.Location = new System.Drawing.Point(215, 42);
+            this.lblApplicationID.Name = "lblApplicationID";
+            this.lblApplicationID.Size = new System.Drawing.Size(79, 20);
+            this.lblApplicationID.TabIndex = 12;
+            this.lblApplicationID.Text = "[ ? ? ? ?]";
             // 
             // label10
             // 
@@ -378,7 +379,7 @@
         private System.Windows.Forms.Label lblApplicationFees;
         private System.Windows.Forms.Label lblIssueDate;
         private System.Windows.Forms.Label lblApplicationDate;
-        private System.Windows.Forms.Label lblِApplicationID;
+        private System.Windows.Forms.Label lblApplicationID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

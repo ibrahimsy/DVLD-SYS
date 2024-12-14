@@ -253,6 +253,39 @@ namespace BankDataAccess
             return dt;
         }
 
+        public static int GetVehicleLicenseIDByVehicleID(int VehicleID)
+        {
+            int VehicleLicenseID = -1;
 
+            string query = @"SELECT VehichleLicenseID 
+                             FROM VehichleLicenses 
+                             WHERE VehichleID = @VehicleID AND Status = 1";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@VehicleID", VehicleID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(),out int ID))
+                {
+                    VehicleLicenseID = ID;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return VehicleLicenseID;
+        }
+    
     }
 }

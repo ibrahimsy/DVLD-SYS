@@ -91,7 +91,6 @@ namespace BankBussiness
             return clsVehichleData.UpdateVehichleByID(VehichleID, ChassisNumber, PlateNumber, MakeID, ModelID, SubModelID, BodyID, OwnerID, Year, Color, CreatedBy);
         }
 
-
         public static clsVehichle Find(int VehichleID)
         {
             string ChassisNumber = "";
@@ -173,7 +172,7 @@ namespace BankBussiness
             return clsVehichleData.GetAllVehichles();
         }
 
-        public int IssueLicense(int CreatedByID)
+        public int IssueLicense(int CreatedByID,ref int ApplicationID)
         {
             clsApplication Application = new clsApplication();
 
@@ -190,6 +189,7 @@ namespace BankBussiness
                 return -1;
             }
 
+            ApplicationID = Application.ApplicationID;
             int VehicleLicenseID = -1;
 
             clsVehichleLicense VehichleLicense = new clsVehichleLicense();
@@ -206,6 +206,11 @@ namespace BankBussiness
                 VehicleLicenseID = VehichleLicense.VehichleLicenseID;
             
             return VehicleLicenseID;
+        }
+
+        public bool HasActiveLicense()
+        {
+            return (clsVehichleLicense.GetVehicleLicenseID(this.VehichleID) != -1);
         }
 
         public bool Save()

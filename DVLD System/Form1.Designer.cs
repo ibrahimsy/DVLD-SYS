@@ -352,6 +352,7 @@
             this.renewVehichleLicenseToolStripMenuItem.Name = "renewVehichleLicenseToolStripMenuItem";
             this.renewVehichleLicenseToolStripMenuItem.Size = new System.Drawing.Size(246, 28);
             this.renewVehichleLicenseToolStripMenuItem.Text = "Renew Vehichle License";
+            this.renewVehichleLicenseToolStripMenuItem.Click += new System.EventHandler(this.renewVehichleLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem10
             // 

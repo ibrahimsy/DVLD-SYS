@@ -3,12 +3,47 @@
   "WorkspaceRootPath": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\vehiclelicenses\\frmissuevehiclelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\vehiclelicenses\\frmissuevehiclelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehiclelicenses\\frmissuevehiclelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\vehiclelicenses\\frmissuevehiclelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehiclelicenses\\frmissuevehiclelicense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\vehicles\\frmvehicleslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehicles\\frmvehicleslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld-bussiness\\clsvehichles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\vehicles\\frmvehicleslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehicles\\frmvehicleslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2AF3C38-BE4A-4B93-9908-21E275F1CD29}|..\\DVLD-DataAccess\\DVLD-DataAccess.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld-dataaccess\\clsvehichlelicensesdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld-bussiness\\clsvehichlelicenses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld-bussiness\\clsapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CE092BD-8E53-459C-924B-6A485D7D585E}|..\\DVLD-Bussiness\\DVLD-Bussiness.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld-bussiness\\clssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\vehicles\\controls\\ctrlvehicleinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehicles\\controls\\ctrlvehicleinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|d:\\development\\c#\\my-github\\dvld sys\\dvld system\\vehicles\\controls\\ctrlvehicleinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{ED2983BD-5F96-4A7B-BEB5-38549E7D9743}|DVLD-Presentation.csproj|solutionrelative:vehicles\\controls\\ctrlvehicleinfowithfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +53,135 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "clsSettings.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsSettings.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsSettings.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsSettings.cs",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsSettings.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T18:29:02.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ctrlVehicleInfoWithFilter.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "RelativeDocumentMoniker": "Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "RelativeToolTip": "Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowFwAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:53:13.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ctrlVehicleInfoWithFilter.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "RelativeDocumentMoniker": "Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs [Design]",
+              "RelativeToolTip": "Vehicles\\Controls\\ctrlVehicleInfoWithFilter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:53:10.225Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmVehiclesList.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\frmVehiclesList.cs",
+              "RelativeDocumentMoniker": "Vehicles\\frmVehiclesList.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\frmVehiclesList.cs",
+              "RelativeToolTip": "Vehicles\\frmVehiclesList.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAYwG4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:47:10.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmVehiclesList.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\frmVehiclesList.cs",
+              "RelativeDocumentMoniker": "Vehicles\\frmVehiclesList.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Vehicles\\frmVehiclesList.cs [Design]",
+              "RelativeToolTip": "Vehicles\\frmVehiclesList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:46:49.135Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "clsVehichleLicensesData.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-DataAccess\\clsVehichleLicensesData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-DataAccess\\clsVehichleLicensesData.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-DataAccess\\clsVehichleLicensesData.cs",
+              "RelativeToolTip": "..\\DVLD-DataAccess\\clsVehichleLicensesData.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwCEBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:14:53.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "clsVehichleLicenses.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsVehichleLicenses.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsVehichleLicenses.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsVehichleLicenses.cs",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsVehichleLicenses.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAawIQAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:11:44.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:06:57.109Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "clsApplication.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsApplication.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsApplication.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsApplication.cs",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsApplication.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAtwBQAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T20:29:19.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsVehichles.cs",
+              "DocumentMoniker": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsVehichles.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-Bussiness\\clsVehichles.cs",
+              "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD-Bussiness\\clsVehichles.cs",
+              "RelativeToolTip": "..\\DVLD-Bussiness\\clsVehichles.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAwMAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T17:06:24.791Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +190,7 @@
               "RelativeDocumentMoniker": "VehicleLicenses\\frmIssueVehicleLicense.cs",
               "ToolTip": "D:\\Development\\C#\\My-Github\\DVLD SYS\\DVLD System\\VehicleLicenses\\frmIssueVehicleLicense.cs",
               "RelativeToolTip": "VehicleLicenses\\frmIssueVehicleLicense.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAnwDIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAUwDAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T11:15:42.319Z",
               "EditorCaption": ""

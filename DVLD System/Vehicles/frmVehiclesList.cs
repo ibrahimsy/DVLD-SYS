@@ -1,5 +1,6 @@
 ﻿using BankBussiness;
 using DVLD_Bussiness;
+using DVLD_System.VehicleLicenses;
 using DVLD_System.Vehicles;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,8 @@ namespace DVLD_System.Vehichles
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
+            issueLicenseForFirstTimeToolStripMenuItem.Enabled = !clsVehichle.Find((int)dgvVehichleList.CurrentRow.Cells[0].Value).HasActiveLicense();
+            
         }
 
         private void editVehicleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,6 +196,12 @@ namespace DVLD_System.Vehichles
                     "Faild",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+        }
+
+        private void issueLicenseForFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueVehicleLicense frm = new frmIssueVehicleLicense((int)dgvVehichleList.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
         }
     }
 }

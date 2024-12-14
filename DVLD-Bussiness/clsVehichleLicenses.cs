@@ -130,6 +130,10 @@ namespace BankBussiness
             return clsVehichleLicenseData.GetAllVehichleLicenses();
         }
 
+        public static int GetVehicleLicenseID(int VehicleID)
+        {
+            return clsVehichleLicenseData.GetVehicleLicenseIDByVehicleID(VehicleID);
+        }
       
         public bool Save()
         {

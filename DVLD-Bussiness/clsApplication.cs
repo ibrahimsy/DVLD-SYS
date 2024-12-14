@@ -18,7 +18,7 @@ namespace DVLD_Bussiness
 
         public enum enApplicationTypes { enNewLocalDrivingLicense = 1, enRenewDrivingLicense = 2, enReplacementForLostDrivingLicense = 3,
                                         enReplacementForDamagedDrivingLicense = 4, enReleaseDetainedDrivingLicsense = 5, enNewInternationalLicense = 6,
-                                        enRetakeTest = 7,IssueVehicleLicense = 8
+                                        enRetakeTest = 7,IssueVehicleLicense = 8,enRenewVehicleLicense = 9
         }
 
         public int ApplicationID { get; set; }

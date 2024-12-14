@@ -51,6 +51,9 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddVehichle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.issueLicenseForFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.renewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehichleList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -178,58 +181,61 @@
             this.editVehicleToolStripMenuItem,
             this.toolStripMenuItem2,
             this.deleteVehicleToolStripMenuItem,
-            this.toolStripMenuItem3});
+            this.toolStripMenuItem3,
+            this.issueLicenseForFirstTimeToolStripMenuItem,
+            this.toolStripMenuItem6,
+            this.renewLicenseToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 138);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 188);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(217, 22);
             this.toolStripMenuItem4.Text = "Show Vehicle Details";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(214, 6);
             // 
             // addVehicleToolStripMenuItem
             // 
             this.addVehicleToolStripMenuItem.Name = "addVehicleToolStripMenuItem";
-            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.addVehicleToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.addVehicleToolStripMenuItem.Text = "Add Vehicle";
             this.addVehicleToolStripMenuItem.Click += new System.EventHandler(this.addVehicleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
             // 
             // editVehicleToolStripMenuItem
             // 
             this.editVehicleToolStripMenuItem.Name = "editVehicleToolStripMenuItem";
-            this.editVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.editVehicleToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.editVehicleToolStripMenuItem.Text = "Edit Vehicle";
             this.editVehicleToolStripMenuItem.Click += new System.EventHandler(this.editVehicleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(214, 6);
             // 
             // deleteVehicleToolStripMenuItem
             // 
             this.deleteVehicleToolStripMenuItem.Name = "deleteVehicleToolStripMenuItem";
-            this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.deleteVehicleToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.deleteVehicleToolStripMenuItem.Text = "Delete Vehicle";
             this.deleteVehicleToolStripMenuItem.Click += new System.EventHandler(this.deleteVehicleToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(178, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 6);
             // 
             // label1
             // 
@@ -283,6 +289,24 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // issueLicenseForFirstTimeToolStripMenuItem
+            // 
+            this.issueLicenseForFirstTimeToolStripMenuItem.Name = "issueLicenseForFirstTimeToolStripMenuItem";
+            this.issueLicenseForFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.issueLicenseForFirstTimeToolStripMenuItem.Text = "Issue License For First Time";
+            this.issueLicenseForFirstTimeToolStripMenuItem.Click += new System.EventHandler(this.issueLicenseForFirstTimeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(214, 6);
+            // 
+            // renewLicenseToolStripMenuItem
+            // 
+            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
+            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.renewLicenseToolStripMenuItem.Text = "Renew License";
+            // 
             // frmVehiclesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,5 +357,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem issueLicenseForFirstTimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem renewLicenseToolStripMenuItem;
     }
 }

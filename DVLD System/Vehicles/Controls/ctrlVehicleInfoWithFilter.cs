@@ -85,6 +85,16 @@ namespace DVLD_System.Vehicles.Controls
             _FindNow();
         }
 
+        public void LoadData(int VehicleID)
+        {
+            TextFocus();
+
+            cbFilterBy.Text = "Vehicle ID";
+            txtFilterValue.Text = VehicleID.ToString();
+
+            _FindNow();
+        }
+
         public void TextFocus()
         {
             txtFilterValue.Focus();
