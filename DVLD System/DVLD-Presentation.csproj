@@ -321,6 +321,12 @@
     <Compile Include="Tests\WrittenTest\frmWrittenTest.Designer.cs">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehicleLicenses\Controls\ctrlVehicleLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VehicleLicenses\Controls\ctrlVehicleLicense.Designer.cs">
+      <DependentUpon>ctrlVehicleLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleLicenses\frmIssueVehicleLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\WrittenTest\frmWrittenTest.resx">
       <DependentUpon>frmWrittenTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleLicenses\Controls\ctrlVehicleLicense.resx">
+      <DependentUpon>ctrlVehicleLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleLicenses\frmIssueVehicleLicense.resx">
       <DependentUpon>frmIssueVehicleLicense.cs</DependentUpon>

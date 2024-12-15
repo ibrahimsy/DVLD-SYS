@@ -137,6 +137,7 @@
             this.llbShowVehicleLicense.TabIndex = 20;
             this.llbShowVehicleLicense.TabStop = true;
             this.llbShowVehicleLicense.Text = "Show Vehicle License";
+            this.llbShowVehicleLicense.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbShowVehicleLicense_LinkClicked);
             // 
             // groupBox1
             // 
