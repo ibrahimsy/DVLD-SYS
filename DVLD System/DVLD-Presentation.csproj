@@ -333,6 +333,12 @@
     <Compile Include="VehicleLicenses\frmIssueVehicleLicense.Designer.cs">
       <DependentUpon>frmIssueVehicleLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehicleLicenses\frmShowVehicleLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleLicenses\frmShowVehicleLicense.Designer.cs">
+      <DependentUpon>frmShowVehicleLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicles\Controls\ctrlVehicleInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleLicenses\frmIssueVehicleLicense.resx">
       <DependentUpon>frmIssueVehicleLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleLicenses\frmShowVehicleLicense.resx">
+      <DependentUpon>frmShowVehicleLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleInfo.resx">
       <DependentUpon>ctrlVehicleInfo.cs</DependentUpon>

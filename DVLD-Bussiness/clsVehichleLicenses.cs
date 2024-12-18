@@ -28,7 +28,14 @@ namespace BankBussiness
         public DateTime ExpiryDate { set; get; }
         public Decimal LicenseFee {  set; get; }
         public byte Status { set; get; }
-        public byte IssueReason { set; get; }
+
+        public enIssueReason IssueReason { set; get; }
+        public string IssueReasonText
+        { get 
+            {
+                return GetIssueReasonText(this.IssueReason);
+            }
+        }
         public int CreatedBy { set; get; }
 
 
@@ -41,6 +48,7 @@ namespace BankBussiness
             this.LicenseFee = 0;
             this.Status = 0;
             this.CreatedBy = -1;
+            this.IssueReason = enIssueReason.ForFirstTime;
             _Mode = enMode.enAddNew;
         }
 
@@ -48,7 +56,7 @@ namespace BankBussiness
 
 
         private clsVehichleLicense(int ApplicationID ,int ApplicantPersonID,DateTime ApplicationDate,int ApplicationTypeID,
-           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, Decimal LicenseFee, byte Status,byte IssueReason, int CreatedBy)
+           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, Decimal LicenseFee, byte Status,enIssueReason IssueReason, int CreatedBy)
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
@@ -69,10 +77,24 @@ namespace BankBussiness
         }
 
 
+        public string GetIssueReasonText(enIssueReason IssueReason)
+        {
+            switch (IssueReason)
+            {
+                case clsVehichleLicense.enIssueReason.ForFirstTime:
+                    return "First Time";
+                case clsVehichleLicense.enIssueReason.ForRenew:
+                    return "For Renew";
+                case clsVehichleLicense.enIssueReason.ForLost:
+                    return "For Lost";
+                default:
+                    return "Unknown";
+            }
+        }
 
         private bool _AddVehichleLicense()
         {
-            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense(ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,IssueReason, CreatedBy);
+            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense(ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,(byte)IssueReason, CreatedBy);
 
             return (VehichleLicenseID != -1);
         }
@@ -80,7 +102,7 @@ namespace BankBussiness
 
         private bool _UpdateVehichleLicense()
         {
-            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,IssueReason, CreatedBy);
+            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,(byte)IssueReason, CreatedBy);
         }
 
 
@@ -93,7 +115,7 @@ namespace BankBussiness
             DateTime ExpiryDate = DateTime.Now;
             byte Status = 0;
             Decimal LicenseFee = 0;
-            byte IssueReason = 0;
+            byte IssueReason = 1;
             int CreatedBy = -1;
             if (clsVehichleLicenseData.GetVehichleLicenseByID(VehichleLicenseID,ref ApplicationID, ref VehichleID, ref IssuedDate, ref ExpiryDate,ref LicenseFee, ref Status,ref IssueReason, ref CreatedBy))
             {
@@ -107,7 +129,7 @@ namespace BankBussiness
                     Application.ApplicationStatus,
                     Application.LastStatusDate,
                     Application.PaidFees,
-                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,IssueReason, CreatedBy);
+                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, (enIssueReason)IssueReason, CreatedBy);
             }
             else
             {

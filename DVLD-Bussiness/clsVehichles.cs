@@ -200,6 +200,7 @@ namespace BankBussiness
             VehichleLicense.ExpiryDate = DateTime.Now.AddYears(1);
             VehichleLicense.LicenseFee = clsSetting.FindSettingByID( (int)clsSetting.enSettings.VehicleFee).SettingValue;
             VehichleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
+            VehichleLicense.IssueReason = clsVehichleLicense.enIssueReason.ForFirstTime;
             VehichleLicense.CreatedBy = CreatedByID;
 
             if (VehichleLicense.Save())

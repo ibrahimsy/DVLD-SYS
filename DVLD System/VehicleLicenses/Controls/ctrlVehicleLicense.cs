@@ -1,4 +1,5 @@
 ﻿using BankBussiness;
+using DVLD_Bussiness;
 using DVLD_System.Global_Classes;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace DVLD_System.VehicleLicenses.Controls
            
         }
 
-        void LoadInfo(int VehicleLicenseID)
+        public void LoadInfo(int VehicleLicenseID)
         {
             clsVehichleLicense VehicleLicnseInfo = clsVehichleLicense.FindVehichleLicenseByID(VehicleLicenseID);
-            if (VehicleLicnseInfo != null)
+            if (VehicleLicnseInfo == null)
             {
                 MessageBox.Show($"No VehicleLicense With ID {VehicleLicenseID}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
@@ -34,6 +35,11 @@ namespace DVLD_System.VehicleLicenses.Controls
             lblApplicationID.Text = VehicleLicnseInfo.ApplicationID.ToString();
             lblVehicleID.Text = VehicleLicnseInfo.VehichleID.ToString();
             lblIssueDate.Text = clsFormat.DateToShort( VehicleLicnseInfo.IssuedDate);
+            lblLicenseFee.Text = VehicleLicnseInfo.LicenseFee.ToString();
+            lblIssueReason.Text = VehicleLicnseInfo.IssueReasonText;
+            lblStatus.Text = VehicleLicnseInfo.Status == 1?"Active":"InActive";
+            lblExpiryDate.Text = clsFormat.DateToShort(VehicleLicnseInfo.ExpiryDate);
+            lblCreatedBy.Text = clsUser.Find(VehicleLicnseInfo.CreatedBy).UserName;
         }
         
 

@@ -47,13 +47,16 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.deleteVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.issueLicenseForFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
+            this.renewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddVehichle = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.issueLicenseForFirstTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
-            this.renewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowVehicleLicense_toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehichleList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,6 +179,9 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
+            this.ShowVehicleLicense_toolStripMenuItem7,
+            this.toolStripMenuItem9,
+            this.toolStripMenuItem8,
             this.addVehicleToolStripMenuItem,
             this.toolStripMenuItem1,
             this.editVehicleToolStripMenuItem,
@@ -186,7 +192,7 @@
             this.toolStripMenuItem6,
             this.renewLicenseToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 188);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 216);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem4
@@ -236,6 +242,24 @@
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 6);
+            // 
+            // issueLicenseForFirstTimeToolStripMenuItem
+            // 
+            this.issueLicenseForFirstTimeToolStripMenuItem.Name = "issueLicenseForFirstTimeToolStripMenuItem";
+            this.issueLicenseForFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.issueLicenseForFirstTimeToolStripMenuItem.Text = "Issue License For First Time";
+            this.issueLicenseForFirstTimeToolStripMenuItem.Click += new System.EventHandler(this.issueLicenseForFirstTimeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(214, 6);
+            // 
+            // renewLicenseToolStripMenuItem
+            // 
+            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
+            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.renewLicenseToolStripMenuItem.Text = "Renew License";
             // 
             // label1
             // 
@@ -289,23 +313,23 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // issueLicenseForFirstTimeToolStripMenuItem
+            // ShowVehicleLicense_toolStripMenuItem7
             // 
-            this.issueLicenseForFirstTimeToolStripMenuItem.Name = "issueLicenseForFirstTimeToolStripMenuItem";
-            this.issueLicenseForFirstTimeToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.issueLicenseForFirstTimeToolStripMenuItem.Text = "Issue License For First Time";
-            this.issueLicenseForFirstTimeToolStripMenuItem.Click += new System.EventHandler(this.issueLicenseForFirstTimeToolStripMenuItem_Click);
+            this.ShowVehicleLicense_toolStripMenuItem7.Name = "ShowVehicleLicense_toolStripMenuItem7";
+            this.ShowVehicleLicense_toolStripMenuItem7.Size = new System.Drawing.Size(217, 22);
+            this.ShowVehicleLicense_toolStripMenuItem7.Text = "Show Vehicle License";
+            this.ShowVehicleLicense_toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
-            // toolStripMenuItem6
+            // toolStripMenuItem8
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(217, 22);
+            this.toolStripMenuItem8.Text = "Add Vehicle";
             // 
-            // renewLicenseToolStripMenuItem
+            // toolStripMenuItem9
             // 
-            this.renewLicenseToolStripMenuItem.Name = "renewLicenseToolStripMenuItem";
-            this.renewLicenseToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.renewLicenseToolStripMenuItem.Text = "Renew License";
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(214, 6);
             // 
             // frmVehiclesList
             // 
@@ -360,5 +384,8 @@
         private System.Windows.Forms.ToolStripMenuItem issueLicenseForFirstTimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem renewLicenseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShowVehicleLicense_toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
     }
 }
