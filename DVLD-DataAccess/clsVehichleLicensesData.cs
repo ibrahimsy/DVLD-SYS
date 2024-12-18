@@ -262,9 +262,9 @@ namespace BankDataAccess
         {
             int VehicleLicenseID = -1;
 
-            string query = @"SELECT VehichleLicenseID 
+            string query = @"SELECT TOP 1 VehichleLicenseID 
                              FROM VehichleLicenses 
-                             WHERE VehichleID = @VehicleID AND Status = 1";
+                             WHERE VehichleID = @VehicleID AND Status = 1 ORDER BY VehichleLicenseID DESC";
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
@@ -291,6 +291,8 @@ namespace BankDataAccess
             }
             return VehicleLicenseID;
         }
+
+        
     
     }
 }

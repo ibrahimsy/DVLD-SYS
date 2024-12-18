@@ -110,7 +110,8 @@ namespace DVLD_System.VehicleLicenses
 
         private void llbShowVehicleLicense_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmShowVehicleLicense frm = new frmShowVehicleLicense(Convert.ToInt32(lblVehicleLicenseID.Text));
+            frm.ShowDialog();
         }
     }
 }

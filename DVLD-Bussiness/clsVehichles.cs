@@ -214,6 +214,12 @@ namespace BankBussiness
             return (clsVehichleLicense.GetVehicleLicenseID(this.VehichleID) != -1);
         }
 
+        public int GetLicenseIDByVehicleID()
+        {
+            return clsVehichleLicenseData.GetVehicleLicenseIDByVehicleID(this.VehichleID);
+        }
+
+
         public bool Save()
         {
             switch (_Mode)

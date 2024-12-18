@@ -106,11 +106,11 @@ namespace DVLD_System.Vehichles
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            bool IsVehicleHasActiveLicesne = clsVehichle.Find((int)dgvVehichleList.CurrentRow.Cells[0].Value).HasActiveLicense();
+            bool ActiveLicesneExist = clsVehichle.Find((int)dgvVehichleList.CurrentRow.Cells[0].Value).HasActiveLicense();
            
-            issueLicenseForFirstTimeToolStripMenuItem.Enabled = !IsVehicleHasActiveLicesne;
+            issueLicenseForFirstTimeToolStripMenuItem.Enabled = !ActiveLicesneExist;
 
-            ShowVehicleLicense_toolStripMenuItem7.Enabled = IsVehicleHasActiveLicesne;
+            ShowVehicleLicense_toolStripMenuItem7.Enabled = ActiveLicesneExist;
         }
 
         private void editVehicleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,7 +208,8 @@ namespace DVLD_System.Vehichles
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            frmShowVehicleLicense frm = new frmShowVehicleLicense((int)dgvVehichleList.CurrentRow.Cells[0].Value);
+            int VehicleLicensID = clsVehichle.Find((int)dgvVehichleList.CurrentRow.Cells[0].Value).GetLicenseIDByVehicleID();
+            frmShowVehicleLicense frm = new frmShowVehicleLicense(VehicleLicensID);
             frm.ShowDialog();
         }
     }

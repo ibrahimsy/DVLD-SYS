@@ -354,3 +354,4 @@ D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLi
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.Controls.ctrlVehicleInfoWithFilter.resources
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLicenses.Controls.ctrlVehicleLicense.resources
 D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLicenses.frmShowVehicleLicense.resources
+D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLicenses.frmRenewVehicleLicense.resources
