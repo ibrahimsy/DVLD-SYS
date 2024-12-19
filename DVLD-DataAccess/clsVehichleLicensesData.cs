@@ -292,7 +292,53 @@ namespace BankDataAccess
             return VehicleLicenseID;
         }
 
-        
-    
+        public static bool GetVehicleLicenseByVehicleID(int VehicleID,ref int VehichleLicenseID, ref int ApplicationID, ref DateTime IssuedDate, ref DateTime ExpiryDate, ref Decimal LicenseFee, ref byte Status, ref byte IssueReason, ref int CreatedBy)
+        {
+            bool IsFound = false;
+
+            string query = @"SELECT TOP 1 * 
+                             FROM VehichleLicenses 
+                             WHERE VehichleID = @VehicleID AND Status = 1 ORDER BY VehichleLicenseID DESC";
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@VehicleID", VehicleID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    IsFound = true;
+
+                    VehichleLicenseID = (int)reader["VehichleLicenseID"];
+                    ApplicationID = (int)reader["ApplicationID"];
+                    IssuedDate = (DateTime)reader["IssuedDate"];
+                    ExpiryDate = (DateTime)reader["ExpiryDate"];
+                    LicenseFee = Convert.ToDecimal(reader["LicenseFee"]);
+                    Status = (byte)reader["Status"];
+                    CreatedBy = (int)reader["CreatedBy"];
+
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                IsFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+            return IsFound;
+        }
+
     }
 }

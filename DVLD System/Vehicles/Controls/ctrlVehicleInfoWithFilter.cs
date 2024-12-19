@@ -112,5 +112,16 @@ namespace DVLD_System.Vehicles.Controls
                 _FindNow();
             }
         }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Clear();
+            TextFocus();
+        }
+
+        private void txtFilterValue_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
     }
 }

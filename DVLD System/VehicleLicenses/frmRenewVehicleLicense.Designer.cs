@@ -351,6 +351,7 @@
             this.Controls.Add(this.ctrlVehicleInfoWithFilter1);
             this.Controls.Add(this.label1);
             this.Name = "frmRenewVehicleLicense";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renew Vehicle License";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

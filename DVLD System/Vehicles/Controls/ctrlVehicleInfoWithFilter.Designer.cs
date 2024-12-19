@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ctrlVehicleInfo1 = new DVLD_System.Vehicles.Controls.ctrlVehicleInfo();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gpFilterBy = new System.Windows.Forms.GroupBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpFilterBy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlVehicleInfo1
@@ -48,6 +51,7 @@
             // 
             // cbFilterBy
             // 
+            this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.Font = new System.Drawing.Font("Titillium Web", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
@@ -58,6 +62,7 @@
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(217, 31);
             this.cbFilterBy.TabIndex = 1;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -78,6 +83,7 @@
             this.txtFilterValue.Size = new System.Drawing.Size(216, 32);
             this.txtFilterValue.TabIndex = 3;
             this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
+            this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
             // 
             // btnSearch
             // 
@@ -103,6 +109,10 @@
             this.gpFilterBy.TabIndex = 5;
             this.gpFilterBy.TabStop = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ctrlVehicleInfoWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,6 +124,7 @@
             this.Size = new System.Drawing.Size(855, 415);
             this.gpFilterBy.ResumeLayout(false);
             this.gpFilterBy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -126,5 +137,6 @@
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox gpFilterBy;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

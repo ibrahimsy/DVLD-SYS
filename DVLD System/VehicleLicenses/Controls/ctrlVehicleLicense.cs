@@ -24,7 +24,7 @@ namespace DVLD_System.VehicleLicenses.Controls
 
         public void LoadInfo(int VehicleLicenseID)
         {
-            clsVehichleLicense VehicleLicnseInfo = clsVehichleLicense.FindVehichleLicenseByID(VehicleLicenseID);
+            clsVehichleLicense VehicleLicnseInfo = clsVehichleLicense.FindByID(VehicleLicenseID);
             if (VehicleLicnseInfo == null)
             {
                 MessageBox.Show($"No VehicleLicense With ID {VehicleLicenseID}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);

@@ -29,6 +29,7 @@ namespace BankBussiness
         public Decimal LicenseFee {  set; get; }
         public byte Status { set; get; }
 
+
         public enIssueReason IssueReason { set; get; }
         public string IssueReasonText
         { get 
@@ -36,9 +37,25 @@ namespace BankBussiness
                 return GetIssueReasonText(this.IssueReason);
             }
         }
+        public bool IsActive
+        {
+            get
+            {
+                return this.Status == (byte)enStatus.Active;
+            }
+        }
+
+        public bool IsExpired
+        {
+            get
+            {
+                return this.ExpiryDate < DateTime.Now ;
+            }
+        }
+
         public int CreatedBy { set; get; }
 
-
+        public clsUser UserInfo;
         public clsVehichleLicense()
         {
             this.VehichleLicenseID = -1;
@@ -73,6 +90,7 @@ namespace BankBussiness
             this.Status = Status;
             this.IssueReason = IssueReason;
             this.CreatedBy = CreatedBy;
+            this.UserInfo = clsUser.Find(CreatedBy);
             _Mode = enMode.enUpdate;
         }
 
@@ -106,7 +124,7 @@ namespace BankBussiness
         }
 
 
-        public static clsVehichleLicense FindVehichleLicenseByID(int VehichleLicenseID)
+        public static clsVehichleLicense FindByID(int VehichleLicenseID)
         {
 
             int VehichleID = -1;
@@ -137,6 +155,36 @@ namespace BankBussiness
             }
         }
 
+        public static clsVehichleLicense FindByVehicleID(int VehichleID)
+        {
+
+            int VehichleLicenseID = -1;
+            int ApplicationID = -1;
+            DateTime IssuedDate = DateTime.Now;
+            DateTime ExpiryDate = DateTime.Now;
+            byte Status = 0;
+            Decimal LicenseFee = 0;
+            byte IssueReason = 1;
+            int CreatedBy = -1;
+            if (clsVehichleLicenseData.GetVehicleLicenseByVehicleID(VehichleID,ref VehichleLicenseID, ref ApplicationID, ref IssuedDate, ref ExpiryDate, ref LicenseFee, ref Status, ref IssueReason, ref CreatedBy))
+            {
+                clsApplication Application = clsApplication.Find(ApplicationID);
+
+                return new clsVehichleLicense(
+                    Application.ApplicationID,
+                    Application.ApplicantPersonID,
+                    Application.ApplicationDate,
+                    Application.ApplicationTypeID,
+                    Application.ApplicationStatus,
+                    Application.LastStatusDate,
+                    Application.PaidFees,
+                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, (enIssueReason)IssueReason, CreatedBy);
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static bool IsExistByVehichleLicenseID(int VehichleLicenseID)
         {
