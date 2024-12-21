@@ -208,7 +208,47 @@ namespace BankBussiness
             return clsVehichleLicenseData.GetVehicleLicenseIDByVehicleID(VehicleID);
         }
       
-        
+        public bool DeactivateLicense()
+        {
+            return clsVehichleLicenseData.DeactivateVehicleLicense(this.VehichleLicenseID);
+        }
+
+        public clsVehichleLicense Renew(int CreatedBy)
+        {
+            clsApplication RenewApplication = new clsApplication();
+
+            RenewApplication.ApplicantPersonID = this.PersonInfo.PersonID;
+            RenewApplication.ApplicationDate = DateTime.Now;
+            RenewApplication.ApplicationTypeID = (int)clsApplication.enApplicationTypes.enRenewVehicleLicense;
+            RenewApplication.ApplicationStatus = (int)clsApplication.enApplicationStatus.enCompleted;
+            RenewApplication.LastStatusDate = DateTime.Now;
+            RenewApplication.PaidFees = clsApplicationTypes.Find((int)clsApplication.enApplicationTypes.enRenewVehicleLicense).Fees;
+            RenewApplication.CreatedByUserID = CreatedBy;
+
+            if (!RenewApplication.Save())
+            {
+                return null;
+            }
+
+            clsVehichleLicense NewVehicleLicense = new clsVehichleLicense();
+            NewVehicleLicense.ApplicationID = RenewApplication.ApplicationID;
+            NewVehicleLicense.VehichleID = this.VehichleID;
+            NewVehicleLicense.IssuedDate = DateTime.Now;
+            NewVehicleLicense.ExpiryDate = DateTime.Now.AddYears(1);
+            NewVehicleLicense.LicenseFee = clsSetting.FindSettingByID((int)clsSetting.enSettings.VehicleFee).SettingValue;
+            NewVehicleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
+            NewVehicleLicense.IssueReason = clsVehichleLicense.enIssueReason.ForRenew;
+            NewVehicleLicense.CreatedBy = CreatedBy;
+
+            if (!NewVehicleLicense.Save())
+                return null;
+
+            //Deactivate Old One
+
+            DeactivateLicense();
+
+            return NewVehicleLicense;
+        }
 
         public bool Save()
         {

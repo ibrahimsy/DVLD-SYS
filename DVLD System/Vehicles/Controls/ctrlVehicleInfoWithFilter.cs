@@ -121,7 +121,15 @@ namespace DVLD_System.Vehicles.Controls
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(txtFilterValue.Text))
+            {
+                errorProvider1.SetError(txtFilterValue,"This Feild Is Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(txtFilterValue, null);
+            }
         }
     }
 }

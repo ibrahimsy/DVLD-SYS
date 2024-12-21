@@ -53,6 +53,8 @@
             this.llShowVehicleLicenseHistory = new System.Windows.Forms.LinkLabel();
             this.btnRenewLicense = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblRenewedLicenseID = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +82,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.lblRenewedLicenseID);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.lblCreatedBy);
             this.groupBox1.Controls.Add(this.lblExpirationDate);
             this.groupBox1.Controls.Add(this.lblVehicleID);
@@ -110,7 +114,7 @@
             // 
             this.lblCreatedBy.AutoSize = true;
             this.lblCreatedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedBy.Location = new System.Drawing.Point(567, 147);
+            this.lblCreatedBy.Location = new System.Drawing.Point(608, 177);
             this.lblCreatedBy.Name = "lblCreatedBy";
             this.lblCreatedBy.Size = new System.Drawing.Size(79, 20);
             this.lblCreatedBy.TabIndex = 21;
@@ -120,7 +124,7 @@
             // 
             this.lblExpirationDate.AutoSize = true;
             this.lblExpirationDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirationDate.Location = new System.Drawing.Point(567, 115);
+            this.lblExpirationDate.Location = new System.Drawing.Point(608, 145);
             this.lblExpirationDate.Name = "lblExpirationDate";
             this.lblExpirationDate.Size = new System.Drawing.Size(79, 20);
             this.lblExpirationDate.TabIndex = 20;
@@ -130,7 +134,7 @@
             // 
             this.lblVehicleID.AutoSize = true;
             this.lblVehicleID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleID.Location = new System.Drawing.Point(567, 78);
+            this.lblVehicleID.Location = new System.Drawing.Point(608, 78);
             this.lblVehicleID.Name = "lblVehicleID";
             this.lblVehicleID.Size = new System.Drawing.Size(79, 20);
             this.lblVehicleID.TabIndex = 19;
@@ -140,7 +144,7 @@
             // 
             this.lblVehicleLicenseID.AutoSize = true;
             this.lblVehicleLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehicleLicenseID.Location = new System.Drawing.Point(567, 42);
+            this.lblVehicleLicenseID.Location = new System.Drawing.Point(608, 42);
             this.lblVehicleLicenseID.Name = "lblVehicleLicenseID";
             this.lblVehicleLicenseID.Size = new System.Drawing.Size(79, 20);
             this.lblVehicleLicenseID.TabIndex = 18;
@@ -199,7 +203,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(450, 141);
+            this.label10.Location = new System.Drawing.Point(496, 171);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 29);
             this.label10.TabIndex = 9;
@@ -208,7 +212,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(410, 106);
+            this.label9.Location = new System.Drawing.Point(456, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 29);
             this.label9.TabIndex = 8;
@@ -217,7 +221,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(458, 71);
+            this.label8.Location = new System.Drawing.Point(504, 71);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 29);
             this.label8.TabIndex = 7;
@@ -226,7 +230,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(394, 36);
+            this.label7.Location = new System.Drawing.Point(440, 36);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 29);
             this.label7.TabIndex = 6;
@@ -311,7 +315,7 @@
             this.btnRenewLicense.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRenewLicense.Image = global::DVLD_System.Properties.Resources.refresh;
             this.btnRenewLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRenewLicense.Location = new System.Drawing.Point(699, 762);
+            this.btnRenewLicense.Location = new System.Drawing.Point(699, 699);
             this.btnRenewLicense.Name = "btnRenewLicense";
             this.btnRenewLicense.Size = new System.Drawing.Size(162, 37);
             this.btnRenewLicense.TabIndex = 24;
@@ -329,7 +333,7 @@
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD_System.Properties.Resources.close__1_;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(595, 762);
+            this.btnClose.Location = new System.Drawing.Point(595, 699);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(98, 37);
             this.btnClose.TabIndex = 23;
@@ -338,11 +342,30 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblRenewedLicenseID
+            // 
+            this.lblRenewedLicenseID.AutoSize = true;
+            this.lblRenewedLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRenewedLicenseID.Location = new System.Drawing.Point(608, 115);
+            this.lblRenewedLicenseID.Name = "lblRenewedLicenseID";
+            this.lblRenewedLicenseID.Size = new System.Drawing.Size(79, 20);
+            this.lblRenewedLicenseID.TabIndex = 23;
+            this.lblRenewedLicenseID.Text = "[ ? ? ? ?]";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(360, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(242, 29);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Renewed License Vehicle ID :";
+            // 
             // frmRenewVehicleLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 812);
+            this.ClientSize = new System.Drawing.Size(869, 749);
             this.Controls.Add(this.llbShowVehicleLicense);
             this.Controls.Add(this.llShowVehicleLicenseHistory);
             this.Controls.Add(this.btnRenewLicense);
@@ -387,5 +410,7 @@
         private System.Windows.Forms.LinkLabel llShowVehicleLicenseHistory;
         private System.Windows.Forms.Button btnRenewLicense;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblRenewedLicenseID;
+        private System.Windows.Forms.Label label11;
     }
 }

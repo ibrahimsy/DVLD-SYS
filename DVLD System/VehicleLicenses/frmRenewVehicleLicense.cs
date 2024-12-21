@@ -15,6 +15,7 @@ namespace DVLD_System.VehicleLicenses
     public partial class frmRenewVehicleLicense : Form
     {
         int _SelectedVehicleID = -1;
+        clsVehichleLicense VehicleLicenseInfo;
         public frmRenewVehicleLicense()
         {
             InitializeComponent();
@@ -22,6 +23,32 @@ namespace DVLD_System.VehicleLicenses
 
         private void btnRenewLicense_Click(object sender, EventArgs e)
         {
+            if (!this.ValidateChildren())
+            {
+                MessageBox.Show("Some Feild is incorrect,put mouse over red button to see error",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            clsVehichleLicense NewVehicleLicense = VehicleLicenseInfo.Renew(clsGlobalSettings.CurrentUser.UserID);
+            if (NewVehicleLicense == null)
+            {
+                MessageBox.Show("An Error Occured ,License Hasn't Renewed",
+                   "Error",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                return;
+            }
+
+            lblRenewedLicenseID.Text = NewVehicleLicense.VehichleLicenseID.ToString();
+            MessageBox.Show($"License Renewed Successfuly With New ID [{NewVehicleLicense.VehichleLicenseID}]",
+                   "Success",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+
 
         }
 
