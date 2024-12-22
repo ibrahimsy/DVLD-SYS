@@ -364,6 +364,7 @@
             this.cancelVeichleLicenseToolStripMenuItem.Name = "cancelVeichleLicenseToolStripMenuItem";
             this.cancelVeichleLicenseToolStripMenuItem.Size = new System.Drawing.Size(246, 28);
             this.cancelVeichleLicenseToolStripMenuItem.Text = "Cancel Veichle License";
+            this.cancelVeichleLicenseToolStripMenuItem.Click += new System.EventHandler(this.cancelVeichleLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 

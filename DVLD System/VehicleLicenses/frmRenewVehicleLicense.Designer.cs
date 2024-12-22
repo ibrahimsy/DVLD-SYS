@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ctrlVehicleInfoWithFilter1 = new DVLD_System.Vehicles.Controls.ctrlVehicleInfoWithFilter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblRenewedLicenseID = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
             this.lblVehicleID = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.llShowVehicleLicenseHistory = new System.Windows.Forms.LinkLabel();
             this.btnRenewLicense = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblRenewedLicenseID = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lblRenewedLicenseID);
             this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.btnRenewLicense);
             this.groupBox1.Controls.Add(this.lblCreatedBy);
             this.groupBox1.Controls.Add(this.lblExpirationDate);
             this.groupBox1.Controls.Add(this.lblVehicleID);
@@ -109,6 +110,25 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Applicationa Renew License Info";
+            // 
+            // lblRenewedLicenseID
+            // 
+            this.lblRenewedLicenseID.AutoSize = true;
+            this.lblRenewedLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRenewedLicenseID.Location = new System.Drawing.Point(608, 115);
+            this.lblRenewedLicenseID.Name = "lblRenewedLicenseID";
+            this.lblRenewedLicenseID.Size = new System.Drawing.Size(79, 20);
+            this.lblRenewedLicenseID.TabIndex = 23;
+            this.lblRenewedLicenseID.Text = "[ ? ? ? ?]";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(360, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(242, 29);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Renewed License Vehicle ID :";
             // 
             // lblCreatedBy
             // 
@@ -315,7 +335,7 @@
             this.btnRenewLicense.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRenewLicense.Image = global::DVLD_System.Properties.Resources.refresh;
             this.btnRenewLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRenewLicense.Location = new System.Drawing.Point(699, 699);
+            this.btnRenewLicense.Location = new System.Drawing.Point(693, 210);
             this.btnRenewLicense.Name = "btnRenewLicense";
             this.btnRenewLicense.Size = new System.Drawing.Size(162, 37);
             this.btnRenewLicense.TabIndex = 24;
@@ -342,25 +362,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblRenewedLicenseID
-            // 
-            this.lblRenewedLicenseID.AutoSize = true;
-            this.lblRenewedLicenseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRenewedLicenseID.Location = new System.Drawing.Point(608, 115);
-            this.lblRenewedLicenseID.Name = "lblRenewedLicenseID";
-            this.lblRenewedLicenseID.Size = new System.Drawing.Size(79, 20);
-            this.lblRenewedLicenseID.TabIndex = 23;
-            this.lblRenewedLicenseID.Text = "[ ? ? ? ?]";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(360, 106);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(242, 29);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Renewed License Vehicle ID :";
-            // 
             // frmRenewVehicleLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +369,6 @@
             this.ClientSize = new System.Drawing.Size(869, 749);
             this.Controls.Add(this.llbShowVehicleLicense);
             this.Controls.Add(this.llShowVehicleLicenseHistory);
-            this.Controls.Add(this.btnRenewLicense);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlVehicleInfoWithFilter1);

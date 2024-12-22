@@ -20,14 +20,16 @@ namespace BankBussiness
         enum enMode { enAddNew = 1, enUpdate = 2 }
         enMode _Mode = enMode.enAddNew;
 
-        public enum enStatus { Active = 1, InActive = 2 }
+        public enum enStatus { Active = 1, InActive = 2 ,Cancelled = 3}
         public enum enIssueReason { ForFirstTime = 1,ForRenew = 2,ForLost = 3}
         public int VehichleLicenseID { set; get; }
         public int VehichleID { set; get; }
+
+        public clsVehichle VehicleInfo;
         public DateTime IssuedDate { set; get; }
         public DateTime ExpiryDate { set; get; }
         public Decimal LicenseFee {  set; get; }
-        public byte Status { set; get; }
+        public enStatus Status { set; get; }
 
 
         public enIssueReason IssueReason { set; get; }
@@ -37,11 +39,19 @@ namespace BankBussiness
                 return GetIssueReasonText(this.IssueReason);
             }
         }
+
+        public string StatusText
+        {
+            get 
+            {
+                return GetStatusText(this.Status);
+            }
+        }
         public bool IsActive
         {
             get
             {
-                return this.Status == (byte)enStatus.Active;
+                return this.Status == enStatus.Active;
             }
         }
 
@@ -73,7 +83,7 @@ namespace BankBussiness
 
 
         private clsVehichleLicense(int ApplicationID ,int ApplicantPersonID,DateTime ApplicationDate,int ApplicationTypeID,
-           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, Decimal LicenseFee, byte Status,enIssueReason IssueReason, int CreatedBy)
+           byte ApplicationStatus,DateTime LastStatusDate,float PaidFees, int VehichleLicenseID, int VehichleID, DateTime IssuedDate, DateTime ExpiryDate, Decimal LicenseFee, enStatus Status,enIssueReason IssueReason, int CreatedBy)
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
@@ -84,6 +94,7 @@ namespace BankBussiness
             this.PaidFees = PaidFees;
             this.VehichleLicenseID = VehichleLicenseID;
             this.VehichleID = VehichleID;
+            this.VehicleInfo = clsVehichle.Find(VehichleID);
             this.IssuedDate = IssuedDate;
             this.ExpiryDate = ExpiryDate;
             this.LicenseFee = LicenseFee;
@@ -91,6 +102,7 @@ namespace BankBussiness
             this.IssueReason = IssueReason;
             this.CreatedBy = CreatedBy;
             this.UserInfo = clsUser.Find(CreatedBy);
+           
             _Mode = enMode.enUpdate;
         }
 
@@ -110,9 +122,23 @@ namespace BankBussiness
             }
         }
 
+        public string GetStatusText(enStatus Status)
+        {
+            switch (Status)
+            {
+                case enStatus.Active:
+                    return "Active";
+                case enStatus.InActive:
+                    return "InActive";
+                case enStatus.Cancelled:
+                    return "Cancelled";
+                default:
+                    return "UnKnown";
+            }
+        }
         private bool _AddVehichleLicense()
         {
-            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense(ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,(byte)IssueReason, CreatedBy);
+            VehichleLicenseID = clsVehichleLicenseData.AddVehichleLicense(ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee,(byte) Status,(byte)IssueReason, CreatedBy);
 
             return (VehichleLicenseID != -1);
         }
@@ -120,7 +146,7 @@ namespace BankBussiness
 
         private bool _UpdateVehichleLicense()
         {
-            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status,(byte)IssueReason, CreatedBy);
+            return clsVehichleLicenseData.UpdateVehichleLicenseByID(VehichleLicenseID, ApplicationID, VehichleID, IssuedDate, ExpiryDate, LicenseFee,(byte) Status,(byte)IssueReason, CreatedBy);
         }
 
 
@@ -147,7 +173,7 @@ namespace BankBussiness
                     Application.ApplicationStatus,
                     Application.LastStatusDate,
                     Application.PaidFees,
-                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, (enIssueReason)IssueReason, CreatedBy);
+                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, (enStatus)Status, (enIssueReason)IssueReason, CreatedBy);
             }
             else
             {
@@ -178,7 +204,7 @@ namespace BankBussiness
                     Application.ApplicationStatus,
                     Application.LastStatusDate,
                     Application.PaidFees,
-                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee, Status, (enIssueReason)IssueReason, CreatedBy);
+                    VehichleLicenseID, VehichleID, IssuedDate, ExpiryDate, LicenseFee,(enStatus) Status, (enIssueReason)IssueReason, CreatedBy);
             }
             else
             {
@@ -210,14 +236,14 @@ namespace BankBussiness
       
         public bool DeactivateLicense()
         {
-            return clsVehichleLicenseData.DeactivateVehicleLicense(this.VehichleLicenseID);
+            return clsVehichleLicenseData.UpdateStatus(2,this.VehichleLicenseID);
         }
 
         public clsVehichleLicense Renew(int CreatedBy)
         {
             clsApplication RenewApplication = new clsApplication();
 
-            RenewApplication.ApplicantPersonID = this.PersonInfo.PersonID;
+            RenewApplication.ApplicantPersonID = this.VehicleInfo.OwnerInfo.PersonID;
             RenewApplication.ApplicationDate = DateTime.Now;
             RenewApplication.ApplicationTypeID = (int)clsApplication.enApplicationTypes.enRenewVehicleLicense;
             RenewApplication.ApplicationStatus = (int)clsApplication.enApplicationStatus.enCompleted;
@@ -236,7 +262,7 @@ namespace BankBussiness
             NewVehicleLicense.IssuedDate = DateTime.Now;
             NewVehicleLicense.ExpiryDate = DateTime.Now.AddYears(1);
             NewVehicleLicense.LicenseFee = clsSetting.FindSettingByID((int)clsSetting.enSettings.VehicleFee).SettingValue;
-            NewVehicleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
+            NewVehicleLicense.Status = clsVehichleLicense.enStatus.Active;
             NewVehicleLicense.IssueReason = clsVehichleLicense.enIssueReason.ForRenew;
             NewVehicleLicense.CreatedBy = CreatedBy;
 
@@ -248,6 +274,12 @@ namespace BankBussiness
             DeactivateLicense();
 
             return NewVehicleLicense;
+        }
+
+
+        public bool Cancel()
+        {
+            return clsVehichleLicenseData.UpdateStatus(3,this.VehichleLicenseID);
         }
 
         public bool Save()

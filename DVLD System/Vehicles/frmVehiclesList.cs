@@ -212,5 +212,24 @@ namespace DVLD_System.Vehichles
             frmShowVehicleLicense frm = new frmShowVehicleLicense(VehicleLicensID);
             frm.ShowDialog();
         }
+
+        private void renewLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewVehicleLicense frm = new frmRenewVehicleLicense((int)dgvVehichleList.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+        }
+
+        private void cancelLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure You Want To Cancel Vehicle License", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                return;
+
+            bool IsCancelled = clsVehichle.Find((int)dgvVehichleList.CurrentRow.Cells[0].Value).CancelLicense();
+
+            if (IsCancelled)
+                MessageBox.Show("The License is cancelled Successfully", "Done", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            else
+                MessageBox.Show("The License is didn't cancel ,An Error Occurred", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

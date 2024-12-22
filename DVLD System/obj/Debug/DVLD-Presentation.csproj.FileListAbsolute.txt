@@ -362,3 +362,5 @@ D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.VehicleLi
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.Controls.ctrlVehicleInfo.resources
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.Controls.ctrlVehicleInfoWithFilter.resources
 D:\Development\C#\My-Github\DVLD-SYS\DVLD System\obj\Debug\DVLD_System.Vehicles.frmShowVehicleInfo.resources
+D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLicenses.Controls.ctrlVehicleLcenseWithFilter.resources
+D:\Development\C#\My-Github\DVLD SYS\DVLD System\obj\Debug\DVLD_System.VehicleLicenses.frmCancelVehicleLicense.resources

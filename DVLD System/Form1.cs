@@ -189,5 +189,11 @@ namespace DVLD_System
             frmRenewVehicleLicense frm = new frmRenewVehicleLicense();
             frm.ShowDialog();
         }
+
+        private void cancelVeichleLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCancelVehicleLicense frm = new frmCancelVehicleLicense();
+            frm.ShowDialog();
+        }
     }
 }

@@ -21,6 +21,14 @@ namespace DVLD_System.VehicleLicenses
             InitializeComponent();
         }
 
+        public frmRenewVehicleLicense(int VehicleID)
+        {
+            InitializeComponent();
+            _SelectedVehicleID = VehicleID;
+            ctrlVehicleInfoWithFilter1.LoadData(_SelectedVehicleID);
+            ctrlVehicleInfoWithFilter1.FilterEnabled = false;
+        }
+
         private void btnRenewLicense_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
@@ -67,7 +75,7 @@ namespace DVLD_System.VehicleLicenses
                 return;
             }
 
-            clsVehichleLicense VehicleLicenseInfo = clsVehichleLicense.FindByVehicleID(_SelectedVehicleID);
+            VehicleLicenseInfo = clsVehichleLicense.FindByVehicleID(_SelectedVehicleID);
             if (VehicleLicenseInfo == null) 
             {
                 MessageBox.Show($"No License Found For Vehicle With ID [{_SelectedVehicleID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -199,7 +199,7 @@ namespace BankBussiness
             VehichleLicense.IssuedDate = DateTime.Now;
             VehichleLicense.ExpiryDate = DateTime.Now.AddYears(1);
             VehichleLicense.LicenseFee = clsSetting.FindSettingByID( (int)clsSetting.enSettings.VehicleFee).SettingValue;
-            VehichleLicense.Status = (byte)clsVehichleLicense.enStatus.Active;
+            VehichleLicense.Status = clsVehichleLicense.enStatus.Active;
             VehichleLicense.IssueReason = clsVehichleLicense.enIssueReason.ForFirstTime;
             VehichleLicense.CreatedBy = CreatedByID;
 
@@ -219,7 +219,10 @@ namespace BankBussiness
             return clsVehichleLicenseData.GetVehicleLicenseIDByVehicleID(this.VehichleID);
         }
 
-
+        public bool CancelLicense()
+        {
+            return clsVehichleLicense.FindByID(GetLicenseIDByVehicleID()).Cancel();
+        }
         public bool Save()
         {
             switch (_Mode)

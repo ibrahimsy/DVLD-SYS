@@ -346,13 +346,45 @@ namespace BankDataAccess
             int AffectedRows = 0;
 
             string query = @"UPDATE VehichleLicenses
-                             SET Status = 0
+                             SET Status = 2
                              WHERE VehichleLicenseID = @VehicleLicenseID";
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@VehicleLicenseID", VehicleLicenseID);
+           
+            try
+            {
+                connection.Open();
+
+                AffectedRows = command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return AffectedRows > 0;
+        }
+
+        public static bool UpdateStatus(byte Status,int VehichleLicenseID)
+        {
+            int AffectedRows = 0;
+
+            string query = @"UPDATE VehichleLicenses SET 
+                                Status = @Status
+                                WHERE VehichleLicenseID = @VehichleLicenseID";
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Status", Status);
+            command.Parameters.AddWithValue("@VehichleLicenseID", VehichleLicenseID);
            
             try
             {

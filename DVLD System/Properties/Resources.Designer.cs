@@ -163,6 +163,16 @@ namespace DVLD_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car {
             get {
                 object obj = ResourceManager.GetObject("car", resourceCulture);
@@ -1006,6 +1016,16 @@ namespace DVLD_System.Properties {
         internal static System.Drawing.Bitmap VehichleServices {
             get {
                 object obj = ResourceManager.GetObject("VehichleServices", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VehicleLicense {
+            get {
+                object obj = ResourceManager.GetObject("VehicleLicense", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

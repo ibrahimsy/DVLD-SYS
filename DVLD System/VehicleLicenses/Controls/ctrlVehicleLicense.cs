@@ -16,30 +16,50 @@ namespace DVLD_System.VehicleLicenses.Controls
     public partial class ctrlVehicleLicense : UserControl
     {
         int _VehicleLicenseID = -1;
+        clsVehichleLicense _VehicleLicnseInfo;
         public ctrlVehicleLicense()
         {
             InitializeComponent();
            
         }
 
+        public int VehicleLicenseID
+        {
+            get
+            {
+                return _VehicleLicenseID;
+            }
+        }
+        public clsVehichleLicense VehicleLicenseInfo
+        {
+            get 
+            {
+                return _VehicleLicnseInfo;
+            }
+
+        }
+
         public void LoadInfo(int VehicleLicenseID)
         {
-            clsVehichleLicense VehicleLicnseInfo = clsVehichleLicense.FindByID(VehicleLicenseID);
-            if (VehicleLicnseInfo == null)
+             _VehicleLicnseInfo = clsVehichleLicense.FindByID(VehicleLicenseID);
+            if (_VehicleLicnseInfo == null)
             {
                 MessageBox.Show($"No VehicleLicense With ID {VehicleLicenseID}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                _VehicleLicenseID = -1;
                 return;
             }
 
-            lblVehichleLicenseID.Text = VehicleLicnseInfo.VehichleLicenseID.ToString();
-            lblApplicationID.Text = VehicleLicnseInfo.ApplicationID.ToString();
-            lblVehicleID.Text = VehicleLicnseInfo.VehichleID.ToString();
-            lblIssueDate.Text = clsFormat.DateToShort( VehicleLicnseInfo.IssuedDate);
-            lblLicenseFee.Text = VehicleLicnseInfo.LicenseFee.ToString();
-            lblIssueReason.Text = VehicleLicnseInfo.IssueReasonText;
-            lblStatus.Text = VehicleLicnseInfo.Status == 1?"Active":"InActive";
-            lblExpiryDate.Text = clsFormat.DateToShort(VehicleLicnseInfo.ExpiryDate);
-            lblCreatedBy.Text = clsUser.Find(VehicleLicnseInfo.CreatedBy).UserName;
+            _VehicleLicenseID = VehicleLicenseID;
+
+            lblVehichleLicenseID.Text = _VehicleLicnseInfo.VehichleLicenseID.ToString();
+            lblApplicationID.Text = _VehicleLicnseInfo.ApplicationID.ToString();
+            lblVehicleID.Text = _VehicleLicnseInfo.VehichleID.ToString();
+            lblIssueDate.Text = clsFormat.DateToShort(_VehicleLicnseInfo.IssuedDate);
+            lblLicenseFee.Text = _VehicleLicnseInfo.LicenseFee.ToString();
+            lblIssueReason.Text = _VehicleLicnseInfo.IssueReasonText;
+            lblStatus.Text = _VehicleLicnseInfo.StatusText;
+            lblExpiryDate.Text = clsFormat.DateToShort(_VehicleLicnseInfo.ExpiryDate);
+            lblCreatedBy.Text = clsUser.Find(_VehicleLicnseInfo.CreatedBy).UserName;
         }
         
 
