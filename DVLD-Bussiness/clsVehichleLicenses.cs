@@ -55,6 +55,14 @@ namespace BankBussiness
             }
         }
 
+        public bool IsCanceled
+        {
+            get
+            {
+                return this.Status == enStatus.Cancelled;
+            }
+        }
+
         public bool IsExpired
         {
             get

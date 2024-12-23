@@ -27,6 +27,17 @@ namespace DVLD_System.VehicleLicenses
             if (_SelectedVehicleLicenseID == -1)
                 return;
             _VehicleLicenseInfo = ctrlVehicleLcenseWithFilter1.VehicleLicenseInfo;
+            if (_VehicleLicenseInfo == null)
+            {
+                MessageBox.Show($"No License Exist With ID = [{_SelectedVehicleLicenseID}]", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (_VehicleLicenseInfo.IsCanceled )
+            {
+                MessageBox.Show("The License Is Allready Cancelled","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             btnCancel.Enabled = true;
         }
 
